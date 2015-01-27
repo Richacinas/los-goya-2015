@@ -1,0 +1,230 @@
+.wrapper { margin:0; padding:0; float:left; width:928px; }
+.section-slider { overflow-x: hidden; width:100%; height:940px; background:#fff}
+.slider-container { position: relative; width: 100%; height:940px; margin-left: auto; margin-right: auto;overflow:hidden;}
+
+.slider-container .slide-left { position: absolute; top: 0px; right: 880px; height: 940px; width: 40px; background:#ffffff;}
+.slider-container .slide-right { position: absolute; top: 0px; left: 880px; height: 940px; width: 40px; background:#ffffff;}
+
+.slider-container .slide-left-enabled, .slider-container .slide-left-enabled .button, .slider-container .slide-right-enabled, .slider-container .slide-right-enabled .button { cursor: pointer; }
+
+.slider-container .slide-left-enabled:hover .button  { background: url"(slide-arrows.png") 8px -42px no-repeat;}
+.slider-container .slide-right-enabled:hover .button {	background: url"slide-arrows.png") -30px 0 no-repeat;}
+.slider-container .slide-right .button { position: absolute; /* left: 8px; */ top:48%; width: 12px; height: 21px; background: url("slide-arrow_r.png") 0 0px no-repeat; z-index:9999;}
+.slider-container .slide-left .button  { position: absolute; right: 0px; top:48%; width: 12px; height: 21px; background: url("slide-arrow_l.png") 0 0px no-repeat;  z-index:9999;}
+
+.section-slider .slide-pager { display: block; width:928px; height: auto; margin-left: auto; margin-right: auto; font-family: Arial; font-weight: normal; font-size: 14px; text-align: center; margin-top:0; position:absolute; top:0; padding-left: 30px;}
+.section-slider .slide-pager li { float: left; display: block; width: 23px; height: 23px; color: #fff; cursor: pointer; line-height: 23px; border:1PX SOLID #000000; margin-right:3px; background:#000000;-moz-border-radius: 15px; border-radius: 15px;}
+.section-slider .slide-pager li:hover {background: #d09d03; color:#fff;border-color:#d09d03;}
+.section-slider .slide-pager li.selected { background: #d09d03; color:#fff; cursor: default;border:2PX SOLID #d09d03;}
+
+.jcarousel-container { width: 875px; margin: 35px 30px 0 20px;}
+.jcarousel-clip-horizontal { width:100%; height:900px; overflow: visible !important;  margin-left:0; background:#fff;}
+.jcarousel-list { height:900px;}
+.jcarousel-item { width: 875px; height:900px; margin-right: 0; }
+
+.jcarousel-item OBJECT { width:520PX;}
+.jcarousel-item:hover {}
+.jcarousel-item-placeholder {}
+
+.fadeout-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #ffffff; opacity: 0; filter: Alpha(Opacity=0); z-index: 100;}
+.fadein-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #ffffff; z-index: 100;}
+
+.content {
+    box-shadow: 0 0 30px rgba(0,0,0,.3); 
+    padding: 1em;
+    margin: 0 0 30px 0px;
+}
+
+.backoffice_wrapper {
+    margin: 0 auto 130px auto;
+    width: 95%;
+    position: relative;
+}
+#backoffice .image_large {
+    width: 100px;
+    height: 150px;
+    cursor:pointer;
+}
+#backoffice .image_medium {
+    width: 60px;
+    height: 100px;
+    cursor:pointer;
+}
+
+#backoffice td {
+    position:relative;
+    text-align: center;
+    padding: 15px;
+}
+#backoffice td input[type=file]{
+    display:none;
+}
+#backoffice td input.carousel_element_id {
+    display:none;
+}
+#backoffice td img.delete_item {
+    height:50px;
+    cursor:pointer;
+}
+#backoffice td img.add_item {
+    height:50px;
+    cursor:pointer;
+}
+#backoffice td.position {
+
+}
+
+#backoffice h1 {
+    text-align: center;
+    
+}
+#backoffice input[type=submit] {
+    background-color: #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    font-family: 'Oswald';
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+    clear: both;
+}
+#commit_result {
+    background-color: lightyellow;
+    font-family: 'Oswald';  
+    font-size: 20px;
+    text-align: right;
+    float: right;
+}
+
+#backoffice_instructions {
+    background-color: lightyellow;
+    font-family: 'Oswald';  
+    font-size: 16px;
+    text-align: left;
+}
+
+.input_short{
+    width: 30px;
+}
+.input_medium{
+    width: 100px;
+}
+.position_cell {
+    width: 14%;
+}
+.name_cell {
+    width: 14%;
+}
+.image_cell {
+    width: 100px;
+    overflow: hidden;
+}
+.photographer_cell {
+    width:14%;
+}
+.text_cell {
+    width:14%;
+}
+.action_cell {
+    width:14%;
+}
+.id_cell {
+    display:none;
+}
+
+
+#backoffice table a:link {
+	color: #666;
+	font-weight: bold;
+	text-decoration:none;
+}
+#backoffice table a:visited {
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+#backoffice table a:active,
+#backoffice table a:hover {
+	color: #bd5a35;
+	text-decoration:underline;
+}
+#backoffice table {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:12px;
+	text-shadow: 1px 1px 0px #fff;
+	background:#eaebec;
+	margin:20px;
+	border:#ccc 1px solid;
+
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+#backoffice table th {
+	padding: 21px 15px 22px 15px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+#backoffice table th:first-child {
+	padding-left:20px;
+}
+#backoffice table tr:first-child th:first-child {
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}
+#backoffice table tr:first-child th:last-child {
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}
+#backoffice table tr {
+	text-align: center;
+	padding-left:20px;
+}
+#backoffice table td:first-child {
+	border-left: 0;
+}
+#backoffice table td {
+	padding: 10px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+#backoffice table tr.even td {
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+#backoffice table tr:last-child td {
+	border-bottom:0;
+}
+#backoffice table tr:last-child td:first-child {
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+#backoffice table tr:last-child td:last-child {
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+#backoffice table tr:hover td {
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+}
