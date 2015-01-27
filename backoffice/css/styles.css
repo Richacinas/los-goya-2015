@@ -10,23 +10,23 @@
         #paste-url.error { color: red; }
 
       .bl-sidebar-bl { border: 1px solid #ccc; margin: 10px 0; background: rgba(255,255,255,0.7); }
-        .bl-sidebar-bl h2 { display: block; border-bottom: 1px solid #ccc; font-size: 1.2em; padding: 5px 10px; background: #f70;
+        .bl-sidebar-bl h2 { display: block; border-bottom: 1px solid #ccc; font-size: 1.2em; padding: 5px 10px; background: #75A5A0;
           color: white; margin-top: 0; margin-bottom: 0; }         
       #bl-sidebar-list, #bl-sidebar-list-stream { height: 200px; overflow: auto; }
       .bl-list-elm-act .tit { background: #eee; color: black; }
       .bl-list-elm { border-bottom: 1px solid #ccc; }
         .bl-list-elm .tit { padding: 10px; color: #666; font-weight: 800; display: inline-block; }
-        .bl-list-elm a { background: #f70; color: white; display: block; padding: 4px; margin: 7px 5px 0 0; float: right; }
-          .bl-sidebar-bl-act h2, .bl-list-elm a.act { background: #5c4111; }
+        .bl-list-elm a { background: #75A5A0; color: white; display: block; padding: 4px; margin: 7px 5px 0 0; float: right; }
+          .bl-sidebar-bl-act h2, .bl-list-elm a.act { background: #75A559; }
           .bl-list-elm .tit .small { display: none; text-decoration: none; }
             .bl-list-elm .tit:hover .small { display: block; }
-      .bl-sidebar-bl .bottom { background: #f70; }
+      .bl-sidebar-bl .bottom { background: #75A5A0; }
         .bl-sidebar-bl .bottom a { color: white; line-height: 1.4em; padding: 5px; display: inline-block; float: left; }
         .bl-sidebar-bl select { padding: 2px; display: block; margin: 3px; text-align: right; float: right; width: 200px; }
 
     #bl-data { position: absolute; right: 0; padding-left: 370px; margin-right: 20px; width: 100%; z-index: 0; }
       .twt-list, .config { border: 1px solid #ccc; margin: 0 0 20px 0; background: rgba(255,255,255,0.7); }
-        .twt-list h2, .config h2 { display: block; border-bottom: 1px solid #ccc; font-size: 1.2em; padding: 10px; background: #f70; color: white; 
+        .twt-list h2, .config h2 { display: block; border-bottom: 1px solid #ccc; font-size: 1.2em; padding: 10px; background: #75A5A0; color: white; 
             margin-top: 0; margin-bottom: 0; }
           .config h2 a.muestra { float: right; color: #fff}  
           .twt-wrap, .config-wrap, .monitor-wrap  { padding: 10px; }
@@ -44,19 +44,19 @@
                 .twt-elm-img:hover h3 { bottom: 0; }
               .twt-elm-img .links { position: absolute; right: 10px; bottom: 10px; }
               .twt-elm-img a { color: rgb(255, 223, 58); font-weight: 800; }
-              .twt-elm .tag { font-size: 1.1em; margin: 0; width: 100%; background: #f70; color: white; padding: 5px; }
+              .twt-elm .tag { font-size: 1.1em; margin: 0; width: 100%; background: #75A5A0; color: white; padding: 5px; }
                 .twt-elm .tag span { float: left; display: block; padding: 5px; height: 30px; overflow: hidden; width: 140px; }
                 .twt-elm .tag a { color: white; float: right; }
                 .twt-elm .tag a:hover { text-shadow: 2px 2px #333; }
               .twt-elm h3 { font-size: 1.2em; margin: 0; padding: 5px; }
               .twt-elm img { display: block; width: 100%; height: auto; position: absolute; left: 0; z-index: -1; top: 41px; }
               .twt-elm a { display: inline-block; padding: 5px; }
-            .twt-elm-disable .tag { background: #5c4111; }
+            .twt-elm-disable .tag { background: #75A559; }
 
   .monitor-wrap { height: 200px; }
 
   
-  .config-wrap button, .monitor-wrap button { background-color:#f70; text-indent:0; border:1px solid #eeb44f; color:#ffffff; font-size:15px; font-weight:bold; font-style:normal; height:65px; line-height:65px; width:131px; text-decoration:none; text-align:center; text-shadow:1px 1px 0px #cc9f52; float: right; margin: 5px; }
+  .config-wrap button, .monitor-wrap button { background-color:#75A5A0; text-indent:0; border:1px solid #eeb44f; color:#ffffff; font-size:15px; font-weight:bold; font-style:normal; height:65px; line-height:65px; width:131px; text-decoration:none; text-align:center; text-shadow:1px 1px 0px #cc9f52; float: right; margin: 5px; }
   .mensaje { display: inline-block; width: 100%; padding: 20px; font-weight: bold; color: green; text-align: center; font-size: 1.4em; }
   .mensaje.error { color: red; }
   .messages { resize: none; border: 0; }
