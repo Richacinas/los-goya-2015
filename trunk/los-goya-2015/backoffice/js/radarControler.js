@@ -52,7 +52,7 @@
                   </div>\
                   <h3></h3>\
                   <div class="links"><a target="_blank" href="" class="usr"></a>\
-                  <a target="_blank" href="" class="lnk">+</a></div>\
+                  <a target="_blank" href="" class="lnk">ver post</a></div>\
                   <img src=""><div></a>\
                 <div>',
       tplTwet: '<div class="twt-elm">\
@@ -69,7 +69,7 @@
                   </div>\
                   <h3></h3>\
                   <div class="links"><a target="_blank" href="" class="usr"></a>\
-                  <a target="_blank" href="" class="lnk">+</a></div>\
+                  <a target="_blank" href="" class="lnk">ver post</a></div>\
                 <div>'
     },
 
