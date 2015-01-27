@@ -8,13 +8,13 @@
   var radarControler = {
 
     settings: { // radarControler.settings
-      filesListFile:    '../data/timeline.json',
-      filesListFile2:   '../data/stream-favorites/timeline.json',
-      FolderFinalFiles: '../radar/final/',
-      FolderDataFiles:  '../data/',
-      FolderDataFiles2: '../data/stream-favorites/',
-      twtprocessor:     '../app/twtprocess.php',
-      termsFile:        '../data/properties/searchTerms.json'
+      filesListFile:    '../../data/timeline.json',
+      filesListFile2:   '../../data/stream-favorites/timeline.json',
+      FolderFinalFiles: '../../radar/final/',
+      FolderDataFiles:  '../../data/',
+      FolderDataFiles2: '../../data/stream-favorites/',
+      twtprocessor:     '../../app/twtprocess.php',
+      termsFile:        '../../data/properties/searchTerms.json'
     },
         // otros 
     data: { // radarControler.data:
