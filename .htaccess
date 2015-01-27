@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule ^admin index.html
+
+RewriteRule ^alfombra-roja/([a-zA-Z_-]+)-([a-zA-Z_-]+)$ alfombra-roja/index.php?nombre-famoso=$1-$2

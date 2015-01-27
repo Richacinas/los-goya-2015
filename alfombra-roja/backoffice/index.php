@@ -1,0 +1,98 @@
+<?php
+session_start();
+
+include '../_partials/utils.php';
+$password = isset($_GET['p']) ? $_GET['p'] : '';
+$result = isset($_GET['r']) ? $_GET['r'] : '';
+
+if ($password != '' && isValidMd5($password)) {
+    
+   if ($password == md5('dRtVe2015goyA')) {
+       $data = getCarouselData();
+       $aCarousel = $data[0];
+       
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Backoffice - La alfombra roja de Los Premios Goya - Premios Goya 2015</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+    <script type="text/javascript" src="http://www.rtve.es/js/rtve.pack.js"></script>
+    <script language="javascript" type="text/javascript" src="//www.rtve.es/js/mushrooms/rtve_mushroom.js" ></script>
+    <script language="javascript" type="text/javascript" src="../js/backoffice.js" ></script>
+    
+</head>
+    <body>
+        <div class="backoffice_wrapper">
+        <form id="backoffice" method="post" action="commit.php" enctype="multipart/form-data">
+            <h1>Administración Lupa / Alfombra Roja</h1>
+            <div id="backoffice_instructions">
+                <ul>
+                    <li>Para los nombres, se aconseja utilizar el formato: Nombre Apellido.</li>
+                    <li>La primera columna (posición) sirve para alterar el orden de los elementos. Se introduce el índice de cada elemento y hay que asegurarse de que no se repiten.</li>
+                    <li>Se consideran los tamaños de las fotos del año pasado como ideales, para foto normal 550x900 (96dpi) y para foto zoom 2091x3422 (96dpi). Alrededor de esas resoluciones estará bien.</li>
+                    <li>Si se desea resaltar alguna parte del texto de pie de foto (columna texto), se puede "rodear" con el tag &lt;strong&gt;. Ejemplo: Jennifer Lopez optó por un escotado vestido de &lt;strong&gt;Zuhair Murad&lt;strong&gt; que le... </li>
+                    <li>Los botones de la derecha sirven para eliminar y añadir un nuevo elemento (Papelera, Sumar).</li>
+                    <li>Una vez realizados los cambios, hay que pulsar sobre el botón Guardar de la parte inferior.</li>
+                </ul>
+            </div>
+            <table id="backoffice_table">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Nombre</th>
+                        <th>Imagen Grande</th>
+                        <th>Imagen Normal</th>
+                        <th>Fotógrafo</th>
+                        <th>Texto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($aCarousel as $key=>$aElement): 
+                        $aElement = escapeArray($aElement);
+                        ?>
+                    <tr id="row<?php print($key); ?>">
+                        <td class="position_cell"><input type="text" class="input_short" id="position<?php print($key); ?>" name="position<?php print($key); ?>" value="<?php $_SESSION ? print($_SESSION['registro']['position'.$key]) : print($aElement[0]); ?>"/></td>
+                        <td class="name_cell"><input type="text" class="input_medium" id="name<?php print($key); ?>" name="name<?php print($key); ?>" value="<?php $_SESSION ? print($_SESSION['registro']['name'.$key]) : print($aElement[2]); ?>"/></td>
+                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key); ?>" name="image_large<?php print($key); ?>" src="../fotos/zoom/<?php print($aElement[1]); ?>" onError="handleImageError(this);"/><input class="select_image_large" id="select_image_large<?php print($key); ?>" name="select_image_large<?php print($key); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key); ?>" name="image_medium<?php print($key); ?>" src="../fotos/<?php print($aElement[1]); ?>" onError="handleImageError(this);"/><input class="select_image_medium" id="select_image_medium<?php print($key); ?>" name="select_image_medium<?php print($key); ?>" type="file" value="Examinar"/></td>
+                        <td class="photographer_cell"><input type="text" class="input_medium" id="photographer<?php print($key); ?>" name="photographer<?php print($key); ?>" value="<?php $_SESSION ? print($_SESSION['registro']['photographer'.$key]) : print($aElement[3]); ?>"/></td>
+                        <td class="text_cell"><textarea id="text<?php print($key); ?>" name="text<?php print($key); ?>" rows="6" cols="35"><?php $_SESSION ? print($_SESSION['registro']['text'.$key]) : print($aElement[4]); ?></textarea></td>
+                        <td class="id_cell"><input type="text" class="carousel_element_id" id="id<?php print($key); ?>" name="id<?php print($key); ?>" value="<?php $_SESSION ? print($_SESSION['registro']['id'.$key]) : print($aElement[5]); ?>"/></td>
+                        <td class="action_cell"><img class="delete_item" id="delete_item<?php print($key); ?>" name="delete_item<?php print($key); ?>" src="../images/delete.png"/></td>
+                    </tr>
+                  <?php endforeach; ?>
+                    
+                    <tr id="row<?php print($key + 1); ?>">
+                        <td class="position_cell"><input type="text" class="input_short" id="position<?php print($key + 1); ?>" name="position<?php print($key + 1); ?>" value=""/></td>
+                        <td class="name_cell"><input type="text" class="input_medium" id="name<?php print($key + 1); ?>" name="name<?php print($key + 1); ?>" value=""/></td>
+                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key + 1); ?>" name="image_large<?php print($key + 1); ?>" src="../fotos/zoom/silueta.jpg"/><input class="select_image_large" id="select_image_large<?php print($key + 1); ?>" name="select_image_large<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key + 1); ?>" name="image_medium<?php print($key + 1); ?>" src="../fotos/silueta.jpg"/><input class="select_image_medium" id="select_image_medium<?php print($key + 1); ?>" name="select_image_medium<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
+                        <td class="photographer_cell"><input type="text" class="input_medium" id="photographer<?php print($key + 1); ?>" name="photographer<?php print($key + 1); ?>" value=""/></td>
+                        <td class="text_cell"><textarea id="text<?php print($key + 1); ?>" name="text<?php print($key + 1); ?>" rows="6" cols="35"></textarea></td>
+                        <td class="id_cell"><input type="text" class="carousel_element_id" id="id<?php print($key + 1); ?>" name="id<?php print($key + 1); ?>" value=""/></td>
+                        <td class="action_cell"><img class="add_item" id="add_item" name="add_item" src="../images/add.png"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="commit_result"><?php print($result); ?></p>
+            <input type="submit" value="Guardar"/>
+        </form>
+    </div>
+    </body>
+</html>
+
+<?php
+   } else {
+       //redirección 404
+   }
+   
+} else {
+    //redirección 404
+}
+
+?>
