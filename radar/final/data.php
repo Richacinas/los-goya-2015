@@ -1,5 +1,5 @@
 <?php return array (
-  'time' => '01271734',
+  'time' => '01272012',
   'totals' => 
   array (
   ),
@@ -204,18 +204,6 @@
     ),
     8 => 
     array (
-      'time' => '2014-12-16T23:56:10.000000',
-      'img' => 'http://v.cdn.vine.co/r/thumbs/9265AD13CC1156745822835466240_2.5.0.15365892363544423711.mp4.jpg?versionId=Q3XT7R3.lo2f33DPziJE_vC1YRWaHorY',
-      'link' => 'https://vine.co/v/Og5qxZu72vi',
-      'id' => 'Og5qxZu72vi',
-      'net' => 'vn',
-      'video' => 'http://v.cdn.vine.co/r/videos_h264dash/0EF7FF2D851156745821308727296_2a16c6a2ad1.5.0.15365892363544423711.mp4?versionId=opEDsfu6wh3Og7FCf0W31Nn8mLdGF84D',
-      'text' => '#BananaMoon',
-      'usr' => 'hazelst',
-      'usr_img' => 'http://v.cdn.vine.co/r/avatars/7E2C3E9C3B977315468824424448_1cc3b7d57fe.3.1_ar1kbn7q1CxoT4QVfFTmVRNROfbUa1qweUfo_4AvSLNoLI5M.f6luBSy.NNlG6DY.jpg?versionId=iHLT19WuNragdcbF0_LOr0cMNN8uGSZs',
-    ),
-    9 => 
-    array (
       'time' => '2015-01-10T14:05:18.000000',
       'img' => 'http://v.cdn.vine.co/r/thumbs/B5ED75B1DC1045897522998292480_1.4.7.8182084520787428562.mp4.jpg?versionId=oBa3qpnHLefgmiNzkPlJ0JnSvUedna93',
       'link' => 'https://vine.co/v/M7MFlunmLJ5',
@@ -226,7 +214,7 @@
       'usr' => 'Nicole Aiton',
       'usr_img' => 'http://v.cdn.vine.co/r/avatars/C172AE9A461157340095993765888_2a4abb5e1e9.5.1.jpg?versionId=Df3euaP3Ke9IMdFhi1cPtZw9sr84v9Sg',
     ),
-    10 => 
+    9 => 
     array (
       'user' => '1770311',
       'screen_name' => 'microsiervos',
@@ -253,7 +241,7 @@
         'net' => 'tw',
       ),
     ),
-    11 => 
+    10 => 
     array (
       'user' => '246349695',
       'screen_name' => 'rosaliasanz',
@@ -280,7 +268,7 @@
       ),
       'type' => 'img-big',
     ),
-    12 => 
+    11 => 
     array (
       'user' => '57354930',
       'screen_name' => 'YorokobuMag',
@@ -307,7 +295,7 @@
         'net' => 'tw',
       ),
     ),
-    13 => 
+    12 => 
     array (
       'user' => '233631354',
       'screen_name' => 'SocialBro',
