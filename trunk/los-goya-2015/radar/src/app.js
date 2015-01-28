@@ -4009,7 +4009,8 @@ var gC = {
             _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "VER_TOP", "VER_TOP"]), $("#bl-topten").slideUp(800, function() {
                 $("#bl-stream").slideDown(800)
             }), $(".bl-tabs-wrap .act").removeClass("act"), $(".enlace-goyas-en-las-redes").addClass("act"), $("#alldone").fadeIn(400), gC.cache.topTenShown = !1
-        })
+        });
+
     },
     generateTopTen: function() {
     	/* Get Top10 favorites */
@@ -4312,7 +4313,7 @@ var gC = {
                     b.hasClass(".bl-tl-elm") || (b = b.parents(".bl-tl-elm"));
                     var c = b.data();
                     if (c && c.time && c.value) {
-                        var d = c.value.toLocaleString() + '<br/><span class="white">Tweets a las ' + c.time.substring(4, 6) + ":" + c.time.substring(6, 8) + "</span>";
+                        var d = c.value.toLocaleString() + '<br/><span class="white">Tuits a las ' + c.time.substring(4, 6) + ":" + c.time.substring(6, 8) + "</span>";
                         gC.tl.cache.$tlTtip.html(d)
                     }
                     $(this).addClass("bl-tl-elm-act")
@@ -4350,7 +4351,7 @@ var gC = {
                 c = 0;
             for (var d in b) b.hasOwnProperty(d) && (c++, gC.tl.data.totals[d] || (gC.tl.data.totals[d] = b[d], gC.tl.data.total += b[d], b[d] > gC.tl.data.maxVal && gC.tl.updateMaxval(b[d]), gC.tl.addData(d, b[d])));
             c > gC.tl.settings.length && (gC.tl.settings.length = c, gC.tl.updateSizes(), gC.tl.redrawBars(), console.log("redraw")), gC.tl.data.media = gC.tl.data.total / c, gC.tl.updateMedia();
-            var e = gC.tl.data.total + ' <span>tweets</span><br/><span class="white">Tuits de Los Goya</span><span></span>';
+            var e = gC.tl.data.total + ' <span>tuits</span><br/><span class="white">Tuits de Los Goya</span><span></span>';
             gC.tl.cache.$tlTtip.html(e)
         },
         updateMedia: function() {
