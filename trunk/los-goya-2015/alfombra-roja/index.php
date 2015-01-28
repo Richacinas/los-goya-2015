@@ -10,7 +10,7 @@ $controllerHeader = file_get_contents("http://www.rtve.es/comunes/controlador/ca
 
 
 $name = isset($_GET['nombre-famoso']) ? $_GET['nombre-famoso'] : '';
-$data = getCarouselData();
+$data = getCarouselData(true);
 $aCarousel = $data[0];
 $aNameIndex = $data[1];
 
@@ -53,7 +53,7 @@ else {
     <meta property="og:title" content="<?php if ($ogTitle != "") { echo $ogTitle; ?>, en la <?php } else { ?>La <?php } ?> alfombra roja de Los Premios Goya - Premios Goya 2015"/>
     <meta property="og:description" content="La alfombra roja de los Premios Goya 2015. Descubre los vestidos de las actrices , los mejores trajes de los actores y los famosos en la gala de los Goya 2015"/>
     <meta property="og:url" content="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo $name; ?>"/>
-    <meta property="og:image" content="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/fotos/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>"/>
+    <meta property="og:image" content="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>"/>
     
     
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -122,10 +122,10 @@ else {
                               <div class="slider-container">
                                 <ul class="image-carousel">
                                     <?php foreach($aCarousel as $key=>$aElement): ?>
-                                      <li>
-                                          <iframe src="item.php?foto=<?php print($aCarousel[$key][1]); ?>&nombre=<?php print($aCarousel[$key][2]); ?>&fotografo=<?php print($aCarousel[$key][3]); ?>&texto=<?php print(str_replace("\"","'",targetBlank($aCarousel[$key][4]))); ?>" title="" frameborder="0" scrolling="no" allowtransparency="true" name="menucontent" id="menucontent" height="900px" width="920"></iframe>
-                                      </li>
-                                    <?php endforeach; ?>
+                                        <li>
+                                            <iframe src="item.php?foto=<?php print($aCarousel[$key][1]); ?>&nombre=<?php print($aCarousel[$key][2]); ?>&fotografo=<?php print($aCarousel[$key][3]); ?>&texto=<?php print(str_replace("\"","'",targetBlank($aCarousel[$key][4]))); ?>" title="" frameborder="0" scrolling="no" allowtransparency="true" name="menucontent" id="menucontent" height="900px" width="920"></iframe>
+                                        </li>
+                                      <?php endforeach; ?>
                                 </ul>
                                 <div class="slide-left">
                                   <div class="overlay"></div>

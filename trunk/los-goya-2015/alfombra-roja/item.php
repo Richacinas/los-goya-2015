@@ -22,7 +22,7 @@ $nameIndex = formatImageName($nombre);
 <meta property="og:title" content="La alfombra roja de Los Premios Goya - Premios Goya 2015 | Lab RTVE.es">
 <meta property="og:description" content="La alfombra roja de los Premios Goya 2015. Descubre los vestidos de las actrices , los mejores trajes de los actores y los famosos en la gala de los Goya 2015">
 <meta property="og:url" content="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo $nameIndex; ?>">
-<meta property="og:image" content="<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/fotos/zoom/<?php echo $foto; ?>">
+<meta property="og:image" content="<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/fotosPublished/zoom/<?php echo $foto; ?>">
 
 <link rel="stylesheet" type="text/css" href="css/zoom.css"/>
 
@@ -46,10 +46,10 @@ $nameIndex = formatImageName($nombre);
     <div class="content">
         <div class="stage">
           <div class="foto">
-              <a title="" href="fotos/zoom/<?php echo $foto; ?>" class="jqzoom">
+              <a title="" href="fotosPublished/zoom/<?php echo $foto; ?>" class="jqzoom">
                   <span class="zoom"></span>
                   <div itemscope itemtype="http://schema.org/ImageObject">
-                      <img class="carrousel_image" title="<?php echo $nombre; ?> en Los Premios Goya 2015 - RTVE.es" src="fotos/<?php echo $foto; ?>" alt="<?php echo $nombre; ?> en Los Premios Goya 2015" itemprop="image" />
+                      <img class="carrousel_image" title="<?php echo $nombre; ?> en Los Premios Goya 2015 - RTVE.es" src="fotosPublished/<?php echo $foto; ?>" alt="<?php echo $nombre; ?> en Los Premios Goya 2015" itemprop="image" />
                   </div>
               </a> 
           </div>

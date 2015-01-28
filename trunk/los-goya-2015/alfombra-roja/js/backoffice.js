@@ -24,8 +24,15 @@ $(function() {
         $("#"+this.parentNode.parentNode.id).hide();
         $("#id"+this.id.replace( /[^\d.]/g, '' )).val("-1");
     });
-
-    
+    $(document).on('change', "input", function(){
+        $("#"+this.parentNode.parentNode.id).css("background", "#F5C9C9");
+    });
+//    img.addEventListener("DOMAttrModified", function(event) {
+//        if (event.attrName == "src") {
+//           // The `src` attribute changed!
+//        }
+//    });
+        
     function getMaxRowElement(tableID, element) {
         
         var maxElement = -1;
