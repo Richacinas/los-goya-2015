@@ -3,13 +3,17 @@
 $baseUrl = $_SERVER['HTTP_HOST'];
 $twitterAccount = "raulevoluciona";
 
-function getCarouselData()
+function getCarouselData($getPublished = false)
 {
     $aElement = array();
     $aCarousel = array();
     $aNameIndex = array();
     $aIdIndex = array();
-    $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
+    if (!$getPublished) {
+        $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
+    } else {
+        $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data-published.csv';
+    }
     $aLines = file( $dataPath );
 
     foreach( $aLines as $line ) {
@@ -142,8 +146,8 @@ function setCsvArray($data, $files) {
         
         if ($position !== $prevPosition) {
             if (($aNewValues[4] !== "-1") && ($aNewValues[1] !== "")) { //Si no trae nombre o el id = -1, entonces no se añade
-                    //Falta el nombre de la foto en el array, que se extrae del fichero
-                    addItemCsvArray($aFormattedData, $prevPosition, $aNewValues, $aOldNames, $aOldIds);
+                //Falta el nombre de la foto en el array, que se extrae del fichero
+                addItemCsvArray($aFormattedData, $prevPosition, $aNewValues, $aOldNames, $aOldIds);
             }
             
             $prevPosition = $position;
@@ -174,6 +178,29 @@ function generateCsv($data, $delimiter = ',', $enclosure = '"') {
        fclose($handle);
        
        return true;
+}
+
+function publishCsv () {
+    $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
+    $dataPublishedPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data-published.csv';
+    copy($dataPath, $dataPublishedPath);
+}
+
+function copyDir($src = "../fotos",$dst = "../fotosPublished") {
+    
+    $dir = opendir($src);
+    @mkdir($dst);
+    while(false !== ( $file = readdir($dir)) ) {
+        if (( $file != '.' ) && ( $file != '..' )) {
+            if ( is_dir($src . '/' . $file) ) {
+                copyDir($src . '/' . $file,$dst . '/' . $file);
+            }
+            else {
+                copy($src . '/' . $file,$dst . '/' . $file);
+            }
+        }
+    }
+    closedir($dir);
 }
 
 ?>

@@ -1,15 +1,14 @@
 <?php
-session_start();
 
 include '../_partials/utils.php';
 $files = $_FILES;
 
 //Se guardan en sesión todos los valores presentes en el formulario
-if( $_POST != null ){
-    foreach($_POST as $campo => $valor) {
-        $_SESSION['registro'][$campo] = $valor;
-    }
-}
+//if( $_POST != null ){
+//    foreach($_POST as $campo => $valor) {
+//        $_SESSION['registro'][$campo] = $valor;
+//    }
+//}
 
 //Este bucle subirá las imágenes seleccionadas en el formulario.
 $uploadOk = 1;
@@ -66,6 +65,10 @@ if ($uploadOk == 1 ) {
         $result = setCsvArray($_POST, $files);
         if (generateCsv($result) == true) { 
             $message = "Se ha guardado correctamente.";
+            if (isset($_POST['publish'])) {
+                publishCsv();
+                copyDir();
+            }
         } else {
             $message = "Ha habido un error al guardar. Recuerda que sólo se permiten imágenes JPG.";
         }
