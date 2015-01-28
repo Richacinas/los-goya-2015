@@ -4272,7 +4272,8 @@ var gC = {
     },
     bindFiltro: function() {
         $("#filtro-invitados").selectBox(), $("#filtro-invitados").change(function() {
-            gC.data.filter = parseInt($(this).val(), 10), gC.data.filter > -1 ? (gC.data.search = $(this).find("option:selected").html(), _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO", gC.data.search])) : (gC.data.search = "", _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO", "Inicio"])), gC.restartDrawing(), gC.drawFixedElms(gC.data.ok.length, gC.cache.pageElms, !0)
+            gC.data.filter = parseInt($(this).val(), 10), gC.data.filter > -1 ? (gC.data.search = $(this).find("option:selected").html(), _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO", gC.data.search])) : (gC.data.search = "", _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO", "Inicio"])), gC.restartDrawing(), gC.drawFixedElms(gC.data.ok.length, gC.cache.pageElms, !0);
+            $(".enlace-goyas-en-las-redes:first").trigger("click");
         });
     },
     bindFavorite: function() {
@@ -4280,7 +4281,8 @@ var gC = {
             var favoriteSearch = $(this).find(".bl-top-elm-wrap:first").data("search");
             gC.data.search = favoriteSearch;
             // filter=200 to recognize filter favorites
-            gC.data.filter = 200, _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO_FAVORITO", gC.data.search]), gC.restartDrawing(), gC.drawFixedElms(gC.data.ok.length, gC.cache.pageElms, !0)
+            gC.data.filter = 200, _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO_FAVORITO", gC.data.search]), gC.restartDrawing(), gC.drawFixedElms(gC.data.ok.length, gC.cache.pageElms, !0);
+            $(".enlace-goyas-en-las-redes:first").trigger("click");
         });
     },
     getActorData: function(a) {
