@@ -4304,7 +4304,7 @@ var gC = {
             gC.tl.bindEvents();
         },
         bindEvents: function() {
-            var a = gC.tl.data.total.toLocaleString() + '<br/><span class="white">Tweets de Los Goya</span><span></span>';
+            var a = gC.tl.data.total.toLocaleString() + '<br/><span class="white">Tuits de Los Goya</span><span></span>';
             if (gC.tl.cache.$tlTtip.html(a), !Modernizr.touch) {
                 var b = 160;
                 gC.tl.cache.$tlData.delegate(".bl-tl-elm", "mouseenter", function(a) {
@@ -4317,12 +4317,12 @@ var gC = {
                     }
                     $(this).addClass("bl-tl-elm-act")
                 }).delegate(".bl-tl-elm", "mouseleave", function() {
-                    var a = gC.tl.data.total.toLocaleString() + '<br/><span class="white">Tweets de Los Goya</span><span></span>';
+                    var a = gC.tl.data.total.toLocaleString() + '<br/><span class="white">Tuits de Los Goya</span><span></span>';
                     gC.tl.cache.$tlTtip.html(a), $(this).removeClass("bl-tl-elm-act")
                 }), gC.tl.cache.$timeline.bind("mouseenter", function() {
                     gC.tl.cache.$timeline.addClass("bl-tl-in")
                 }).bind("mouseleave", function() {
-                    var a = gC.tl.data.total.toLocaleString() + '<br/><span class="white">Tweets de Los Goya</span><span></span>';
+                    var a = gC.tl.data.total.toLocaleString() + '<br/><span class="white">Tuits de Los Goya</span><span></span>';
                     gC.tl.cache.$tlTtip.html(a).stop(!0, !0).animate({
                         right: 0
                     }, 800), gC.tl.cache.$timeline.removeClass("bl-tl-in").removeClass("ttip-izq")
@@ -4350,7 +4350,7 @@ var gC = {
                 c = 0;
             for (var d in b) b.hasOwnProperty(d) && (c++, gC.tl.data.totals[d] || (gC.tl.data.totals[d] = b[d], gC.tl.data.total += b[d], b[d] > gC.tl.data.maxVal && gC.tl.updateMaxval(b[d]), gC.tl.addData(d, b[d])));
             c > gC.tl.settings.length && (gC.tl.settings.length = c, gC.tl.updateSizes(), gC.tl.redrawBars(), console.log("redraw")), gC.tl.data.media = gC.tl.data.total / c, gC.tl.updateMedia();
-            var e = gC.tl.data.total + ' <span>tweets</span><br/><span class="white">Tweets de Los Goya</span><span></span>';
+            var e = gC.tl.data.total + ' <span>tweets</span><br/><span class="white">Tuits de Los Goya</span><span></span>';
             gC.tl.cache.$tlTtip.html(e)
         },
         updateMedia: function() {
