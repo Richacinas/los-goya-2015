@@ -3886,10 +3886,21 @@ var gC = {
                 if (0 >= e) gC.cache.streamEnded = !0, $(".strm-load").hide(), $("#alldone").addClass("active"), void(gC.cache.displayIni = e);
                 if (d >= b) return void(gC.cache.displayIni = e);
                 if (gC.data.filter > -1) {
-                    if (gC.data.ok[e].tags && labTools.utils.inArray(gC.data.search, gC.data.ok[e].tags)) {
-                        d++;
-                        var f = gC.themePost(gC.data.ok[e]);
-                        gC.preloader(f, gC.data.ok[e], c)
+                    if (gC.data.filter === 200) {
+                        // 200 means Favorite filter search
+                        var postText = gC.data.ok[e].text;
+                        var favoriteSearch = gC.data.search;
+                        if (gC.isFavoriteInPost(favoriteSearch, postText)) {
+                            d++;
+                            var f = gC.themePost(gC.data.ok[e]);
+                            gC.preloader(f, gC.data.ok[e], c)
+                        }
+                    } else {
+                        if (gC.data.ok[e].tags && labTools.utils.inArray(gC.data.search, gC.data.ok[e].tags)) {
+                            d++;
+                            var f = gC.themePost(gC.data.ok[e]);
+                            gC.preloader(f, gC.data.ok[e], c)
+                        }
                     }
                 } else {
                     d++;
@@ -3902,6 +3913,7 @@ var gC = {
                     if (e >= gC.data.ok.length) return void(gC.cache.displayEnd = e);
                     if (d >= b) return void(gC.cache.displayEnd = e);
                     if (gC.data.filter > -1) {
+                        // Wall filter search (by select box)
                         if (gC.data.ok[e].tags && labTools.utils.inArray(gC.data.ok[e].tags[0], gC.data.search)) {
                             d++;
                             var f = gC.themePost(gC.data.ok[e]);
@@ -3914,6 +3926,17 @@ var gC = {
                     }
                     gC.cache.displayEnd = e
                 }
+    },
+    isFavoriteInPost: function(favoriteSearch, postText) {
+        var favoriteTerms = favoriteSearch.split(',');
+        var termFound = false;
+        $.each(favoriteTerms, function(favIndex, favoriteTerm) {
+            if (postText.search(favoriteTerm) !== -1) {
+                termFound = true;
+                return false; // break
+            }
+        });
+        return termFound;
     },
     drawElms: function(a, b, c) {
         for (var d = a; b > d; d++)
@@ -4027,6 +4050,7 @@ var gC = {
           		targetFavorite.find('img').attr('src', './fotos-personajes/' + favoriteData['image']);
         		targetFavorite.find('h2').html(favoriteData['name']);
         		targetFavorite.find('.bl-top-text-count-total').html(favoriteTotal);
+                targetFavorite.find('.bl-top-elm-wrap').data('search', favoriteData['search']);
         		if(favoriteData['twitterUrl'] !== undefined) {
         			var twitterUrlArray = favoriteData['twitterUrl'].split("/");
         			var twitterUsername = twitterUrlArray[twitterUrlArray.length - 1];
@@ -4039,10 +4063,12 @@ var gC = {
           			var targetFavorite = $(favorites[leftIndex]);
           			targetFavorite.find('img').attr('src', './fotos-personajes/favorite-default.jpg');
         			targetFavorite.find('h2').html("-");
-        			targetFavorite.find('.bl-top-text-count-total').html("sin ");
+        			targetFavorite.find('.bl-top-text-count-total').html("sin ");/*.data('search',);*/
         			leftIndex--;
           		}
           	}
+            // Bind Favorites click
+            gC.bindFavorite();
         },
         error: function(jqXHR, textStatus, errorThrown) {
           
@@ -4247,7 +4273,15 @@ var gC = {
     bindFiltro: function() {
         $("#filtro-invitados").selectBox(), $("#filtro-invitados").change(function() {
             gC.data.filter = parseInt($(this).val(), 10), gC.data.filter > -1 ? (gC.data.search = $(this).find("option:selected").html(), _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO", gC.data.search])) : (gC.data.search = "", _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO", "Inicio"])), gC.restartDrawing(), gC.drawFixedElms(gC.data.ok.length, gC.cache.pageElms, !0)
-        })
+        });
+    },
+    bindFavorite: function() {
+        $(".bl-top-elm").on("click", function() {
+            var favoriteSearch = $(this).find(".bl-top-elm-wrap:first").data("search");
+            gC.data.search = favoriteSearch;
+            // filter=200 to recognize filter favorites
+            gC.data.filter = 200, _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO_FAVORITO", gC.data.search]), gC.restartDrawing(), gC.drawFixedElms(gC.data.ok.length, gC.cache.pageElms, !0)
+        });
     },
     getActorData: function(a) {
         for (var b = 0; b < gC.data.actores.length; b++)
@@ -4287,7 +4321,7 @@ var gC = {
     },
     tl: {
         settings: {
-            length: 300
+            length: 400 /* 6 hours and 40 minutes */
         },
         data: {
             queries: {},
@@ -4349,8 +4383,10 @@ var gC = {
             if (!a.timeline) return void console.log("no timeline");
             var b = a.timeline,
                 c = 0;
+            var numOfTimelineBars = $(".bl-tl-elm").length;
+            var settingsLength = gC.tl.settings.length;
             for (var d in b) b.hasOwnProperty(d) && (c++, gC.tl.data.totals[d] || (gC.tl.data.totals[d] = b[d], gC.tl.data.total += b[d], b[d] > gC.tl.data.maxVal && gC.tl.updateMaxval(b[d]), gC.tl.addData(d, b[d])));
-            c > gC.tl.settings.length && (gC.tl.settings.length = c, gC.tl.updateSizes(), gC.tl.redrawBars(), console.log("redraw")), gC.tl.data.media = gC.tl.data.total / c, gC.tl.updateMedia();
+            c > settingsLength && (settingsLength = c, gC.tl.updateSizes(), gC.tl.redrawBars(), console.log("redraw")), gC.tl.data.media = gC.tl.data.total / c, gC.tl.updateMedia();
             var e = gC.tl.data.total + ' <span>tuits</span><br/><span class="white">Tuits de Los Goya</span><span></span>';
             gC.tl.cache.$tlTtip.html(e)
         },
@@ -4380,7 +4416,9 @@ var gC = {
             }
         },
         updateSizes: function() {
-            gC.tl.cache.elmWidth = gC.tl.cache.$tlData.width() / gC.tl.settings.length, gC.tl.cache.elmHeight = gC.tl.cache.$tlData.height(), gC.tl.cache.redrawTimeline && clearTimeout(gC.tl.cache.redrawTimeline), gC.tl.cache.redrawTimeline = setTimeout(gC.tl.redrawBars, 100)
+            var numOfTimelineBars = $(".bl-tl-elm").length;
+            var settingsLength = gC.tl.settings.length;
+            gC.tl.cache.elmWidth = gC.tl.cache.$tlData.width() / settingsLength, gC.tl.cache.elmHeight = gC.tl.cache.$tlData.height(), gC.tl.cache.redrawTimeline && clearTimeout(gC.tl.cache.redrawTimeline), gC.tl.cache.redrawTimeline = setTimeout(gC.tl.redrawBars, 100)
         },
         redrawBars: function() {
             gC.tl.cache.$tlData.find(".bl-tl-elm").each(function() {

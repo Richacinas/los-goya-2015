@@ -366,7 +366,7 @@ letter-spacing: 0.02em;
     padding-bottom: 50px;
     position: relative;
     min-height: 50px;
-    /*max-width: 1260px;*/
+    max-width: 1789px;
     margin: 0 auto;
     display: block;
     -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1), 0 0 70px rgba(0,0,0,0.1);
@@ -410,8 +410,9 @@ letter-spacing: 0.02em;
 }
 
 .bl-tabs-outer {
-    height: 50px;/*max-width: 1260px;*/
-margin: 0 auto;
+    height: 50px;
+    max-width: 1789px;
+    margin: 0 auto;
 }
 
 #bl-tabs {
