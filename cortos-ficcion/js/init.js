@@ -42,6 +42,14 @@ jQuery(function($) {
 			var sectionId = $(this).data('section');
 			menu.navigateTo(sectionId);
 		});
-
+		// Video preview if apple device
+		if (isAppleDevice) {
+			$("#preview-video-texto-apple").show();
+			$("#play-icon").show().on("click", function() {
+				$("#preview-video-texto-apple").stop().fadeOut("fast");
+				$("#play-icon").stop().fadeOut("fast");
+				$("#video-texto").get(0).play();
+			});
+		}
 	});
 });
