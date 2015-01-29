@@ -112,7 +112,7 @@ p {
 }
 
 strong {
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
 }
 
 .inline {
@@ -132,12 +132,32 @@ strong {
     zoom: 1;
 }
 
-.wk-col-l {
+.bl-tl-foot .wk-col-l {
+    display: inline;
+    float: left;
+    background-color: #dfdfdf;
+    width: 37.5%;
+}
+
+.bl-tl-foot .wk-col-c {
+    display: inline;
+    background-color: #cdcdcd;
+    width: 45%;
+}
+
+.bl-tl-foot .wk-col-r {
+    display: inline;
+    float: right;
+    background-color: #dfdfdf;
+    width: 17.5%;
+}
+
+.bl-tabs-wrap .wk-col-l {
     display: inline;
     float: left;
 }
 
-.wk-col-r {
+.bl-tabs-wrap .wk-col-r {
     display: inline;
     float: right;
 }
@@ -210,27 +230,17 @@ body {
 }
 
 h1 {
-font-size: 1.5em;
+font-size: 1.8em;
 position: relative;
-padding-left: 40%;
-color: #484746;
-font-family: 'RE65',Arial,Helvetica,sans-serif;
+    color: #75a5a0;
+font-family: 'RE45',Arial,Helvetica,sans-serif;
 line-height: 1;
 text-align: left;
-padding: 1em 0 1em 0;
+padding: 0.8em 0 0.8em 0.8em;
 }
 
 h1 span {
-    font-size: .7em;
-}
-
-h1 span a {
-    color: inherit;
-    text-decoration: none;
-}
-
-h1 span a:hover {
-    color: inherit;
+    font-family: 'RE65',Arial,Helvetica,sans-serif;
 }
 
 h1:before {
@@ -266,13 +276,23 @@ background-size: 100% auto;
 }
 
 .bold {
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
+}
+
+.recpoint {
+    background-color: #de1b2d;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin: 10px 6px 0px 0px;
+    float: left;
 }
 
 #lab-header {
 width: 100%;
+height: 44px;
 z-index: 10;
-background: #75A5A0;
+background-color: #222222;
 position: relative;
 /*max-width: 1260px;*/
 display: block;
@@ -283,13 +303,34 @@ box-sizing: border-box;
 -moz-box-sizing: border-box;
 }
 
-#lab-header .centerlink {
-text-decoration: none;
-font-size: 1.6em;
-line-height: 2.2em;
-font-family: 'RE65',Arial,Helvetica,sans-serif;
-color: white;
-letter-spacing: 0.02em;
+#header-left-menu {
+    float: left;
+    height: 44px;
+    margin-top: 7px;
+    font-size: 1em;
+    line-height: 1.7em;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+}
+#header-left-menu a {
+    color: #ffffff;
+    text-decoration: none;
+}
+#header-left-menu img {
+    float: left;
+    margin: 0 15px 0 25px;
+}
+#header-left-menu menu {
+    float: left;
+}
+#header-left-menu menu ul li {
+    float: left;
+    padding: 0 10px;
+}
+
+#header-left-menu menu ul li.last {
+    border-left: solid 1px #ffffff;
 }
 
 #lab-header .social-lockup {
@@ -307,31 +348,31 @@ letter-spacing: 0.02em;
     margin-right: 10px;
     width: 30px;
     height: 25px;
-    background: url(../img/bg--mainsprite.png) top left no-repeat;
+    background: url(../img/socials-sprite.png) top left no-repeat;
 }
 
 #lab-header .social-lockup .social-fbook {
-    background-position: -230px -20px;
+    background-position: 0px 0px;
 }
 
 #lab-header .social-lockup .social-fbook:hover {
-    background-position: -230px -50px;
+    background-position: 0px 0px;
 }
 
 #lab-header .social-lockup .social-twitter {
-    background-position: -260px -20px;
+    background-position: -48px 0px;
 }
 
 #lab-header .social-lockup .social-twitter:hover {
-    background-position: -260px -50px;
+    background-position: -48px 0px;
 }
 
 #lab-header .social-lockup .social-gplus {
-    background-position: -200px -20px;
+    background-position: -101px 0px;
 }
 
 #lab-header .social-lockup .social-gplus:hover {
-    background-position: -200px -50px;
+    background-position: -101px 0px;
 }
 
 .twet-count {
@@ -379,7 +420,19 @@ letter-spacing: 0.02em;
 
 #bl-stream .col-strm {
     float: left;
-    width: 250px;
+    /*width: 250px;*/
+}
+
+#bl-stream .strem-wdth-8 {
+    width: 12.5%;
+}
+
+#bl-stream .strem-wdth-7 {
+    width: 14.2857%;
+}
+
+#bl-stream .strem-wdth-6 {
+    width: 16.6666667%;
 }
 
 #bl-stream .strem-wdth-5 {
@@ -471,7 +524,7 @@ letter-spacing: 0.02em;
     text-decoration: none;
     color: #484746;
     font-size: 140%;
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
 }
 
 #bl-tabs .menu a.act,#bl-tabs .menu span.act {
@@ -753,7 +806,7 @@ margin: 0 auto;
     height: 100%;
     width: 100%;
     overflow: hidden; 
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
     color: white;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
 }
@@ -780,7 +833,7 @@ transform: scale(1);
 
 .twt-elm-img a {
     color: #ffdf3a;
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
 }
 
 .twt-elm .tag {
@@ -957,7 +1010,7 @@ transform: scale(1);
 .username {
     font-size: 14px;
     color: #75a5a0;
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
     position: relative;
     left: 65px;
     top: -80px;
@@ -967,7 +1020,7 @@ transform: scale(1);
 .username_ig {
     font-size: 14px;
     color: #75a5a0;
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
     position: relative;
     left: 80px;
     top: -75px;
@@ -977,7 +1030,7 @@ transform: scale(1);
 .nombre_ig {
     font-size: 15px;
     color: #000;
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
     vertical-align: top;
     position: relative;
     left: 80px;
@@ -986,7 +1039,7 @@ transform: scale(1);
 }
 
 .description {
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
     padding-left: 10px;
     padding-right: 10px;
     margin: 0;
@@ -1043,7 +1096,7 @@ padding: 0.2em 0.5em 0 0.5em;
 
 .bl-tl-data {
     width: 100%;
-    height: 60px;
+    height: 75px;
     position: relative;
 }
 
@@ -1081,7 +1134,7 @@ text-align: right;
 line-height: .6em;
 pointer-events: none;
 font-size: 160%;
-font-family: 'RE65',Arial,Helvetica,sans-serif;
+font-family: 'RE45',Arial,Helvetica,sans-serif;
 }
 
 .bl-tl-ttip span {
@@ -1096,7 +1149,7 @@ position: absolute;
 top: 0;
 right: 0;
 width: 4px;
-height: 125px;
+height: 140px;
 background: #75a5a0;
 }
 
@@ -1131,37 +1184,26 @@ background: #75a5a0;
 
 .bl-tl-foot {
     width: 100%;
-    height: 1.3em;
+    height: 1em;
     position: relative;
-    background: #75a5a0;
 }
 
 .bl-tl-foot .bl-tl-foot-elm {
-    color: #fff;
+    color: #75a5a0;
     position: relative;
-    font-size: 90%;
-    line-height: 1.65;
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
 }
 
-.bl-tl-foot .bl-tl-foot-elm:before {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 20px;
-    position: absolute;
-    left: 0;
-    background: url(../img/bg--mainsprite.png) -17px -44px no-repeat;
-}
-
-.bl-tl-foot .bl-tl-foot-ini {
-    padding-left: 45px;
+.bl-tl-foot .bl-tl-foot-elm span {
+    color: #6d6868;
+    padding-right: 10px;
 }
 
 .bl-tl-foot .bl-tl-foot-med {
     position: absolute;
-    left: 35%;
-    padding-left: 45px;
+
 }
 
 .bl-tl-foot .bl-tl-foot-med:before {
@@ -1431,7 +1473,7 @@ background: #75a5a0;
 .selectBox-options .selectBox-optgroup {
     color: #666;
     background: #EEE;
-    font-family: 'RE65',Arial,Helvetica,sans-serif;
+    font-family: 'RE45',Arial,Helvetica,sans-serif;
     line-height: 1.5;
     padding: 0 .3em;
     white-space: nowrap;
