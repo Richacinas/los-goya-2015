@@ -147,16 +147,16 @@
 								</video>
 							</div>
 							<div class="fotorama column-center" style="height:750px" data-nav="thumbs">
-								<a href="images/slide/slide1.jpg" data-caption="Texto1"><img src="images/slide/slide1.jpg" id="sliders-1" /></a>
-								<a href="images/slide/slide2.jpg" data-caption="Texto2"><img src="images/slide/slide2.jpg" id="sliders-2" /></a>
-								<a href="images/slide/slide3.jpg" data-caption="Texto3"><img src="images/slide/slide3.jpg" id="sliders-3" /></a>
-								<a href="images/slide/slide4.jpg" data-caption="Texto4"><img src="images/slide/slide4.jpg" id="sliders-4" /></a>
-								<a href="images/slide/slide5.jpg" data-caption="Texto5"><img src="images/slide/slide5.jpg" id="sliders-5" /></a>
-								<a href="images/slide/slide6.jpg" data-caption="Texto6"><img src="images/slide/slide6.jpg" id="sliders-6" /></a>
-								<a href="images/slide/slide7.jpg" data-caption="Texto7"><img src="images/slide/slide7.jpg" id="sliders-7" /></a>
-								<a href="images/slide/slide8.jpg" data-caption="Texto8"><img src="images/slide/slide8.jpg" id="sliders-8" /></a>
-								<a href="images/slide/slide9.jpg" data-caption="Texto9"><img src="images/slide/slide9.jpg" id="sliders-9" /></a>
-								<a href="images/slide/slide10.jpg" data-caption="Texto10"><img src="images/slide/slide10.jpg" id="sliders-10" /></a>
+								<a href="images/slide/slide1.jpg" data-caption="Kepa Sojo, Karra Elejalde y Andrés Gertrudix preparándose para rodar."><img src="images/slide/slide1.jpg" id="sliders-1" /></a>
+								<a href="images/slide/slide2.jpg" data-caption="3, 2, 1… ¡Acción!"><img src="images/slide/slide2.jpg" id="sliders-2" /></a>
+								<a href="images/slide/slide3.jpg" data-caption="El alemán Leonard Proxauf, uno de los protagonistas de <i>Safari</i>."><img src="images/slide/slide3.jpg" id="sliders-3" /></a>
+								<a href="images/slide/slide4.jpg" data-caption="Helen Kennedy y Tabitha Wells, pasando un mal rato en el instituto de <i>Safari</i>."><img src="images/slide/slide4.jpg" id="sliders-4" /></a>
+								<a href="images/slide/slide5.jpg" data-caption="No cabreemos a Edna Fontana, Paquita en <i>Trato Preferente</i>."><img src="images/slide/slide5.jpg" id="sliders-5" /></a>
+								<a href="images/slide/slide6.jpg" data-caption="Antonio Gómez, el sufrido banquero del corto de Carlos Polo."><img src="images/slide/slide6.jpg" id="sliders-6" /></a>
+								<a href="images/slide/slide7.jpg" data-caption="Daniel Grao, intentando evitar que Alexandra Jiménez se lleve un <i>Café para llevar</i>."><img src="images/slide/slide7.jpg" id="sliders-7" /></a>
+								<a href="images/slide/slide8.jpg" data-caption="Alexandra Jiménez, Alicia en <i>Café para llevar</i>, concentrada en los preparativos de su boda."><img src="images/slide/slide8.jpg" id="sliders-8" /></a>
+								<a href="images/slide/slide9.jpg" data-caption="Julián Villagrán y Luis Bermejo, dos banqueros en apuros en <i>Todo un futuro juntos</i>."><img src="images/slide/slide9.jpg" id="sliders-9" /></a>
+								<a href="images/slide/slide10.jpg" data-caption="Carlos, en pleno dilema emocional en el corto de Pablo Remón."><img src="images/slide/slide10.jpg" id="sliders-10" /></a>
 							</div>
 						</div>
 					</div>
