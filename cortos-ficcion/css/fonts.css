@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Gill_Sans_MT';
+  src: url('../font/Gill_Sans_MT.eot'); /* IE9 Compat Modes */
+  src: url('../font/Gill_Sans_MT.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/Gill_Sans_MT.woff') format('woff'), /* Modern Browsers */
+       url('../font/Gill_Sans_MT.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../font/Gill_Sans_MT.svg#Gill_Sans_MT') format('svg'); /* Legacy iOS */
+}
+
