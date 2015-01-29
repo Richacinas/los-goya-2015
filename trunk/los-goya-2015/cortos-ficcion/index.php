@@ -140,7 +140,9 @@
 								<p class="articulo16" style="margin-left :0px; margin-bottom:0px; margin-top:20px; margin-right:70px;">De intensidad 9,3 en la escala Richter, <strong>liberó la  energía de 23.000 bombas atómicas como la de Hiroshima</strong>, una potencia suficiente como para hacer que el planeta vibrara un centímetro. Olas de hasta 20 metros viajaron por el océano a 700 kilómetros por hora, la velocidad de un avión a reacción.  Las más pequeñas llegaron a 5.000 kilómetros del epicentro, hasta Somalia.</p>
 							</div>
 							<div class="column-text" style="height: 400px;">
-								<video controls style="height:350px; width:540px; margin-top: 35px" data-video="" poster="images/preview_video_texto.png">
+								<img id="preview-video-texto-apple" src="images/preview_video_texto.png" style="height:350px; width:540px; margin-top: 35px; display:none; text-align:center;"/>
+								<img id="play-icon" src="images/play.png" style="display:none; margin:0 auto;"/>
+								<video id="video-texto" controls style="height:350px; width:540px; margin-top: 35px" data-video="" poster="images/preview_video_texto.png">
 									<source src="videos/video-text-1.mp4" type="video/mp4" />
 									<source src="videos/video-text-1.ogv" type="video/ogv" />
 									<source src="videos/video-text-1.webm" type="video/webm" />
