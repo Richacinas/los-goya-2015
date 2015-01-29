@@ -141,9 +141,9 @@
 							</div>
 							<div class="column-text" style="height: 400px;">
 								<video controls style="height:350px; width:540px; margin-top: 35px" data-video="" poster="images/preview_video_texto.png">
-									<source src="" type="video/mp4" />
-									<source src="" type="video/ogv" />
-									<source src="" type="video/webm" />
+									<source src="videos/video-text-1.mp4" type="video/mp4" />
+									<source src="videos/video-text-1.ogv" type="video/ogv" />
+									<source src="videos/video-text-1.webm" type="video/webm" />
 								</video>
 							</div>
 							<div class="fotorama column-center" style="height:750px" data-nav="thumbs">
@@ -225,9 +225,9 @@
 						<div class="video-preview-mask"></div>
 						<div class="article-video">
 							<video controls style="width:1060px; height:597px; margin-top:65px;" data-video="" poster="images/preview_video_distribucion.png">
-								<source src="" type="video/mp4" />
-								<source src="" type="video/ogv" />
-								<source src="" type="video/webm" />
+								<source src="videos/video-distribucion.mp4" type="video/mp4" />
+								<source src="videos/video-distribucion.ogv" type="video/ogv" />
+								<source src="videos/video-distribucion.webm" type="video/webm" />
 							</video>
 						</div>
 					</div>

@@ -328,12 +328,10 @@ h3 {
 }
 
 .img-fondo-datos-perfiles {
-    background-image: url("../images/fondo_datos_perfiles.jpg");
+    background-image: url("../images/fondo_datos_perfiles.png");
     background-repeat: no-repeat;
-    background-size: 2545px 1200px;
     background-position: center;
     text-align: center;
-    /*width: 2545px;*/
     height: 750px;
     margin: auto;
 }
