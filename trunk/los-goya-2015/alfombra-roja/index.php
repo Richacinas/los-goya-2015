@@ -46,8 +46,8 @@ else {
     <meta name="RTVE.template_version" content="V_30"/>
 
     <title>La alfombra roja de Los Premios Goya - RTVE.es</title>
-    <meta name="Title" content="La alfombra roja de Los Premios Goya - RTVE.es" />
-    <meta name="Description" content="La alfombra roja de los Premios Goya 2015. Descubre los vestidos de las actrices , los mejores trajes de los actores y los famosos en la gala de los Goya 2015" />
+    <meta name="Title" content="La alfombra roja de la gala de Los Goya – Premios Goya 2015 – RTVE.es" />
+    <meta name="Description" content="La alfombra roja de la gala de Los Goya. Descubre los mejores vestidos y trajes de los protagonistas de los Premios Goya aquí en RTVE. Entra ya." />
     <meta name="Keywords" content="Alfombra roja, vestidos, fotos, premios Goya, premios goya, premios goya 2015, Premios Goya 2015, los Goya, los Goya 2015, Gala Premios Goya, Gala Premios Goya 2015, Gala los Goya, Gala los Goya 2015, noticias, ganadores, v&iacute;deos, videos, imagenes, fotos, fotograf&iacute;as" />
     <meta property="og:site_name" content="Lab RTVE.es Alfombra Roja"/>
     <meta property="og:title" content="<?php if ($ogTitle != "") { echo $ogTitle; ?>, en la <?php } else { ?>La <?php } ?> alfombra roja de Los Premios Goya - Premios Goya 2015"/>

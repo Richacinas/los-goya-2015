@@ -25,7 +25,7 @@ $(function() {
         $("#id"+this.id.replace( /[^\d.]/g, '' )).val("-1");
     });
     $(document).on('change', "input", function(){
-        $("#"+this.parentNode.parentNode.id).css("background", "#F5C9C9");
+        $("#"+this.parentNode.parentNode.id).addClass("changed_row");
     });
 //    img.addEventListener("DOMAttrModified", function(event) {
 //        if (event.attrName == "src") {
