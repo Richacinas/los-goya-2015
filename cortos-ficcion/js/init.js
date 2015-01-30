@@ -68,6 +68,13 @@ jQuery(function($) {
 				$("#preview-video-trailer").attr("src","images/trailer-"+director.id+".png");
 			});
 
+			$("#play-icon0").show();
+			$("#preview-video-trailer").show().on("click", function() {
+				$("#preview-video-trailer").stop().fadeOut("fast");
+				$("#play-icon0").stop().fadeOut("fast");
+				$("#video-trailer").get(0).play();
+			});
+
 		}
 	});
 });
