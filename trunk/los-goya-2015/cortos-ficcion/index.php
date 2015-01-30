@@ -140,8 +140,10 @@
 								<p class="articulo16" style="margin-left :0px; margin-bottom:0px; margin-top:20px; margin-right:70px;">De intensidad 9,3 en la escala Richter, <strong>liberó la  energía de 23.000 bombas atómicas como la de Hiroshima</strong>, una potencia suficiente como para hacer que el planeta vibrara un centímetro. Olas de hasta 20 metros viajaron por el océano a 700 kilómetros por hora, la velocidad de un avión a reacción.  Las más pequeñas llegaron a 5.000 kilómetros del epicentro, hasta Somalia.</p>
 							</div>
 							<div class="column-text" style="height: 400px;">
-								<img id="preview-video-texto-apple" src="images/preview_video_texto.png" style="height:350px; width:540px; margin-top: 35px; display:none; text-align:center;"/>
-								<img id="play-icon" src="images/play.png" style="display:none; margin:0 auto;"/>
+								<div style="height:350px; width:540px; margin-top: 35px; display:none; text-align:center;"> 
+									<img id="preview-video-texto-apple" src="images/preview_video_texto.png"/>
+									<img id="play-icon" src="images/play.png" style="display:none; margin:0 auto;"/>
+								</div>
 								<video id="video-texto" controls style="height:350px; width:540px; margin-top: 35px" data-video="" poster="images/preview_video_texto.png">
 									<source src="videos/video-text-1.mp4" type="video/mp4" />
 									<source src="videos/video-text-1.ogv" type="video/ogv" />
@@ -226,7 +228,11 @@
 					<div id="img-video-distribucion">
 						<div class="video-preview-mask"></div>
 						<div class="article-video">
-							<video controls style="width:1060px; height:597px; margin-top:65px;" data-video="" poster="images/preview_video_distribucion.png">
+							<div style="height:597px; width:1060px; margin-top: 65px; display:none; text-align:center;"> 
+								<img id="preview-video-apple1" src="images/preview_video_distribucion.png"/>
+								<img id="play-icon2" src="images/play.png" style="display:none; margin:0 auto;"/>
+							</div>
+							<video id="video-apple-1" controls style="width:1060px; height:597px; margin-top:65px;" data-video="" poster="images/preview_video_distribucion.png">
 								<source src="videos/video-distribucion.mp4" type="video/mp4" />
 								<source src="videos/video-distribucion.ogv" type="video/ogv" />
 								<source src="videos/video-distribucion.webm" type="video/webm" />
@@ -265,7 +271,11 @@
 					<div id="img-video-goya">
 						<div class="video-preview-mask"></div>
 						<div class="article-video">
-							<video controls style="width:1060px; height:597px; margin-top:65px" data-video="" poster="images/preview_video_goya.png">
+							<div style="height:597px; width:1060px; margin-top: 65px; display:none; text-align:center;"> 
+								<img id="preview-video-apple2" src="images/preview_video_goya.png"/>
+								<img id="play-icon3" src="images/play.png" style="display:none; margin:0 auto;"/>
+							</div>
+							<video id="video-apple-2" controls style="width:1060px; height:597px; margin-top:65px" data-video="" poster="images/preview_video_goya.png">
 								<source src="" type="video/mp4"/>
 								<source src="" type="video/ogv"/>
 								<source src="" type="video/webm"/>
