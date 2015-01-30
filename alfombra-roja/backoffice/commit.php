@@ -77,7 +77,7 @@ if ($uploadOk == 1 ) {
     $message = "Ha habido un error al subir la/s foto/s.";
 }
 
-header('Location: /los-goya-2015/alfombra-roja/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d&r='.$message);
+header('Location: /test-los-goya-2015/alfombra-roja/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d&r='.$message);
 exit();
 
 ?>
