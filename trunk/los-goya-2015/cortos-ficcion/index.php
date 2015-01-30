@@ -4,19 +4,19 @@
 	<script type="text/javascript" src="//www.rtve.es/js/mushrooms/rtve_mushroom.js" ></script>
 
 	<meta charset="utf-8">
-	<meta itemprop="name" content="10 años del tsunami en el Índico - Lab RTVE.es">
+	<meta itemprop="name" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es">
 	<meta itemprop="description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas.">
 	<meta itemprop="og:description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas.">
 	<meta name="description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas.">
 	<meta name="keywords" content="Tsunami, Terremoto, maremoto, 26 de diciembre de 2004, Indonesia, Océano Índico, Tailandia, Sri Lanka, India, Malasia, Maldivas, Somalia, muertos, vídeos, fotos, Almudena Ariza, Érika Reija">
-	<meta name="twitter:title" content="10 años del tsunami en el Índico - Lab RTVE.es">
+	<meta name="twitter:title" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es">
 	<meta name="twitter:description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas.">
-	<meta name="twitter:image" content="http://lab.rtve.es/tsunami/images/aniversario-tsunami.jpg">
-	<meta property="og:site_name" content="Labbie Awards 2014"/>
-	<meta property="og:title" content="10 años del tsunami en el Índico - Lab RTVE.es" />
-	<meta property="og:image" content="http://lab.rtve.es/tsunami/images/aniversario-tsunami.jpg" />
+	<meta name="twitter:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/.png">
+	<meta property="og:site_name" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es"/>
+	<meta property="og:title" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es" />
+	<meta property="og:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/.png" />
 	<meta property="og:description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas." />
-	<meta property="og:url" content="http://lab.rtve.es/parallax" />
+	<meta property="og:url" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion" />
 	
 	<title>Cortometrajes de Ficción Goya 2015</title>
 
@@ -43,6 +43,10 @@
 	<!-- Pop-up trailer de directores -->
 		<mask id="fondo-trailers"></mask>
 		<div id="trailers" class="trailer">
+			<div style="height:100%; width:100%; display:none; text-align:center;"> 
+				<img id="preview-video-trailer" src=""/>
+				<img id="play-icon0" src="images/play.png" style="display:none; margin:0 auto;"/>
+			</div>
 			<video id="video-trailer" controls style="height:100%; width:100%;" data-video="" poster="">
 				<source id="trailer-mp4" src="" type="video/mp4" />
 				<source id="trailer-ogv" src="" type="video/ogv" />
@@ -58,7 +62,7 @@
 				</div>
 				<div class="share-icon">
 					<a href="https://plus.google.com/share?url=/index.html" target="_blank" title="Google+"><button class="icon"><img src="images/gplus-icon.png" /></button></a>
-					<a href="https://www.facebook.com/dialog/feed?app_id=597255927040700&picture=http://lab.rtve.es/tsunami/images/aniversario-tsunami.jpg&link=http://lab.rtve.es/tsunami&description=Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el oceano Indico, que acabo con la vida de mas de 230.000 personas.&redirect_uri=http://lab.rtve.es" target="_blank" title="Facebook"><button class="icon"><img src="images/facebook-icon.png" /></button></a>
+					<a href="https://www.facebook.com/dialog/feed?app_id=857963194246392&picture=http://lab.rtve.es/tsunami/images/aniversario-tsunami.jpg&link=http://lab.rtve.es/tsunami&description=Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el oceano Indico, que acabo con la vida de mas de 230.000 personas.&redirect_uri=http://lab.rtve.es" target="_blank" title="Facebook"><button class="icon"><img src="images/facebook-icon.png" /></button></a>
 					<a href="https://twitter.com/intent/tweet?button_hashtag=Tsunami&amp;via=lab_rtvees&amp;text=Aniversario Tsunami&amp;url=http://lab.rtve.es/tsunami" target="_blank" title="Twitter"><button class="icon"><img src="images/twitter-icon.png" /></button></a>
 				</div>
 			</div>
@@ -142,7 +146,7 @@
 							<div class="column-text" style="height: 400px;">
 								<div style="height:350px; width:540px; margin-top: 35px; display:none; text-align:center;"> 
 									<img id="preview-video-texto-apple" src="images/preview_video_texto.png"/>
-									<img id="play-icon" src="images/play.png" style="display:none; margin:0 auto;"/>
+									<img id="play-icon1" src="images/play.png" style="display:none; margin:0 auto;"/>
 								</div>
 								<video id="video-texto" controls style="height:350px; width:540px; margin-top: 35px" data-video="" poster="images/preview_video_texto.png">
 									<source src="videos/video-text-1.mp4" type="video/mp4" />

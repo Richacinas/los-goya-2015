@@ -44,10 +44,10 @@ jQuery(function($) {
 		});
 		// Video preview if apple device
 		if (isAppleDevice) {
-			$("#play-icon").show();
+			$("#play-icon1").show();
 			$("#preview-video-texto-apple").show().on("click", function() {
 				$("#preview-video-texto-apple").stop().fadeOut("fast");
-				$("#play-icon").stop().fadeOut("fast");
+				$("#play-icon1").stop().fadeOut("fast");
 				$("#video-texto").get(0).play();
 			});
 			$("#play-icon2").show();
@@ -62,6 +62,12 @@ jQuery(function($) {
 				$("#play-icon3").stop().fadeOut("fast");
 				$("#video-apple-2").get(0).play();
 			});
+
+			$(".director").on("click", function() {
+				director = this;
+				$("#preview-video-trailer").attr("src","images/trailer-"+director.id+".png");
+			});
+
 		}
 	});
 });

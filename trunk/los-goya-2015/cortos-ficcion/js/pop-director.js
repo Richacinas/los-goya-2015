@@ -27,5 +27,6 @@ jQuery(function($) {
 		$("#trailer-ogv").attr("src","");
 		$("#trailer-webm").attr("src","");
 		$("#video-trailer").attr("poster","");
+		$("#preview-video-trailer").attr("src","");
 	}	
 });
