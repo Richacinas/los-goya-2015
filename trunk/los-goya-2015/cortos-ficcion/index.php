@@ -276,9 +276,9 @@
 								<img id="play-icon3" src="images/play.png" style="display:none; margin:0 auto;"/>
 							</div>
 							<video id="video-apple-2" controls style="width:1060px; height:597px; margin-top:65px" data-video="" poster="images/preview_video_goya.png">
-								<source src="" type="video/mp4"/>
-								<source src="" type="video/ogv"/>
-								<source src="" type="video/webm"/>
+								<source src="videos/video-goya.mp4" type="video/mp4"/>
+								<source src="videos/video-goya.ogv" type="video/ogv"/>
+								<source src="videos/video-goya.webm" type="video/webm"/>
 							</video>
 						</div>
 					</div>
