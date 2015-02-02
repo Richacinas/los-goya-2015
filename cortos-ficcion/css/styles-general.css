@@ -64,7 +64,7 @@ header {
     width: 100%;
     height: 50%;
     position: absolute;
-    margin-top: 250px;
+    margin-top: 210px;
     margin-left: -60px;
 }
 
@@ -191,11 +191,6 @@ h2.main-section-title {
     background-image: url("../images/fondo_los_goya.png");
 }
 
-#img-timeline {
-    background-image: url("../images/timeline.png");
-    background-size: 100% 100%;
-}
-
 .img-section-cab {
     background-repeat: no-repeat;
     background-size: 2545px 903px;
@@ -240,6 +235,10 @@ h2.main-section-title {
     height: 1015px;
     width: 530px;
     word-wrap: break-word;
+}
+
+a {
+    color:black;
 }
 
 p {
@@ -335,6 +334,15 @@ h3 {
 
 .img-fondo-datos-distribucion {
     background-image: url("../images/fondo_datos_distribucion.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    height: 725px;
+    margin: auto;
+}
+
+.img-fondo-datos-timeline {
+    background-image: url("../images/fondo_datos_timeline.png");
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
