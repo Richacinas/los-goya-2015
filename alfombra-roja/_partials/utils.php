@@ -10,9 +10,9 @@ function getCarouselData($getPublished = false)
     $aNameIndex = array();
     $aIdIndex = array();
     if (!$getPublished) {
-        $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/test-los-goya-2015/alfombra-roja/data.csv';
+        $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
     } else {
-        $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/test-los-goya-2015/alfombra-roja/data-published.csv';
+        $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data-published.csv';
     }
     $aLines = file( $dataPath );
 
@@ -169,7 +169,7 @@ function setCsvArray($data, $files) {
 
 function generateCsv($data, $delimiter = ',', $enclosure = '"') {
     
-       $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/test-los-goya-2015/alfombra-roja/data.csv';
+       $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
        $handle = fopen($dataPath, 'r+');
        @ftruncate($handle, 0);
        foreach ($data as $line) {
@@ -181,8 +181,8 @@ function generateCsv($data, $delimiter = ',', $enclosure = '"') {
 }
 
 function publishCsv () {
-    $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/test-los-goya-2015/alfombra-roja/data.csv';
-    $dataPublishedPath = $_SERVER["DOCUMENT_ROOT"] .'/test-los-goya-2015/alfombra-roja/data-published.csv';
+    $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
+    $dataPublishedPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data-published.csv';
     copy($dataPath, $dataPublishedPath);
 }
 

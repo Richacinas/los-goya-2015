@@ -2,72 +2,84 @@
 
 include '_partials/utils.php';
 
-$foto = $_GET["foto"];
+/*$foto = $_GET["foto"];
 $nombre = $_GET["nombre"];
 $fotografo = $_GET["fotografo"];
 $texto = $_GET["texto"];
 
-$nameIndex = formatImageName($nombre);
+$nameIndex = formatImageName($nombre);*/
+
+$name = isset($_GET['nombre-famoso']) ? $_GET['nombre-famoso'] : '';
+$data = getCarouselData(true);
+$aCarousel = $data[0];
+$aNameIndex = $data[1];
+
+//La estructura aCarousel es la siguiente:   aCarousel[nombre_famoso]
+//y cada elemento es un array[integer] con 6 elementos:
+// posición, nombre_foto.jpg, nombre_famoso, nombre_fotógrafo, texto, identificador
+// Vienen ya ordenados de acuerdo al valor de posición
+$ogTitle = "";
+if ($name != '') {
+    $carouselIndex = array_search($name."-goya-2015.jpg", array_values($aNameIndex));
+    if (!(is_int($carouselIndex))) {
+        $carouselIndex = 0;
+    } else {
+        $ogTitle = $aCarousel[$carouselIndex + 1][2];
+    }
+}
+else {
+    $carouselIndex = 0;
+}
+
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title><?php echo $nombre; ?> en Los Premios Goya 2015 - RTVE.es</title>
-<meta name="Title" content="<?php echo $nombre; ?> en Los Premios Goya 2015 - RTVE.es" />
-<meta name="Description" content="Los Goya 2015 - <?php echo $texto; ?>" />
-<meta name="Keywords" content="Alfombra roja, vestidos, fotos, premios Goya, premios goya, premios goya 2015, Premios Goya 2015, los Goya, los Goya 2015, Gala Premios Goya, Gala Premios Goya 2015, Gala los Goya, Gala los Goya 2015, noticias, ganadores, v&iacute;deos, videos, imagenes, fotos, fotograf&iacute;as" />
-<meta property="og:site_name" content="Lab RTVE.es Alfombra Roja">
-<meta property="og:title" content="La alfombra roja de Los Premios Goya - Premios Goya 2015 | Lab RTVE.es">
-<meta property="og:description" content="La alfombra roja de los Premios Goya 2015. Descubre los vestidos de las actrices , los mejores trajes de los actores y los famosos en la gala de los Goya 2015">
-<meta property="og:url" content="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo $nameIndex; ?>">
-<meta property="og:image" content="<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/fotosPublished/zoom/<?php echo $foto; ?>">
 
-<link rel="stylesheet" type="text/css" href="css/zoom.css"/>
-
-<script type="text/javascript" src="js/slider_jquery.js"></script>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/zoom.js"></script>
-<script type="text/javascript" src="//www.rtve.es/js/mushrooms/rtve_mushroom.js" ></script>
-
-</head>
-<body>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-    <div class="content">
-        <div class="stage">
-          <div class="foto">
-              <a title="" href="fotosPublished/zoom/<?php echo $foto; ?>" class="jqzoom">
-                  <span class="zoom"></span>
-                  <div itemscope itemtype="http://schema.org/ImageObject">
-                      <img class="carrousel_image" title="<?php echo $nombre; ?> en Los Premios Goya 2015 - RTVE.es" src="fotosPublished/<?php echo $foto; ?>" alt="<?php echo $nombre; ?> en Los Premios Goya 2015" itemprop="image" />
-                  </div>
-              </a> 
-          </div>
-          <div class="txt">
-            <h1 class="rtv03"><?php echo $nombre; ?> en los Goya 2015</h1>
-            <span><?php echo $fotografo; ?></span>
-            <p><?php echo $texto; ?></p>
-          </div>
-          <div class="socialshare">
-          <table width="100%" border="0">
-            <tr>
-              <td><div class="fb-share-button" data-href="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo $nameIndex; ?>" data-layout="button_count"></div></td>
-              <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo $nameIndex; ?>" data-text="<?php echo $nombre; ?>, en la alfombra roja de los Goya 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
-            </tr>
-          </table>
-          </div>
-        </div>
+<div class="content">
+    <div class="stage">
+      <div class="foto">
+          <a title="" href="fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>" class="jqzoom">
+              <span class="zoom"></span>
+              <div itemscope itemtype="http://schema.org/ImageObject">
+                  <img id="carrousel_image" title="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en Los Premios Goya 2015 - RTVE.es" src="fotosPublished/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>" data-zoom-image="fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>" alt="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en Los Premios Goya 2015" itemprop="image" />
+              </div>
+          </a>
+      </div>
+      <div class="txt">
+        <h1 class="rtv03"><?php echo $aCarousel[$carouselIndex + 1][2]; ?> en los Goya 2015</h1>
+        <span><?php echo $aCarousel[$carouselIndex + 1][3]; ?></span>
+        <p><?php echo print(str_replace("\"","'",targetBlank($aCarousel[$carouselIndex + 1][4]))); ?></p>
+      </div>
+      <div class="socialshare">
+      <table width="100%" border="0">
+        <tr>
+          <td><div class="fb-share-button" data-href="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-layout="button_count"></div></td>
+          <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-text="<?php echo $aCarousel[$carouselIndex + 1][2]; ?>, en la alfombra roja de los Goya 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+        </tr>
+      </table>
+      </div>
     </div>
-<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-</body>
-</html>
+</div>
+<div class="slide-left">
+    <a id="photoprev" class="slide-link" href="<?php echo formatImageName($aCarousel[$carouselIndex == 0 ? count($aCarousel) : $carouselIndex][2]); ?>"></a>
+    <div class="overlay"></div>
+    <div class="button"></div>
+</div>
+<div class="slide-right">
+    <a id="photonext" class="slide-link" href="<?php echo formatImageName($aCarousel[$carouselIndex + 2 > count($aCarousel) ? 1 : $carouselIndex + 2][2]); ?>"></a>
+    <div class="overlay"></div>
+    <div class="button"></div>
+</div>
+<ul class="slide-pager">
+    <?php for ($i = 1; $i <= count($aCarousel); $i++):
+            if ($carouselIndex + 1 == $i) {
+                echo "<li class='selected slide-pager-option'>". $i . "<a href=".formatImageName($aCarousel[$i][2])."></a></li>";
+            } else {
+                echo "<li class='slide-pager-option'>". $i . "<a href=".formatImageName($aCarousel[$i][2])."></a></li>";
+            }
+          endfor;
+    ?>
+</ul>
+<script>
+$("#carrousel_image").elevateZoom({ zoomType: "lens", lensShape: "round", lensSize: 300, containLensZoom: true });
+</script>
+
