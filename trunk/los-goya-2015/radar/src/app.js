@@ -4085,7 +4085,7 @@ var gC = {
                     c = b.parents(".col-top").index();
                 gC.data.superCount[a[c]]
             }
-        })
+        });
     },
     resizeTopTen: function() {
         var a = .6 * $("#main").width(),
@@ -4277,12 +4277,17 @@ var gC = {
         });
     },
     bindFavorite: function() {
-        $(".bl-top-elm").on("click", function() {
-            var favoriteSearch = $(this).find(".bl-top-elm-wrap:first").data("search");
+        $(".bl-top-elm button.filter-tweets").on("click", function() {
+            var favoriteSearch = $(this).closest(".bl-top-elm").find(".bl-top-elm-wrap:first").data("search");
             gC.data.search = favoriteSearch;
             // filter=200 to recognize filter favorites
             gC.data.filter = 200, _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO_FAVORITO", gC.data.search]), gC.restartDrawing(), gC.drawFixedElms(gC.data.ok.length, gC.cache.pageElms, !0);
             $(".enlace-goyas-en-las-redes:first").trigger("click");
+        });
+        $(".bl-top-elm").on("mouseover", function() {
+            $(this).find('.bl-top-text').css('padding-top','40%');
+        }).on("mouseout", function() {
+            $(this).find('.bl-top-text').css('padding-top','10px');
         });
     },
     getActorData: function(a) {

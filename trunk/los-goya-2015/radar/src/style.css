@@ -655,7 +655,7 @@ width: 100%;
 display: none;
 margin-bottom: 50px;
 /*max-width: 1260px;*/
-margin: 0 auto;
+margin: 0 auto 50px;
 }
 
 .bl-top-elm {
@@ -672,37 +672,65 @@ margin: 0 auto;
 
 .bl-top-elm .bl-top-count {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     top: 4px;
     right: 4px;
-    background: #75a5a0;
-    color: #fff;
+    background: #000000;
+    color: #cfcfcf;
     text-align: center;
+    font-size: 1.8em;
     line-height: 1.4em;
     z-index: 2;
 }
 
 .bl-top-elm .bl-top-text {
     position: absolute;
-    bottom: -28px;
-    background: rgba(0,0,0,.8);
+    background: rgba(117, 165, 160, 0.8);
     z-index: 2;
     padding: 10px;
     width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.3em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-transition: all 1s ease-in;
-    -moz-transition: all 1s ease-in;
-    -o-transition: all 1s ease-in;
-    transition: all 1s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+.col-top-1 .bl-top-text {
+    bottom: -96.5%;
+}
+.col-top-2 .bl-top-text {
+    bottom: -93%;
+}
+.col-top-3 .bl-top-text {
+    bottom: -90%;
+}
+.col-top-4 .bl-top-text {
+    bottom: -86%;
 }
 
 .bl-top-elm .bl-top-text-count {
-    height: 15px;
-    overflow: hidden;
-    font-size: .8em;
+    font-size: 1.3em;
+    font-family: 'RE65';
+}
+
+.bl-top-elm button.filter-tweets {
+    border: 0;
+    width: 130px;
+    height: 32px;
+    background-color: #84b5b0;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: 'RE45';
+    cursor: pointer;
+    margin-top: 15px;
 }
 
 .bl-top-elm:hover .bl-top-text {
@@ -710,7 +738,7 @@ margin: 0 auto;
 }
 
 .bl-top-elm h2 {
-    padding-bottom: .4em;
+    padding-bottom: 7px;
 }
 
 .bl-top-elm a {
@@ -753,26 +781,25 @@ margin: 0 auto;
     position: absolute;
     right: 2%;
     bottom: 1%;
-    background: rgba(117, 165, 160, 0.9) url(../img/bg--mainsprite.png) no-repeat;
+    background: rgba(0, 0, 0, 0.8) url(../img/socials-posts.png) no-repeat;
     z-index: 2;
 }
 
 .twt-elm.twt-elm-tve:before {
-    background-position: -48px -140px;
+    background-position: 2px 7px;
 }
 
 .twt-elm.twt-elm-vine:before {
-    background: rgba(0,0,0,.8) url(../img/vine-icon.png) no-repeat;
-    background-size: 23px 23px;
-    background-position: center;
+    background: rgba(0, 0, 0, 0.8) url(../img/socials-posts.png) no-repeat;
+    background-position: -72px 6px;
 }
 
 .twt-elm.twt-elm-ig:before {
-    background-position: -19px -140px;
+    background-position: -125px 7px;
 }
 
 .twt-elm.twt-elm-twt:before {
-    background-position: -79px -140px;
+    background-position: -33px 6px;
 }
 
 .twt-elm p {
