@@ -11,8 +11,8 @@ require_once 'Favorite.php';
 class FavoritesHandler {
 
 	/* Favorites CSV file path to be accessed */
-	const FAVORITES_CSV = "/data/popular.csv";
-	const FAVORITES_APPEARANCES = "/data/favorites-appearances.json";
+	const FAVORITES_CSV = "/data/favorites/popular.csv";
+	const FAVORITES_APPEARANCES = "/data/favorites/favorites-appearances.json";
 
 	private $favorites;
 	private $favoritesModified;

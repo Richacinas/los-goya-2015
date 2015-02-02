@@ -4037,7 +4037,7 @@ var gC = {
     },
     generateTopTen: function() {
     	/* Get Top10 favorites */
-    	$.ajax( "../data/favorites-appearances.json", {
+    	$.ajax( "../data/favorites/favorites-appearances.json", {
         success: function(data, status){
         	// Favorites view positions
         	var favorites = $('.bl-top-elm');
