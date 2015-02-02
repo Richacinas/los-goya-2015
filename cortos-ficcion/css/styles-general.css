@@ -191,6 +191,11 @@ h2.main-section-title {
     background-image: url("../images/fondo_los_goya.png");
 }
 
+#img-timeline {
+    background-image: url("../images/timeline.png");
+    background-size: 100% 100%;
+}
+
 .img-section-cab {
     background-repeat: no-repeat;
     background-size: 2545px 903px;
@@ -328,8 +333,8 @@ h3 {
     margin: auto;
 }
 
-.img-fondo-datos-perfiles {
-    background-image: url("../images/fondo_datos_perfiles.png");
+.img-fondo-datos-distribucion {
+    background-image: url("../images/fondo_datos_distribucion.png");
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
