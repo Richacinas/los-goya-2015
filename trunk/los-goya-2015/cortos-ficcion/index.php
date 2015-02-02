@@ -11,10 +11,10 @@
 	<meta name="keywords" content=" Goya, Goya 2015, Premios Goya, Premios Goya 2015, nominados Goya 2015, nominados Premios Goya 2015, nominados Premios Goya 2015 RTVE,  Goya 2015 RTVE, cortometrajes, nominados cortometrajes Premios Goya 2015, cortos Goya 2015, cortometrajes de ficción, cortos de ficción, cortometraje de ficción, mejores cortos 2015, mejores cortometrajes 2015, Kepa Sojo, Patricia Font, Gerardo Herrero, Carlos Polo, Pablo Remón, Café para llevar, Loco con ballesta, Todo un futuro juntos, Safari, Trato Preferente, cine, cine español, interactivo cine español, Karra Elejalde, Alexandra Jiménez, Daniel Grao, Julián Villagrán, Luis Bermejo, Leonard Proxauf, ECAM, ESCAC, Madrid en Corto, Lab RTVE, Lab RTVE Goya 2015, Lab RTVE Goya 2015 interactivo, entrevista Kepa Sojo, entrevista Patricia Font, entrevista Gerardo Herrero, entrevista Carlos Polo, entrevista Pablo Remón, parallax RTVE, parallax RTVE Goya 2015, Ganador cortometraje Goya 2015, Ganador corto Goya 2015">
 	<meta name="twitter:title" content="Entrevista interactiva a los nominados al Goya a mejor corto de ficción 2015 - Lab RTVE.es ">
 	<meta name="twitter:description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es">
-	<meta name="twitter:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/.png">
+	<meta name="twitter:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/redessociales.png">
 	<meta property="og:site_name" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es"/>
 	<meta property="og:title" content="Entrevista interactiva a los nominados al Goya a mejor corto de ficción 2015 - Lab RTVE.es " />
-	<meta property="og:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/.png" />
+	<meta property="og:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/redessociales.png" />
 	<meta property="og:description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es" />
 	<meta property="og:url" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion" />
 	
@@ -58,8 +58,8 @@
 				</div>
 				<div class="share-icon">
 					<a href="https://plus.google.com/share?url=/index.html" target="_blank" title="Google+"><button class="icon"><img src="images/gplus-icon.png" /></button></a>
-					<a href="https://www.facebook.com/dialog/feed?app_id=597255927040700&picture=http://lab.rtve.es/tsunami/images/aniversario-tsunami.jpg&link=http://lab.rtve.es/tsunami&description=Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el oceano Indico, que acabo con la vida de mas de 230.000 personas.&redirect_uri=http://lab.rtve.es" target="_blank" title="Facebook"><button class="icon"><img src="images/facebook-icon.png" /></button></a>
-					<a href="https://twitter.com/intent/tweet?button_hashtag=Tsunami&amp;via=lab_rtvees&amp;text=Aniversario Tsunami&amp;url=http://lab.rtve.es/tsunami" target="_blank" title="Twitter"><button class="icon"><img src="images/twitter-icon.png" /></button></a>
+					<a href="https://www.facebook.com/dialog/feed?app_id=597255927040700&picture=http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/redessociales.png&link=http://lab.rtve.es/los-goya-2015/cortos-ficcion&description=Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es&redirect_uri=http://lab.rtve.es/los-goya-2015" target="_blank" title="Facebook"><button class="icon"><img src="images/facebook-icon.png" /></button></a>
+					<a href="https://twitter.com/intent/tweet?button_hashtag=Tsunami&amp;via=lab_rtvees&amp;text=De la idea al Goya en 4 pasos: entrevista a los nominados a mejor corto de ficción&amp;url=http://lab.rtve.es/los-goya-2015/cortos-ficcion" target="_blank" title="Twitter"><button class="icon"><img src="images/twitter-icon.png" /></button></a>
 				</div>
 			</div>
 			<!-- Menu -->
@@ -183,8 +183,7 @@
 				</section>
 				<!-- Section 2 -->
 				<section>
-					<div class="img-fondo-datos-perfiles">
-						<img src="images/perfiles_data.png" style="margin-top:-25px;" id="text3-1"/>
+					<div id="img-timeline" class="img-section-cab img-main-section">
 					</div>
 				</section>
 			</section>
@@ -195,10 +194,9 @@
 					<div id="img-cab-distribucion" class="img-section-cab img-main-section">
 						<h2 class="main-section-title">DISTRIBUCI&Oacute;N</h2>
 					</div>
-					<div class="text-section" style="height: 450px;">
+					<div class="text-section" style="height: 300px;">
 						<div class="article">
 							<div class="column-center" style="height: 180px;">
-								<p class="articulo19" style="margin-left:25px; margin-right:75px;margin-top:50px;">Los rodajes nunca son fáciles, hay que tener madera para ello. A mi me quedó claro, y eso que Gerardo y Kepa me lo advirtieron. Por ejemplo, Gerardo tuvo que utilizar un instituto de las afueras de Madrid en pleno verano para rodar Safari y por si fuera poco tuvieron un pequeño percance con la actriz protagonista, Helen Kennedy, en un tiroteo. Afortunadamente, el incidente se quedó en un susto. Kepa sufrió el calor de la montaña alavesa -¡esos mosquitos!-,  a Pablo, por exigencias de su historia, no le quedó más remedio que rodar en un bar abierto al público la conversación de sus banqueros protagonistas... Del rodaje de mi corto…¡Mejor no hablar!, lo importante es que gracias  a la buena voluntad de actores y equipo salió adelante.</p>
 								<p class="articulo19" style="margin-left:25px; margin-right:75px;margin-top:50px;">Ahora solo tenía que conseguir que llegase a la gente, que lo vieran. Pero…¿cómo conseguirlo? Este fue el momento que más me costó afrontar, pues si el mundo de <strong>la financiación</strong> ya me era poco familiar y el del rodaje no fue un camino de rosas, el de <strong>la distribución</strong> ni os cuento. Menos mal que tenía los consejos de Carlos, Pablo, Patricia, Kepa y Gerardo. En lo que todos coincidían era que resulta más sencillo contratar una empresa que nos ayudase a distribuirlo.</p>
 								<p class="articulo19" style="margin-left:25px; margin-right:75px;margin-top:50px;">Haciendo caso de los consejos de los expertos, eso fue lo que hicimos. Juntamos el dinero para pagar los gastos que esto implica y dejar que la agencia se encargase de moverlo por festivales de todo el mundo.</p>
 							</div>
@@ -206,6 +204,19 @@
 					</div>
 				</section>
 				<!-- Section 2 -->
+				<section>
+					<div class="img-fondo-datos-distribucion">
+						<img src="images/distribucion_data.png" style="margin-top:60px;"/>
+					</div>
+					<div class="text-section" style="height: 300px;">
+						<div class="article">
+							<div class="column-center" style="height: 180px;">
+								<p class="articulo19" style="margin-left:25px; margin-right:75px;margin-top:50px;">Los rodajes nunca son fáciles, hay que tener madera para ello. A mi me quedó claro, y eso que Gerardo y Kepa me lo advirtieron. Por ejemplo, Gerardo tuvo que utilizar un instituto de las afueras de Madrid en pleno verano para rodar Safari y por si fuera poco tuvieron un pequeño percance con la actriz protagonista, Helen Kennedy, en un tiroteo. Afortunadamente, el incidente se quedó en un susto. Kepa sufrió el calor de la montaña alavesa -¡esos mosquitos!-,  a Pablo, por exigencias de su historia, no le quedó más remedio que rodar en un bar abierto al público la conversación de sus banqueros protagonistas... Del rodaje de mi corto…¡Mejor no hablar!, lo importante es que gracias  a la buena voluntad de actores y equipo salió adelante.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Section 3 -->
 				<section>
 					<div id="img-video-distribucion">
 						<div class="video-preview-mask"></div>
