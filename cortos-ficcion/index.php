@@ -4,18 +4,18 @@
 	<script type="text/javascript" src="//www.rtve.es/js/mushrooms/rtve_mushroom.js" ></script>
 
 	<meta charset="utf-8">
-	<meta itemprop="name" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es">
-	<meta itemprop="description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas.">
-	<meta itemprop="og:description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas.">
-	<meta name="description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas.">
-	<meta name="keywords" content="Tsunami, Terremoto, maremoto, 26 de diciembre de 2004, Indonesia, Océano Índico, Tailandia, Sri Lanka, India, Malasia, Maldivas, Somalia, muertos, vídeos, fotos, Almudena Ariza, Érika Reija">
-	<meta name="twitter:title" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es">
-	<meta name="twitter:description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas.">
+	<meta itemprop="name" content="Entrevista interactiva a los nominados al Goya a mejor corto de ficción 2015 - Lab RTVE.es">
+	<meta itemprop="description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es">
+	<meta itemprop="og:description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es">
+	<meta name="description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es">
+	<meta name="keywords" content=" Goya, Goya 2015, Premios Goya, Premios Goya 2015, nominados Goya 2015, nominados Premios Goya 2015, nominados Premios Goya 2015 RTVE,  Goya 2015 RTVE, cortometrajes, nominados cortometrajes Premios Goya 2015, cortos Goya 2015, cortometrajes de ficción, cortos de ficción, cortometraje de ficción, mejores cortos 2015, mejores cortometrajes 2015, Kepa Sojo, Patricia Font, Gerardo Herrero, Carlos Polo, Pablo Remón, Café para llevar, Loco con ballesta, Todo un futuro juntos, Safari, Trato Preferente, cine, cine español, interactivo cine español, Karra Elejalde, Alexandra Jiménez, Daniel Grao, Julián Villagrán, Luis Bermejo, Leonard Proxauf, ECAM, ESCAC, Madrid en Corto, Lab RTVE, Lab RTVE Goya 2015, Lab RTVE Goya 2015 interactivo, entrevista Kepa Sojo, entrevista Patricia Font, entrevista Gerardo Herrero, entrevista Carlos Polo, entrevista Pablo Remón, parallax RTVE, parallax RTVE Goya 2015, Ganador cortometraje Goya 2015, Ganador corto Goya 2015">
+	<meta name="twitter:title" content="Entrevista interactiva a los nominados al Goya a mejor corto de ficción 2015 - Lab RTVE.es ">
+	<meta name="twitter:description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es">
 	<meta name="twitter:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/.png">
 	<meta property="og:site_name" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es"/>
-	<meta property="og:title" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es" />
+	<meta property="og:title" content="Entrevista interactiva a los nominados al Goya a mejor corto de ficción 2015 - Lab RTVE.es " />
 	<meta property="og:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/.png" />
-	<meta property="og:description" content="Especial interactivo de RTVE.es al cumplirse los 10 años del tsunami en el océano Índico, que acabó con la vida de más de 230.000 personas." />
+	<meta property="og:description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es" />
 	<meta property="og:url" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion" />
 	
 	<title>Cortometrajes de Ficción Goya 2015</title>
@@ -117,10 +117,10 @@
 				</section>
 				<!-- Section 2 -->
 				<section>
-					<div class="text-section" style="height: 1440px;">
+					<div class="text-section" style="height: 1480px;">
 						<div class="article">
 							<div class="column-left" style="height: 510px; margin-top:0px">
-								<p class="articulo16" style="margin-left :25px; margin-bottom:0px; margin-top:60px; margin-right:70px;">Por extraño que parezca hace cuatro años, decidí que me iba a presentar a los Goya. Fue una mañana, volviendo de la universidad. Una de mis profesoras estaba nominada a mejor cortometraje de ficción y la emoción que transmitía era tan grande que me hizo plantearme esto como un objetivo real: no pensaba morirme sin vivir eso.</p>
+								<p class="articulo19" style="margin-left :25px; margin-bottom:0px; margin-top:60px; margin-right:70px;">Por extraño que parezca hace cuatro años, decidí que me iba a presentar a los Goya. Fue una mañana, volviendo de la universidad. Una de mis profesoras estaba nominada a mejor cortometraje de ficción y la emoción que transmitía era tan grande que me hizo plantearme esto como un objetivo real: no pensaba morirme sin vivir eso.</p>
 								<p class="articulo16" style="margin-left :25px; margin-bottom:0px; margin-top:20px; margin-right:70px;"><strong>¿Pero cómo se llega a los Goya?</strong> Con mi profesora perdí el contacto, así que decidí preguntar a los <a href="http://www.rtve.es/noticias/los-goya/nominados/" target="_blank">nominados a Mejor Corto de Ficción de la 29ª</a> edición para que me orientasen.</p>
 								<p class="articulo16" style="margin-left :25px; margin-bottom:0px; margin-top:20px; margin-right:70px;">En primer lugar necesitaba una idea. ¿Pero de dónde vienen las ideas? Estuve días y noches dándole vueltas, escribiendo sinopsis una tras otra sin llegar a convencerme ninguno de los planteamientos a los que llegaba. Y me costó dar con el problema: la ficción no surge de la nada, sino de la propia experiencia. ¡Claro!  En realidad tiene sentido, no creo que pueda llegar a conectar con un espectador si mi historia no es sincera. Lo que me contaron Kepa, Gerardo, Pablo, Patricia y Carlos <strong>-los nominados a Mejor Cortometraje este año-</strong> no hizo más que confirmar esta teoría. Además, me ayudó mucho saber que no todos ellos habían contado con enormes presupuestos. Aumentó mis esperanzas, porque precisamente mi mayor limitación era la económica.</p>
 								<p class="articulo16" style="margin-left :25px; margin-bottom:0px; margin-top:20px; margin-right:70px;">Para <strong>el rodaje</strong> conté con lo más básico: mi cámara de fotos tiene una calidad de grabación bastante decente y reuniendo a la gente adecuada que he conocido en la facultad, juntos seguro que podíamos llegar a algo bueno. Que se lo digan sino a Patricia que, gracias a sus compañeros de la ESCAC, pudo rodar su corto en dos días. Mi intuición no fallaba, porque reuniéndonos todos, juntando nuestro dinerillo, conseguimos llegar a algo más que decente, ¡redondo! Un par de días de rodaje con la gente adecuada pueden dar mucho más de sí que lo que una se imagina en un principio.</p>
@@ -137,7 +137,7 @@
 								</video>
 								<p class="articulo16" style="margin-left :25px; margin-bottom:0px; margin-top:45px; margin-right:70px;">Hablemos de <strong>los actores</strong>. Todos pensábamos que ningún profesional de nombre iba a querer ayudarnos, pero no sabéis lo equivocados que estábamos. Sólo hay que echar un vistazo a los actores de los cortos nominados al Goya este año: Alexandra Jiménez, Daniel Grao, Julián Villagrán, Luis Bermejo, Karra Elejalde... Y es que la base de todo es una buena <strong>idea</strong>, una que permita a actores conocidos probar otro tipo de papeles a los que no están acostumbrados.</p>
 							</div>
-							<div class="fotorama column-center" style="height:750px; margin-top:245px;" data-nav="thumbs">
+							<div class="fotorama column-center" style="height:750px; margin-top:280px;" data-nav="thumbs">
 								<a href="images/slide/slide1.jpg" data-caption="Kepa Sojo, Karra Elejalde y Andrés Gertrudix preparándose para rodar."><img src="images/slide/slide1.jpg" id="sliders-1" /></a>
 								<a href="images/slide/slide2.jpg" data-caption="3, 2, 1… ¡Acción!"><img src="images/slide/slide2.jpg" id="sliders-2" /></a>
 								<a href="images/slide/slide3.jpg" data-caption="El alemán Leonard Proxauf, uno de los protagonistas de <i>Safari</i>."><img src="images/slide/slide3.jpg" id="sliders-3" /></a>
