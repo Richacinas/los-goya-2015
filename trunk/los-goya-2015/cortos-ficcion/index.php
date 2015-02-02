@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<?php
-	$url= "http://".$_SERVER['HTTP_HOST'];
-?>
 <html>
 <head>
 	<script type="text/javascript" src="//www.rtve.es/js/mushrooms/rtve_mushroom.js" ></script>
 
 	<meta charset="utf-8">
 	<meta itemprop="name" content="Entrevista interactiva a los nominados al Goya a mejor corto de ficción 2015 - Lab RTVE.es">
+	<meta itemprop="image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/redessociales.png">
 	<meta itemprop="description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es">
 	<meta itemprop="og:description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es">
 	<meta name="description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es">
 	<meta name="keywords" content=" Goya, Goya 2015, Premios Goya, Premios Goya 2015, nominados Goya 2015, nominados Premios Goya 2015, nominados Premios Goya 2015 RTVE,  Goya 2015 RTVE, cortometrajes, nominados cortometrajes Premios Goya 2015, cortos Goya 2015, cortometrajes de ficción, cortos de ficción, cortometraje de ficción, mejores cortos 2015, mejores cortometrajes 2015, Kepa Sojo, Patricia Font, Gerardo Herrero, Carlos Polo, Pablo Remón, Café para llevar, Loco con ballesta, Todo un futuro juntos, Safari, Trato Preferente, cine, cine español, interactivo cine español, Karra Elejalde, Alexandra Jiménez, Daniel Grao, Julián Villagrán, Luis Bermejo, Leonard Proxauf, ECAM, ESCAC, Madrid en Corto, Lab RTVE, Lab RTVE Goya 2015, Lab RTVE Goya 2015 interactivo, entrevista Kepa Sojo, entrevista Patricia Font, entrevista Gerardo Herrero, entrevista Carlos Polo, entrevista Pablo Remón, parallax RTVE, parallax RTVE Goya 2015, Ganador cortometraje Goya 2015, Ganador corto Goya 2015">
 	<meta name="twitter:title" content="Entrevista interactiva a los nominados al Goya a mejor corto de ficción 2015 - Lab RTVE.es ">
 	<meta name="twitter:description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es">
-	<meta name="twitter:image" content=<?php print($url); ?>"/los-goya-2015/cortos-ficcion/images/redessociales.png">
+	<meta name="twitter:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/redessociales.png">
 	<meta property="og:site_name" content="Cortos de Ficción - Los Goya 2015 - Lab RTVE.es"/>
 	<meta property="og:title" content="Entrevista interactiva a los nominados al Goya a mejor corto de ficción 2015 - Lab RTVE.es " />
-	<meta property="og:image" content=<?php print($url); ?>"/los-goya-2015/cortos-ficcion/images/redessociales.png" />
+	<meta property="og:image" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/redessociales.png" />
 	<meta property="og:description" content="Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es" />
-	<meta property="og:url" content=<?php print($url); ?>"/los-goya-2015/cortos-ficcion" />
+	<meta property="og:url" content="http://lab.rtve.es/los-goya-2015/cortos-ficcion" />
 	
 	<title>Cortometrajes de Ficción Goya 2015</title>
 
@@ -60,9 +58,9 @@
 					<a href="http://lab.rtve.es/" target="_blank" title="lab.rtve.es"><img src="images/rtve-icon.png"/></a>
 				</div>
 				<div class="share-icon">
-					<a href="https://plus.google.com/share?url=<?php print($url); ?>/los-goya-2015/cortos-ficcion" target="_blank" title="Google+"><button class="icon"><img src="images/gplus-icon.png"/></button></a>
-					<a href="https://www.facebook.com/dialog/feed?app_id=597255927040700&picture=<?php print($url); ?>/los-goya-2015/cortos-ficcion/images/redessociales.png&link=<?php print($url); ?>/los-goya-2015/cortos-ficcion&description=Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es&redirect_uri=<?php print($url); ?>/los-goya-2015" target="_blank" title="Facebook"><button class="icon"><img src="images/facebook-icon.png"/></button></a>
-					<a href="https://twitter.com/intent/tweet?button_hashtag=Goya2015&amp;via=lab_rtvees&amp;text=Entrevista a los nominados a mejor corto de ficción&amp;url=<?php print($url); ?>/los-goya-2015/cortos-ficcion" target="_blank" title="Twitter"><button class="icon"><img src="images/twitter-icon.png"/></button></a>
+					<a href="https://plus.google.com/share?url=http://lab.rtve.es/los-goya-2015/cortos-ficcion" target="_blank" title="Google+"><button class="icon"><img src="images/gplus-icon.png"/></button></a>
+					<a href="https://www.facebook.com/dialog/feed?app_id=857963194246392&picture=http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/redessociales.png&link=http://lab.rtve.es/los-goya-2015/cortos-ficcion&description=Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es&redirect_uri=http://lab.rtve.es/los-goya-2015/cortos-ficcion" target="_blank" title="Facebook"><button class="icon"><img src="images/facebook-icon.png"/></button></a>
+					<a href="https://twitter.com/intent/tweet?button_hashtag=Goya2015&amp;via=lab_rtvees&amp;text=De la idea al Goya en 4 pasos: Entrevista a los nominados a mejor corto de ficción&amp;url=http://lab.rtve.es/los-goya-2015/cortos-ficcion" target="_blank" title="Twitter"><button class="icon"><img src="images/twitter-icon.png"/></button></a>
 				</div>
 			</div>
 			<!-- Menu -->
@@ -113,8 +111,8 @@
 								<span class="text-director">"Todo un futuro juntos"<br>Pablo Remón</span>
 							</div>
 						</div>
-						<div class="column-center" style="witdh=80%; height: 100px; position:absolute; bottom:80px; display:block;">
-							<p class="articulo19" style="font-size:23px;color:white; margin-top:10px; text-align:center;"><i>Así hice mi corto: De la idea al Goya en 4 pasos</i></p>
+						<div class="column-center" style="witdh=80%; height: 100px; position:absolute; bottom:100px; display:block;">
+							<p class="articulo19" style="font-size:35px;color:white; margin-top:10px; text-align:center;"><i>Así hice mi corto: De la idea al Goya en 4 pasos</i></p>
 							<p class="articulo19" style="color:white; margin-top:60px; text-align:center;">Me llamo Juana y acabo de salir de la Universidad. Mi objetivo es conseguir una nominación a los Goya. Esta es la historia de cómo me he embarcado en esta aventura tras charlar con los nominados a Mejor Corto de Ficción de este año. Pincha en su foto para ver el tráiler de su cortometraje.</p>
 						</div>
 					</div>
@@ -131,10 +129,10 @@
 							</div>
 							<div class="column-text" style="height: 400px;">
 								<div style="height:350px; width:540px; margin-top: 35px; display:none; text-align:center;"> 
-									<img id="preview-video-texto-apple" src="images/preview_video_texto.png"/>
+									<img id="preview-video-texto-apple" src="images/preview_video_texto.jpg"/>
 									<img id="play-icon1" src="images/play.png" style="display:none; margin:0 auto;"/>
 								</div>
-								<video id="video-texto" controls style="height:350px; width:540px; margin-top: 100px" data-video="" poster="images/preview_video_texto.png">
+								<video id="video-texto" controls style="height:350px; width:540px; margin-top: 100px" data-video="" poster="images/preview_video_texto.jpg">
 									<source src="videos/video-text-1.mp4" type="video/mp4" />
 									<source src="videos/video-text-1.ogv" type="video/ogv" />
 									<source src="videos/video-text-1.webm" type="video/webm" />
@@ -227,10 +225,10 @@
 						<div class="video-preview-mask"></div>
 						<div class="article-video">
 							<div style="height:597px; width:1060px; margin-top: 65px; display:none; text-align:center;"> 
-								<img id="preview-video-apple1" src="images/preview_video_distribucion.png"/>
+								<img id="preview-video-apple1" src="images/preview_video_distribucion.jpg"/>
 								<img id="play-icon2" src="images/play.png" style="display:none; margin:0 auto;"/>
 							</div>
-							<video id="video-apple-1" controls style="width:1060px; height:597px; margin-top:65px;" data-video="" poster="images/preview_video_distribucion.png">
+							<video id="video-apple-1" controls style="width:1060px; height:597px; margin-top:65px;" data-video="" poster="images/preview_video_distribucion.jpg">
 								<source src="videos/video-distribucion.mp4" type="video/mp4" />
 								<source src="videos/video-distribucion.ogv" type="video/ogv" />
 								<source src="videos/video-distribucion.webm" type="video/webm" />
@@ -263,10 +261,10 @@
 						<div class="video-preview-mask"></div>
 						<div class="article-video">
 							<div style="height:597px; width:1060px; margin-top: 65px; display:none; text-align:center;"> 
-								<img id="preview-video-apple2" src="images/preview_video_goya.png"/>
+								<img id="preview-video-apple2" src="images/preview_video_goya.jpg"/>
 								<img id="play-icon3" src="images/play.png" style="display:none; margin:0 auto;"/>
 							</div>
-							<video id="video-apple-2" controls style="width:1060px; height:597px; margin-top:65px" data-video="" poster="images/preview_video_goya.png">
+							<video id="video-apple-2" controls style="width:1060px; height:597px; margin-top:65px" data-video="" poster="images/preview_video_goya.jpg">
 								<source src="videos/video-goya.mp4" type="video/mp4"/>
 								<source src="videos/video-goya.ogv" type="video/ogv"/>
 								<source src="videos/video-goya.webm" type="video/webm"/>
@@ -297,7 +295,7 @@
 	<div id="credits">
 		<ul>
 			<li>Coordinación: César Vallejo</li>
-			<li>Realización: Becarios en prácticas: Alba Montero, Laia Iborra y Pelayo Prieto</li>
+			<li>Realización: Alba Montero, Laia Iborra y Pelayo Prieto (Becarios en prácticas)</li>
 			<li>Desarrollo: Equipo de tecnología de RTVE.es</li>
 			<li>Agradecimientos: Patricia Font, Gerardo Herrero, Pablo Remón, Carlos Polo y Kepa Sojo</li>
 		</ul>
