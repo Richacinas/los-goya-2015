@@ -22,6 +22,7 @@ define('SITE_ROOT', dirname(__FILE__));
 
 // deshabilita limite de tiempo
 set_time_limit(0);
+session_start();
 
 
 // Ruta de los ficheros de funciones PHP que cargamos
@@ -32,13 +33,14 @@ $vineFunctions          = SITE_ROOT . '/core/social/socialVine.php'; // -> herra
 $functions_properties   = SITE_ROOT . '/core/functions_properties.php'; // -> herramientas de gestion de archivos de configuracion
 
 
-$dataFolder3            = SITE_ROOT . '/../radar/final/';
-$saveDataminute         = $dataFolder3 . 'minute.json'; // el json del último minuto
-$saveDatatotal          = $dataFolder3 . 'total.json'; // el json definitiva
-$saveDataphp            = $dataFolder3 . 'data.php'; // almacenando temporalmente
+$radarDataFolder        = SITE_ROOT . '/../radar/final/';
+$saveDataminute         = $radarDataFolder . 'minute.json'; // el json del último minuto
+$saveDatatotal          = $radarDataFolder . 'total.json'; // el json definitiva
+$saveDataphp            = $radarDataFolder . 'data.php'; // almacenando temporalmente
 $dataFolder             = SITE_ROOT . '/../data/';
 $totalsJson             = $dataFolder . 'totals.json'; // datos totales
-$dataFolder2            = SITE_ROOT . '/../data/stream-favorites/';
+$favoritesStreamFolder  = SITE_ROOT . '/../data/stream-favorites/';
+$favoritesFolder  = SITE_ROOT . '/../data/favorites/';
 
 $file_SearchTerms       = SITE_ROOT . '/../data/properties/searchTerms.json';
 $pathProperties         = SITE_ROOT . '/../data/properties/entorno.properties';
@@ -67,21 +69,20 @@ $filter             = $jsonSearchTerms_a["filter"];       // Indica si el Filtro
 
 if(isset($argv) && isset($argv[1])) {
   $method = $argv[1];
-} elseif(isset($_GET['method'])){
+} else if(isset($_GET['method'])){
   $method = $_GET['method'];
+} else if (isset($_POST['method'])) {
+  $method = $_POST['method'];
 } else {
   die('no se indicó acción');
 }
 
   // según el parámetro method haremos una cosa u otra;
 switch ($method) {
-
     // fuerza a procesar 
   case 'refresh':
-
     initializaDatos();
     saveData();
-
     echo 'done';  
     break;
 
@@ -395,37 +396,132 @@ switch ($method) {
     return false;
 
     break;
-    // borra toda nuestra preciada información
-  case 'wipeout':
-    rrmdirContents($dataFolder);
-    rrmdirContents($dataFolder2);
-    rrmdirContents($dataFolder3);
-    writeJson($dataFolder.'timeline.json', array());
-    writeJson($dataFolder.'totals.json', array());
-    writeJson($dataFolder2.'timeline.json', array());
-    writeJson($dataFolder2.'timeline.json', array());
-    writeJson($dataFolder3.'minute.json', array());
-    writeJson($dataFolder3.'total.json', array());
-    chmod ($dataFolder.'timeline.json', 0777);
-    chmod ($dataFolder2.'timeline.json', 0777);
-    chmod ($dataFolder3.'minute.json', 0777);
-    chmod ($dataFolder3.'total.json', 0777);
-    chmod ($dataFolder.'totals.json', 0777);
-
-    initializaDatos();
-    writeData();
-
-    echo 'done';
-    return true;
-  break;
-    // borra toda nuestra preciada información
-  case 'cleanTime':
-    writeJson($dataFolder.'totals.json', '');
-    print_r('limpiuando');//totalsJson
-  break;
+  case 'cleanData':
+    if (isset($_POST['csrf'])) {
+      $csrf = $_POST['csrf'];
+      $sessionCSRF = $_SESSION['csrf'];
+      if ($csrf === $sessionCSRF) {
+        $rightClean = cleanData();
+        if ($rightClean) {
+          print("<div style='color:green;'>-- Clean DONE --</div><br/>");
+          print("<a href='/los-goya-2015/radar/backoffice'><button><< OK! Volver</button></a>");
+        } else {
+          print("<div style='color:red;'>-- Clean ERROR --</div><br/>");
+          print("<a href='/los-goya-2015/radar/backoffice'><button><< Volver</button></a>");
+        }
+      }
+    } else {
+      print_r("NO ACTION POSSIBLE!");
+    }
+    break;
   default:
     die('no se indicó acción valida'.PHP_EOL);
   break;
+}
+
+function cleanData() {
+  /* Clean Radar home info */
+    cleanRadarHomeTimelineInfo();
+    /* Clean Backoffice Timeline STREAM twitter data 
+    ("STREAM de Twitter" timeline section) */
+    cleanBackofficeStreamTwitterData();
+    /* Clean Backoffice STREAM twitter data posts 
+    ("STREAM de Twitter" real posts when click in a time) */
+    cleanBackofficeStreamTwitterPosts();
+    /* Clean Backoffice Timeline FAVORITES STREAM twitter data 
+    ("Tuits e Instagrams de FAVORITOS" timeline section) */
+    cleanBackofficeFavoritesStreamTwitterData();
+    /* Clean Backoffice FAVORITES STREAM twitter data posts 
+    ("Tuits e Instagrams de FAVORITOS" real posts when click in a time) */
+    cleanBackofficeFavoritesStreamTwitterPosts();
+    /* Clean Popular/Favorites frontoffice tweets data */
+    cleanPopularData();
+    /* Clean saved data in GLOBALS/data.php data */
+    cleanSavedPostsData();
+    /* Clean Home Radar timeline and data */
+    cleanRadarHomeInfo();
+    /* Clean Home Radar posts */
+    cleanRadarHomePosts();
+    /* Set 0777 permissions to dynamic files*/
+    setPermissionsToDataFiles();
+    /* Init data files */
+    initializaDatos();
+    writeData();
+    clearstatcache();
+    return true;
+}
+
+function cleanRadarHomeTimelineInfo() {
+  global $dataFolder;
+  // clean /data/totals.json with an empty array []
+    writeJson($dataFolder.'totals.json', array());
+    print('Limpiando '.$dataFolder.'totals.json ...<br/>');
+}
+function cleanBackofficeStreamTwitterData() {
+  global $dataFolder;
+  // clean /data/timeline.json with an empty array []
+    writeJson($dataFolder.'timeline.json', array());
+    print('Limpiando '.$dataFolder.'timeline.json ...<br/>');
+}
+function cleanBackofficeStreamTwitterPosts() {
+  global $dataFolder;
+  // remove /data/*.json : time JSON files
+    removeTimeJsonFilesFromDirectory($dataFolder);
+    print('Limpiando archivos /data/&lt;time&gt;.json ...<br/>');
+}
+function cleanBackofficeFavoritesStreamTwitterData() {
+  global $favoritesStreamFolder;
+  // clean /data/stream-favorites/timeline.json with an empty array []
+    writeJson($favoritesStreamFolder.'timeline.json', array());
+    print('Limpiando '.$favoritesStreamFolder.'timeline.json ...<br/>');
+}
+function cleanBackofficeFavoritesStreamTwitterPosts() {
+  global $favoritesStreamFolder;
+  // remove /data/stream-favorites/*.json : time JSON files
+    removeTimeJsonFilesFromDirectory($favoritesStreamFolder);
+    print('Limpiando archivos /data/stream-favorites/&lt;time&gt;.json ...<br/>');
+}
+function cleanRadarHomeInfo() {
+  global $radarDataFolder;
+  // clean /radar/final/total.json with an empty array []
+  // clean /radar/final/minute.json with an empty array []
+    writeJson($radarDataFolder.'minute.json', array());
+    print('Limpiando '.$radarDataFolder.'minute.json ...<br/>');
+    writeJson($radarDataFolder.'total.json', array());
+    print('Limpiando '.$radarDataFolder.'total.json ...<br/>');
+}
+function cleanRadarHomePosts() {
+  global $radarDataFolder;
+  // remove /radar/final/*.json : time JSON files
+    removeTimeJsonFilesFromDirectory($radarDataFolder);
+    print('Limpiando archivos /radar/final/&lt;time&gt;.json ...<br/>');
+}
+function cleanSavedPostsData() {
+  global $radarDataFolder;
+  // remove /radar/final/*.json : time JSON files
+    removeDataphp($radarDataFolder);
+    print('Limpiando archivo /radar/final/data.php ...<br/>');
+}
+function cleanPopularData() {
+  global $favoritesFolder;
+  // clean /data/favorites/favorites-appearances.json with an empty array []
+    writeJson($favoritesFolder.'favorites-appearances.json', array());
+    print('Limpiando '.$favoritesFolder.'favorites-appearances.json ...<br/>');
+}
+function setPermissionsToDataFiles() {
+  global $dataFolder, $favoritesFolder, $favoritesStreamFolder, $radarDataFolder;
+    print("Dando permisos a ".$dataFolder.'totals.json<br/>');
+    chmod($dataFolder.'totals.json', 0777);
+    print("Dando permisos a ".$dataFolder.'timeline.json<br/>');
+    chmod($dataFolder.'timeline.json', 0777);
+    print("Dando permisos a ".$favoritesStreamFolder.'timeline.json<br/>');
+    chmod($favoritesStreamFolder.'timeline.json', 0777);
+    print("Dando permisos a ".$radarDataFolder.'minute.json<br/>');
+    chmod($radarDataFolder.'minute.json', 0777);
+    print("Dando permisos a ".$radarDataFolder.'total.json<br/>');
+    chmod($radarDataFolder.'total.json', 0777);
+    print("Dando permisos a ".$favoritesFolder.'favorites-appearances.json<br/>');
+    chmod($favoritesFolder.'favorites-appearances.json', 0777);
 }
 
 function getTweetFullWithLink($link) {
@@ -567,7 +663,7 @@ function processTimeline($tl) {
   $output = array();
 
   //print_r($tl);
-
+  if (isset($tl['searchs']) && sizeOf($tl['searchs']) > 0) {
   foreach ($tl['searchs'] as $key=>$value) { 
 
     $count = 0;
@@ -582,6 +678,7 @@ function processTimeline($tl) {
   }
 
   arsort($output);
+  }
 
   return $output;
 }
@@ -595,6 +692,9 @@ function saveData(){
   $timeline = json_decode(file_get_contents($GLOBALS['totalsJson']),true);
 
   $countFinal = processTimeline($timeline);
+  if (!isset($timeline['global'])) {
+    $timeline['global'] = array();
+  }
 
   writeJson($GLOBALS['saveDataminute'], array(
     'data' => transformPosts($GLOBALS['data']['minute']), 
@@ -640,7 +740,7 @@ function transformPosts($postsObject) {
 function sendDataFTP($filename) {
 
   // Generamos la ruta del fichero en la carpeta de destino (FTP)
-  $remote_file = $GLOBALS['ftp_remote_folder'] . str_replace($GLOBALS['dataFolder3'], "", $filename);
+  $remote_file = $GLOBALS['ftp_remote_folder'] . str_replace($GLOBALS['radarDataFolder'], "", $filename);
 
   // Datos de la conexion al FTP
   $ftp_server = $GLOBALS['ftp_server'];

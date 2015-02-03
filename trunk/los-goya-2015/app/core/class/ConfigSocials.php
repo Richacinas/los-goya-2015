@@ -1,6 +1,6 @@
 <?php
 
-class Config {
+class ConfigSocials {
 	private $config;
 	private $log = array();
 

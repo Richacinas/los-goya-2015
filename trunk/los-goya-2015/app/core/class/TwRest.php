@@ -1,13 +1,13 @@
 <?php
 
-require_once './Config.php';
+require_once 'ConfigSocials.php';
 
 class TWREST {
 	private $config;
 	private $newTweets;
 
 	public function __construct($saveData, $logFile) {
-		$this->config = new Config($saveData, $logFile);
+		$this->config = new ConfigSocials($saveData, $logFile);
 		$this->twData['search'] = array();
 		$this->newTweets = true;
 	}

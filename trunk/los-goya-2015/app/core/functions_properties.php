@@ -158,10 +158,34 @@ function rrmdirContents($dir) {
     $objects = scandir($dir);
     foreach ($objects as $object) {
       if ($object != "." && $object != "..") {
-        if (filetype($dir."/".$object) == "dir") {//Directory /*rrmdir($dir."/".$object); */}
-        else {/*File*/ unlink  ($dir."/".$object);}
+        if (filetype($dir."/".$object) == "dir") {/*Directory*/ /*rrmdir($dir."/".$object); */}
+        else {/*File*/ unlink  ($dir.$object);}
       }
     }
   }
   return true;   
+}
+
+function removeTimeJsonFilesFromDirectory($dir) {
+  if (is_dir($dir)) {
+    $objects = scandir($dir);
+    foreach ($objects as $object) {
+      if ($object != "." && $object != ".." && (filetype($dir."/".$object) != "dir") ) {
+        $fileparts = explode(".", $object);
+        $filename = $fileparts[sizeof($fileparts)-2];
+        $extension = $fileparts[sizeof($fileparts)-1];
+        if ($extension === 'json' && $filename !== 'timeline' && $filename !== 'totals' && $filename !== 'total' && $filename !== 'minute') {
+          unlink($dir.$object);
+        }
+      }
+    }
+  }
+  return true; 
+}
+
+function removeDataphp($dir) {
+  if (is_dir($dir)) {
+    unlink($dir.'data.php');
+  }
+  return true; 
 }

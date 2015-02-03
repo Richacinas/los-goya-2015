@@ -98,3 +98,53 @@
 .fa-plus {
     color: blue;
   }
+
+form#cleanDataForm {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+input#cleanDataButton {
+  border: solid 3px #75A5A0;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 1.5em;
+  color: #75A5A0;
+}
+input#cleanDataButton:hover {
+   color: #ffffff;
+   border: solid 3px #75A559;
+   background: #75A5A0;
+}
+
+div#cleanDataPopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: solid 6px #75A5A0;
+  background: #ffffff;
+  border-radius: 5px;
+  font-size: 1.3em;
+  color: #75A5A0;
+  min-height: 100px;
+  text-align: center;
+  padding: 20px;
+  z-index: 3;
+}
+
+div#cleanDataPopup #cleanDataAccept, div#cleanDataPopup #cleanDataReject {
+  border: solid 3px #75A5A0;
+  background: #ffffff;
+  border-radius: 5px;
+  color: #75A5A0;
+  font-weight: bold;
+  margin: 30px 20px 0;
+  width: 300px;
+}
+div#cleanDataPopup #cleanDataReject:hover, div#cleanDataPopup #cleanDataAccept:hover {
+  color: #ffffff;
+  border: solid 3px #75A559;
+  background: #75A5A0;
+  border-radius: 5px;
+}
