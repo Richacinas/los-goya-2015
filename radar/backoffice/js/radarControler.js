@@ -118,6 +118,19 @@
           }
         });
 
+        $("#cleanDataButton").on("click", function() {
+          // Show clean confirmation
+          radarControler.streaming.showCleanConfirmationPopup();
+          return false;
+        });
+
+      },
+      showCleanConfirmationPopup: function() {
+        $("#cleanDataPopup").fadeIn("fast", function() {
+          $("#cleanDataReject").on("click", function(){
+            $("#cleanDataPopup").fadeOut("fast");
+          });
+        });
       },
       // radarControler.streaming.reiniciarEvento()      
       reiniciarEvento: function() {

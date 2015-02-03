@@ -3959,7 +3959,7 @@ var gC = {
                     gC.posizionator(a, b, c);
                     var e = d.attr("src");
                     d.attr("src", "./img/loading.gif").data("src", e);
-                    var f = $('<img src="' + e + '">');
+                    var f = $('<img src="' + e + '" width="150" height="150">');
                     f.bind("load", function() {
                         d.attr("src", e);
                         var b = d[0],
@@ -4284,9 +4284,15 @@ var gC = {
             gC.data.filter = 200, _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO_FAVORITO", gC.data.search]), gC.restartDrawing(), gC.drawFixedElms(gC.data.ok.length, gC.cache.pageElms, !0);
             $(".enlace-goyas-en-las-redes:first").trigger("click");
         });
-        $(".bl-top-elm").on("mouseover", function() {
-            $(this).find('.bl-top-text').css('padding-top','40%');
-        }).on("mouseout", function() {
+        $(".bl-top-elm").on("mouseenter", function() {
+            var blTopElement = $(this);
+            var nameHeight = $(this).find('.bl-top-text h2:first').height();
+            var tweetsHeight = $(this).find('.bl-top-text-count:first').height();
+            var filterButtonHeight = $(this).find('button.filter-tweets:first').height();
+            var centerBlockHeight = parseInt(nameHeight) + parseInt(tweetsHeight) + parseInt(filterButtonHeight);
+            var blPadding = ($(blTopElement).height()-centerBlockHeight)/2;
+            $(this).find(".bl-top-text").css('padding-top', blPadding+"px");
+        }).on("mouseleave", function() {
             $(this).find('.bl-top-text').css('padding-top','10px');
         });
     },

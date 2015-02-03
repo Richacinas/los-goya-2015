@@ -1,3 +1,25 @@
+<?php 
+function randomString () {
+  $characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+  $numberOfCharacters=10; 
+  $chain = ""; 
+  for($i=0;$i<$numberOfCharacters;$i++)
+  {
+    $chain .= substr($characters,rand(0,strlen($characters)),1); 
+  }
+  return $chain;
+}
+
+
+session_start();
+
+$csrf = md5(randomString()); 
+$_SESSION['csrf'] = $csrf;
+
+$host = "http://".$_SERVER['HTTP_HOST'].'/los-goya-2015';
+
+?>
+
 <!doctype html>
 <html lang="es-es">
 <head>
@@ -10,6 +32,18 @@
 
   <div class="page-header">
     <h1>Social Radar Controler <small>lab.rtve.es</small></h1>
+    <form action="<?php print($host);?>/app/twtprocess.php" method="post" name="cleanDataForm" id="cleanDataForm">
+      <input type="hidden" name="method" value="cleanData" />
+      <input type="hidden" name="csrf" value="<?php print($csrf);?>" />
+      <input type="submit" name="cleanDataButton" id="cleanDataButton" value="Limpiar todos los datos" />
+      <div id="cleanDataPopup">
+        <div>¿Realmente quieres borrar todos los datos recogidos del radar?</div>
+        <div>
+          <input type="submit" name="cleanDataButton" id="cleanDataAccept" value="¡SÍ, borrar todo!" />
+          <input type="button" name="reject" id="cleanDataReject" value="NO, me he confundido de botón" />
+        </div>
+      </div>
+    </form>
   </div>
 
   <div id="bl-data">
@@ -63,7 +97,7 @@
     </div>
 
     <div class="bl-sidebar-bl">
-      <h2>Tuits y instagrams de FAVORITOS:</h2>
+      <h2>Tuits e instagrams de FAVORITOS:</h2>
       <div id="bl-sidebar-list"></div>
     </div>
 

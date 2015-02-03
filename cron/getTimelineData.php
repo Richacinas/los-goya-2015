@@ -53,11 +53,11 @@ $search             = $jsonSearchTerms_a["search"];
 $data = array();
 $data['search'] = array();
 
-require_once SITE_ROOT . '/../app/core/class/Config.php';
+require_once SITE_ROOT . '/../app/core/class/ConfigSocials.php';
 require_once SITE_ROOT . '/../app/core/class/TwRest.php';
 require_once SITE_ROOT . '/../app/core/class/IgRest.php';
 
-$config = new Config($saveData, $logFile);
+$config = new ConfigSocials($saveData, $logFile);
 $log  = json_decode(file_get_contents($logFile), true);
 
 /* BEGIN CRONJOB PROCESS HERE */

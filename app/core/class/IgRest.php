@@ -1,6 +1,6 @@
 <?php
 
-require_once './Config.php';
+require_once 'ConfigSocials.php';
 
 class IGREST {
 	private $igData; // Tweets data result
@@ -8,7 +8,7 @@ class IGREST {
 	private $newIgPosts;
 
 	public function __construct($saveData, $logFile) {
-		$this->config = new Config($saveData, $logFile);
+		$this->config = new ConfigSocials($saveData, $logFile);
 		$this->igData['search'] = array();
 		$this->newIgPosts = true;
 	}
