@@ -32,6 +32,7 @@ $host = "http://".$_SERVER['HTTP_HOST'].'/los-goya-2015';
 
   <div class="page-header">
     <h1>Social Radar Controler <small>lab.rtve.es</small></h1>
+    <a id="radar-link" href="/los-goya-2015/radar" target="_blank">Ver Radar</a>
     <form action="<?php print($host);?>/app/twtprocess.php" method="post" name="cleanDataForm" id="cleanDataForm">
       <input type="hidden" name="method" value="cleanData" />
       <input type="hidden" name="csrf" value="<?php print($csrf);?>" />
