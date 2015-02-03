@@ -295,7 +295,7 @@
 	<div id="credits">
 		<ul>
 			<li>Coordinación: César Vallejo</li>
-			<li>Realización: Alba Montero, Laia Iborra y Pelayo Prieto (Becarios en prácticas)</li>
+			<li>Guión y Realización: Alba Montero, Laia Iborra y Pelayo Prieto (Becarios en prácticas)</li>
 			<li>Desarrollo: Equipo de tecnología de RTVE.es</li>
 			<li>Agradecimientos: Patricia Font, Gerardo Herrero, Pablo Remón, Carlos Polo y Kepa Sojo</li>
 		</ul>
