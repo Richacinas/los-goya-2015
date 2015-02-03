@@ -174,7 +174,7 @@ function removeTimeJsonFilesFromDirectory($dir) {
         $fileparts = explode(".", $object);
         $filename = $fileparts[sizeof($fileparts)-2];
         $extension = $fileparts[sizeof($fileparts)-1];
-        if ($extension === 'json' && $filename !== 'timeline' && $filename !== 'totals' && $filename !== 'total' && $filename !== 'minute') {
+        if ($extension === 'json' && $filename !== 'timeline' && $filename !== 'totals' && $filename !== 'total' && $filename !== 'minute' && $filename !== 'favorites-appearances') {
           unlink($dir.$object);
         }
       }

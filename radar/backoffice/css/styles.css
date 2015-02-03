@@ -101,7 +101,7 @@
 
 form#cleanDataForm {
   position: absolute;
-  top: 20px;
+  top: 40px;
   right: 50px;
 }
 input#cleanDataButton {
@@ -147,4 +147,21 @@ div#cleanDataPopup #cleanDataReject:hover, div#cleanDataPopup #cleanDataAccept:h
   border: solid 3px #75A559;
   background: #75A5A0;
   border-radius: 5px;
+}
+
+a#radar-link {
+  color: #75A5A0;
+  border: solid 1px #75A559;
+  background: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  top: 50px;
+  left: 530px;
+  font-size: 1.2em;
+  padding: 2px 10px;
+  text-decoration: none;
+}
+a#radar-link:hover {
+  color: #ffffff;
+  background: #75A5A0;
 }
