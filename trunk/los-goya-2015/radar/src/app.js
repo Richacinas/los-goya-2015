@@ -3707,6 +3707,7 @@ var gC = {
     	// Get radar totals data
         $.ajax(gC.data.dataFolder + "total.json", {
             success: function(a) {
+                gC.loadPostsIdsInTemplate(a.data);
                 gC.processFilter(a.search, a.filter), gC.data.superCount = gC.processSuperCount(a.supercount), a.ended || (gC.data.lastTime = a.time), gC.cache.timelineActive && gC.tl.processGraph(a), gC.processInitialData(a)
             },
             error: function() {
@@ -3736,6 +3737,7 @@ var gC = {
         $.ajax(gC.data.dataFolder + 'total.json', {
     
             success: function(data, status) {
+                gC.loadPostsIdsInTemplate(data.data);
                 // Rellenamos el select con los invitados mostrando unicamente los activos
                 gC.processFilter(data.search, data.filter);
                 gC.data.superCount = gC.processSuperCount(data.supercount);
@@ -3786,10 +3788,16 @@ var gC = {
             timeout: 4000
         });
     },
+    loadPostsIdsInTemplate: function(data) {
+        $("#stream-ids").empty();
+        $.each(data, function(index, post) {
+            $("#stream-ids").append("<div class='post-id' data-postid='"+post.id+"'></div>");
+        });
+    },
     getHomeLastPosts: function() {
     	var homePosts = new Array();
-    	$("#bl-stream .twt-elm[id]").each(function() {
-    		homePosts.push($(this).attr("id"));
+    	$("#stream-ids .post-id").each(function() {
+    		homePosts.push($(this).data("postid"));
     	});
     	return homePosts;
     },
