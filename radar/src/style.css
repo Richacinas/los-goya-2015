@@ -136,7 +136,7 @@ strong {
     display: inline;
     float: left;
     background-color: #dfdfdf;
-    width: 37.5%;
+    width: 35.5%;
 }
 
 .bl-tl-foot .wk-col-c {
@@ -149,7 +149,7 @@ strong {
     display: inline;
     float: right;
     background-color: #dfdfdf;
-    width: 17.5%;
+    width: 19.5%;
 }
 
 .bl-tabs-wrap .wk-col-l {
@@ -1255,7 +1255,7 @@ background: #75a5a0;
 }
 
 .bl-tl-foot .bl-tl-foot-fin {
-    padding-right: 40px;
+    padding-right: 0;
 }
 
 .bl-tl-foot .bl-tl-foot-fin:before {

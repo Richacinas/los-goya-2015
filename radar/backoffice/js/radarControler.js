@@ -371,7 +371,7 @@
         for(element in radarControler.data.tagCount){
         
           if(radarControler.data.tagCount.hasOwnProperty(element)){
-            var $target = $input.find('.input-'+element.replace(/ /g,"_"));
+            var $target = $input.find('.input-'+element.replace(/ /g,"_").replace(/@/g,""));
             if($target.length) $('<span class="count">'+radarControler.data.tagCount[element]+'</span>').insertBefore($target);
           }
         }
