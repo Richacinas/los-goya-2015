@@ -3797,7 +3797,7 @@ var gC = {
     getHomeLastPosts: function() {
     	var homePosts = new Array();
     	$("#stream-ids .post-id").each(function() {
-    		homePosts.push($(this).data("postid"));
+    		homePosts.push(($(this).data("postid").toString()));
     	});
     	return homePosts;
     },
@@ -3900,19 +3900,19 @@ var gC = {
                         var favoriteSearch = gC.data.search;
                         if (gC.isFavoriteInPost(favoriteSearch, postText)) {
                             d++;
-                            var f = gC.themePost(gC.data.ok[e]);
+                            var f = gC.themePost(gC.data.ok[e], e);
                             gC.preloader(f, gC.data.ok[e], c)
                         }
                     } else {
                         if (gC.data.ok[e].tags && labTools.utils.inArray(gC.data.search, gC.data.ok[e].tags)) {
                             d++;
-                            var f = gC.themePost(gC.data.ok[e]);
+                            var f = gC.themePost(gC.data.ok[e], e);
                             gC.preloader(f, gC.data.ok[e], c)
                         }
                     }
                 } else {
                     d++;
-                    var f = gC.themePost(gC.data.ok[e]);
+                    var f = gC.themePost(gC.data.ok[e], e);
                     gC.preloader(f, gC.data.ok[e], c)
                 }
                 gC.cache.displayIni = e
@@ -3924,12 +3924,12 @@ var gC = {
                         // Wall filter search (by select box)
                         if (gC.data.ok[e].tags && labTools.utils.inArray(gC.data.ok[e].tags[0], gC.data.search)) {
                             d++;
-                            var f = gC.themePost(gC.data.ok[e]);
+                            var f = gC.themePost(gC.data.ok[e], e);
                             gC.preloader(f, gC.data.ok[e], c)
                         }
                     } else {
                         d++;
-                        var f = gC.themePost(gC.data.ok[e]);
+                        var f = gC.themePost(gC.data.ok[e], e);
                         gC.preloader(f, gC.data.ok[e], c)
                     }
                     gC.cache.displayEnd = e
@@ -3950,11 +3950,11 @@ var gC = {
         for (var d = a; b > d; d++)
             if (gC.data.filter > -1) {
                 if (labTools.utils.inArray(gC.data.ok[d].tags[0], gC.data.search)) {
-                    var e = gC.themePost(gC.data.ok[d]);
+                    var e = gC.themePost(gC.data.ok[d], d);
                     gC.preloader(e, gC.data.ok[d], c)
                 }
             } else {
-                var e = gC.themePost(gC.data.ok[d]);
+                var e = gC.themePost(gC.data.ok[d], d);
                 gC.preloader(e, gC.data.ok[d], c)
             }
     },
@@ -3995,27 +3995,27 @@ var gC = {
         var h = 2;
         a.hasClass("twt-elm-txt") && (h = 1), gC.cache.colsElms[g] = gC.cache.colsElms[g] ? gC.cache.colsElms[g] + h : h
     },
-    themePost: function(a) {
+    themePost: function(a, index) {
         if (!a || !a.net) return void console.log("Error dibujando post: ", a);
         var b = "";
         switch (a.net) {
             case "tw":
                 if (a.media) {
                     var c = "";
-                    c = $.isArray(a.media) ? a.media[0] : a.media, b = $(a.text ? '<a href="" target="_blank" class="twt-elm twt-elm-twt twt-elm-img" id="'+a.id+'"><div class="elm-wrap"><img src="' + c + '"></div><h2><div>@' + a.screen_name + ": " + a.text + "</div></h2></a>" : '<a href="" target="_blank" class="twt-elm twt-elm-twt twt-elm-img">                        <div class="elm-wrap"><img src="' + c + '"></div></a>'), b.attr("href", a.link)
+                    c = $.isArray(a.media) ? a.media[0] : a.media, b = $(a.text ? '<a href="" target="_blank" class="twt-elm twt-elm-twt twt-elm-img" id="'+a.id+'###'+index+'"><div class="elm-wrap"><img src="' + c + '"></div><h2><div>@' + a.screen_name + ": " + a.text + "</div></h2></a>" : '<a href="" target="_blank" class="twt-elm twt-elm-twt twt-elm-img">                        <div class="elm-wrap"><img src="' + c + '"></div></a>'), b.attr("href", a.link)
                 } else {
                     var d = a.screen_name;
-                    b = $('<div target="_blank" class="twt-elm twt-elm-twt twt-elm-txt" id="'+a.id+'"><div class="elm-wrap"><a class="elm-usr" style="display:inline" href="' + a.link + '" target="_other">@' + d + ':</a> <p style="display:inline">' + gC.processTweetLinks(a.text) + "</p></div></div>")
+                    b = $('<div target="_blank" class="twt-elm twt-elm-twt twt-elm-txt" id="'+a.id+'###'+index+'"><div class="elm-wrap"><a class="elm-usr" style="display:inline" href="' + a.link + '" target="_other">@' + d + ':</a> <p style="display:inline">' + gC.processTweetLinks(a.text) + "</p></div></div>")
                 }
                 break;
             case "ig":
-                b = $(a.text ? '<a href="" target="_blank" class="twt-elm twt-elm-ig twt-elm-img" id="'+a.id+'"><div class="elm-wrap"><img src="' + a.image + '"></div>                    <h2><div>@' + a.user_name + ": " + a.text + "</div></h2></a>" : '<a href="" target="_blank" class="twt-elm twt-elm-ig twt-elm-img"><div class="elm-wrap"><img src="' + a.image + '"></div></a>'), a.video && b.addClass("twt-elm-vid"), b.attr("href", a.link);
+                b = $(a.text ? '<a href="" target="_blank" class="twt-elm twt-elm-ig twt-elm-img" id="'+a.id+'###'+index+'"><div class="elm-wrap"><img src="' + a.image + '"></div>                    <h2><div>@' + a.user_name + ": " + a.text + "</div></h2></a>" : '<a href="" target="_blank" class="twt-elm twt-elm-ig twt-elm-img"><div class="elm-wrap"><img src="' + a.image + '"></div></a>'), a.video && b.addClass("twt-elm-vid"), b.attr("href", a.link);
                 break;
             case "+t":
-                b = $('<a href="" target="_blank" class="twt-elm twt-elm-tve twt-elm-img" id="'+a.id+'"><div class="elm-wrap"><img src="' + a.img + '"></div>                  <h2><div>"' + a.text + '"</div></h2></a>'), b.attr("href", a.link), a.video && b.addClass("twt-elm-vid");
+                b = $('<a href="" target="_blank" class="twt-elm twt-elm-tve twt-elm-img" id="'+a.id+'###'+index+'"><div class="elm-wrap"><img src="' + a.img + '"></div>                  <h2><div>"' + a.text + '"</div></h2></a>'), b.attr("href", a.link), a.video && b.addClass("twt-elm-vid");
                 break;
             case "vn":
-                b = $('<a href="" target="_blank" class="twt-elm twt-elm-vine twt-elm-img" id="'+a.id+'"><div class="elm-wrap"><img src="' + a.img + '"></div>                  <h2><div>"' + a.text + '"</div></h2></a>'), b.attr("href", a.link), a.video && b.addClass("twt-elm-vid");
+                b = $('<a href="" target="_blank" class="twt-elm twt-elm-vine twt-elm-img" id="'+a.id+'###'+index+'"><div class="elm-wrap"><img src="' + a.img + '"></div>                  <h2><div>"' + a.text + '"</div></h2></a>'), b.attr("href", a.link), a.video && b.addClass("twt-elm-vid");
                 break;
             default:
                 return void console.log("Error dibujando post: ", a)
