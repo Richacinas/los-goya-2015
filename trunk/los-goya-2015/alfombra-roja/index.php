@@ -1,6 +1,6 @@
 <?php
 
-include '_partials/utils.php';
+include 'partials/utils.php';
 
 $footer = file_get_contents("http://www.rtve.es/comunes/pie/pie_portada.inc",0);
 $header = utf8_encode(file_get_contents("http://wwww.rtve.es/comunes/cabecera/cabecera_portada.inc",0));
@@ -52,9 +52,15 @@ else {
     <meta property="og:site_name" content="Lab RTVE.es Alfombra Roja"/>
     <meta property="og:title" content="<?php if ($ogTitle != "") { echo $ogTitle; ?>, en la <?php } else { ?>La <?php } ?> alfombra roja de Los Premios Goya - Premios Goya 2015"/>
     <meta property="og:description" content="La alfombra roja de los Premios Goya 2015. Descubre los vestidos de las actrices , los mejores trajes de los actores y los famosos en la gala de los Goya 2015"/>
-    <meta property="og:url" content="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo $name; ?>"/>
-    <meta property="og:image" content="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>"/>
+    <meta property="og:url" content="<?php echo $baseUrl; echo $name; ?>"/>
+    <meta property="og:image" content="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>"/>
 
+    <!-- no cache headers -->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="no-cache"/>
+    <meta http-equiv="Expires" content="-1"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <!-- end no cache headers -->
 
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <!--link rel="stylesheet" type="text/css" href="css/zoom.css"/-->
@@ -112,13 +118,13 @@ else {
                     <div class="unit c100 last">
                         <div class="unit c33 first">
                             <div class="mark sbt fbook">
-                                <div class="fb-share-button" data-href="http://www.rtve.es/noticias/los-goya-2015/alfombra-roja/" data-layout="button_count"></div>
+                                <div class="fb-share-button" data-href="http://www.rtve.es/noticias/test-los-goya-2015/alfombra-roja/" data-layout="button_count"></div>
                             </div>
                         </div>
                         <div class="unit c34 middle">
                             <!-- fragment start -->
                             <div class="mark sbt tweet">
-                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.rtve.es/noticias/los-goya-2015/alfombra-roja/" data-text="La alfombra roja con lupa de los Premios Goya 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.rtve.es/noticias/test-los-goya-2015/alfombra-roja/" data-text="La alfombra roja con lupa de los Premios Goya 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                             </div>
                         </div>
                         <div class="unit c33 last"><!-- fragment start -->
@@ -130,24 +136,22 @@ else {
                     <div class="carousel-content">
                         <div class="content">
                             <div class="stage">
-                              <div class="foto">
-                                  <a title="" href="fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>" class="jqzoom">
-                                      <span class="zoom"></span>
-                                      <div itemscope itemtype="http://schema.org/ImageObject">
-                                          <img id="carrousel_image" title="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en Los Premios Goya 2015 - RTVE.es" src="fotosPublished/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>" data-zoom-image="fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>" alt="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en Los Premios Goya 2015" itemprop="image" />
-                                      </div>
-                                  </a>
-                              </div>
-                              <div class="txt">
-                                <h1 class="rtv03"><?php echo $aCarousel[$carouselIndex + 1][2]; ?> en los Goya 2015</h1>
-                                <span><?php echo $aCarousel[$carouselIndex + 1][3]; ?></span>
-                                <p><?php echo print(str_replace("\"","'",targetBlank($aCarousel[$carouselIndex + 1][4]))); ?></p>
-                              </div>
+                                <div itemscope itemtype="http://schema.org/ImageObject">
+                                    <div class="foto">
+                                        <img id="carrousel_image" title="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en Los Premios Goya 2015 - RTVE.es" src="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotosPublished/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>" data-zoom-image="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>" alt="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en Los Premios Goya 2015" itemprop="image" />
+                                    </div>
+                                    <div class="txt">
+                                      <h1 class="rtv03" itemprop="name"><?php echo $aCarousel[$carouselIndex + 1][2]; ?> en los Goya 2015</h1>
+                                      <span itemprop="provider"><?php echo $aCarousel[$carouselIndex + 1][3]; ?></span>
+                                      <p itemprop="description"><?php echo str_replace("\"","'",targetBlank($aCarousel[$carouselIndex + 1][4])); ?></p>
+                                      <meta itemprop="author" content="<?php echo count(explode("/", $aCarousel[$carouselIndex + 1][3])) > 1 ? array_pop(explode("/", $aCarousel[$carouselIndex + 1][3])) : ""; ?>" />
+                                    </div>
+                                </div>
                               <div class="socialshare">
                               <table width="100%" border="0">
                                 <tr>
-                                  <td><div class="fb-share-button" data-href="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-layout="button_count"></div></td>
-                                  <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://<?php echo $baseUrl; ?>/los-goya-2015/alfombra-roja/<?php echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-text="<?php echo $aCarousel[$carouselIndex + 1][2]; ?>, en la alfombra roja de los Goya 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+                                  <td><div class="fb-share-button" data-href="<?php echo $baseUrl; echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-layout="button_count"></div></td>
+                                  <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $baseUrl; echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-text="<?php echo $aCarousel[$carouselIndex + 1][2]; ?>, en la alfombra roja de los Goya 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
                                 </tr>
                               </table>
                               </div>

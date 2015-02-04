@@ -1,8 +1,10 @@
 <?php
 
-include '../_partials/utils.php';
+include '../partials/utils.php';
 $password = isset($_GET['p']) ? $_GET['p'] : '';
 $result = isset($_GET['r']) ? $_GET['r'] : '';
+
+var_dump($_POST);
 
 if ($password != '' && isValidMd5($password)) {
     
@@ -58,8 +60,8 @@ if ($password != '' && isValidMd5($password)) {
                     <tr id="row<?php print($key); ?>">
                         <td class="position_cell"><input type="text" class="input_short" id="position<?php print($key); ?>" name="position<?php print($key); ?>" value="<?php echo isset($_POST['position'.$key]) ? $_POST['position'.$key] : $aElement[0]; ?>"/></td>
                         <td class="name_cell"><input type="text" class="input_medium" id="name<?php print($key); ?>" name="name<?php print($key); ?>" value="<?php echo isset($_POST['name'.$key]) ? $_POST['name'.$key] : $aElement[2]; ?>"/></td>
-                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key); ?>" name="image_large<?php print($key); ?>" src="../fotos/zoom/<?php print($aElement[1]); ?>" onError="handleImageError(this);"/><input class="select_image_large" id="select_image_large<?php print($key); ?>" name="select_image_large<?php print($key); ?>" type="file" value="Examinar"/></td>
-                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key); ?>" name="image_medium<?php print($key); ?>" src="../fotos/<?php print($aElement[1]); ?>" onError="handleImageError(this);"/><input class="select_image_medium" id="select_image_medium<?php print($key); ?>" name="select_image_medium<?php print($key); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key); ?>" name="image_large<?php print($key); ?>" src="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotos/zoom/<?php print($aElement[1]); ?>" onError="handleImageError(this);"/><input class="select_image_large" id="select_image_large<?php print($key); ?>" name="select_image_large<?php print($key); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key); ?>" name="image_medium<?php print($key); ?>" src="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotos/<?php print($aElement[1]); ?>" onError="handleImageError(this);"/><input class="select_image_medium" id="select_image_medium<?php print($key); ?>" name="select_image_medium<?php print($key); ?>" type="file" value="Examinar"/></td>
                         <td class="photographer_cell"><input type="text" class="input_medium" id="photographer<?php print($key); ?>" name="photographer<?php print($key); ?>" value="<?php echo isset($_POST['photographer'.$key]) ? $_POST['photographer'.$key] : $aElement[3]; ?>"/></td>
                         <td class="text_cell"><textarea id="text<?php print($key); ?>" name="text<?php print($key); ?>" rows="6" cols="35"><?php echo isset($_POST['text'.$key]) ? $_POST['text'.$key] : $aElement[4]; ?></textarea></td>
                         <td class="id_cell"><input type="text" class="carousel_element_id" id="id<?php print($key); ?>" name="id<?php print($key); ?>" value="<?php echo isset($_POST['id'.$key]) ? $_POST['id'.$key] : $aElement[5]; ?>"/></td>
@@ -70,8 +72,8 @@ if ($password != '' && isValidMd5($password)) {
                     <tr id="row<?php print($key + 1); ?>">
                         <td class="position_cell"><input type="text" class="input_short" id="position<?php print($key + 1); ?>" name="position<?php print($key + 1); ?>" value=""/></td>
                         <td class="name_cell"><input type="text" class="input_medium" id="name<?php print($key + 1); ?>" name="name<?php print($key + 1); ?>" value=""/></td>
-                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key + 1); ?>" name="image_large<?php print($key + 1); ?>" src="../fotos/zoom/silueta.jpg"/><input class="select_image_large" id="select_image_large<?php print($key + 1); ?>" name="select_image_large<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
-                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key + 1); ?>" name="image_medium<?php print($key + 1); ?>" src="../fotos/silueta.jpg"/><input class="select_image_medium" id="select_image_medium<?php print($key + 1); ?>" name="select_image_medium<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key + 1); ?>" name="image_large<?php print($key + 1); ?>" src="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotos/zoom/silueta.jpg"/><input class="select_image_large" id="select_image_large<?php print($key + 1); ?>" name="select_image_large<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key + 1); ?>" name="image_medium<?php print($key + 1); ?>" src="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotos/silueta.jpg"/><input class="select_image_medium" id="select_image_medium<?php print($key + 1); ?>" name="select_image_medium<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
                         <td class="photographer_cell"><input type="text" class="input_medium" id="photographer<?php print($key + 1); ?>" name="photographer<?php print($key + 1); ?>" value=""/></td>
                         <td class="text_cell"><textarea id="text<?php print($key + 1); ?>" name="text<?php print($key + 1); ?>" rows="6" cols="35"></textarea></td>
                         <td class="id_cell"><input type="text" class="carousel_element_id" id="id<?php print($key + 1); ?>" name="id<?php print($key + 1); ?>" value=""/></td>

@@ -1,6 +1,6 @@
 <?php
 
-$baseUrl = $_SERVER['HTTP_HOST'];
+$baseUrl = "http://lab.rtve.es/test-los-goya-2015/alfombra-roja/";
 $twitterAccount = "raulevoluciona";
 
 function getCarouselData($getPublished = false)
@@ -10,9 +10,9 @@ function getCarouselData($getPublished = false)
     $aNameIndex = array();
     $aIdIndex = array();
     if (!$getPublished) {
-        $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
+        $dataPath = 'http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/data.csv';
     } else {
-        $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data-published.csv';
+        $dataPath = 'http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/data-published.csv';
     }
     $aLines = file( $dataPath );
 
@@ -169,7 +169,7 @@ function setCsvArray($data, $files) {
 
 function generateCsv($data, $delimiter = ',', $enclosure = '"') {
     
-       $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
+       $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/test-los-goya-2015/alfombra-roja/data.csv';
        $handle = fopen($dataPath, 'r+');
        @ftruncate($handle, 0);
        foreach ($data as $line) {
@@ -177,12 +177,16 @@ function generateCsv($data, $delimiter = ',', $enclosure = '"') {
        }
        fclose($handle);
        
+       $random = date_timestamp_get(date_create());
+       rename($dataPath, str_replace(".csv", $random.".csv",$dataPath));
+       copy(str_replace(".csv", $random.".csv",$dataPath), $dataPath);
+       chmod($dataPath,0777);
        return true;
 }
 
 function publishCsv () {
-    $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
-    $dataPublishedPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data-published.csv';
+    $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/test-los-goya-2015/alfombra-roja/data.csv';
+    $dataPublishedPath = $_SERVER["DOCUMENT_ROOT"] .'/test-los-goya-2015/alfombra-roja/data-published.csv';
     copy($dataPath, $dataPublishedPath);
 }
 
