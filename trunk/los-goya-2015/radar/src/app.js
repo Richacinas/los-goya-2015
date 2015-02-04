@@ -4133,6 +4133,9 @@ var gC = {
     muestraPopup: function(a) {
         var b, c = $("body").scrollTop(),
             d = ($(document).height(), $(document).width(), c - 200);
+            console.log(d);
+            console.log($(document).height());
+            console.log($(document).width());
         $("#bl-stream").find(".bl-pop").remove();
         var e = $(a.currentTarget),
             f = gC.getPost(e.data("id")),
@@ -4187,7 +4190,7 @@ var gC = {
             h.append('<hr class="orange_bar">');
             var k = '<div id="datos_user" style="width:100%;height:55px;margin-top:-20px;background:white">',
                 l = $(k);
-            f.usr_img && l.append("/imagenes/" == f.usr_img.substring(0, 10) ? '<img id="avatar_ig" src="http://img.irtve.es' + f.usr_img + '">' : '<img id="avatar_ig" src="' + f.usr_img + '">'), f.usr && l.append('<span class="username_ig">@' + f.usr + "</span"), h.append(l), f.text && h.append('<span class="description" style="margin-top:30px">' + f.text + "</span>"), f.link && (h.append('<a class="detalles" target="other" href=' + f.link + ">Detalles</a>"), h.find(".detalles").bind("click", function() {
+            f.usr_img && l.append("/imagenes/" == f.usr_img.substring(0, 10) ? '<img id="avatar_ig" src="http://img.irtve.es' + f.usr_img + '">' : '<img id="avatar_ig" src="' + f.usr_img + '">'), f.usr && l.append('<span class="username_ig">@' + f.usr + "</span"), h.append(l), f.text && h.append('<span class="description" style="padding-top:30px">' + f.text + "</span>"), f.link && (h.append('<a class="detalles" target="other" href=' + f.link + ">Detalles</a>"), h.find(".detalles").bind("click", function() {
                 _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "DETALLES_+TVE", f.id])
             }))
         } else if ("vn" == f.net) {
@@ -4234,21 +4237,21 @@ var gC = {
                 s = (gC.cache.$window.height(), $("#bl-stream").width()),
                 x = $("video#videoficha");
             if ("+t" == f.net) {
-                var y = 480,
-                    z = 270,
+                var y = "50%",
+                    z = "auto",
                     w = (s - y) / 2;
                 y >= r ? (y = r, z = x.height(), h.css({
-                    height: z + 235,
-                    width: y - 50,
-                    position: "absolute",
-                    right: "",
-                    left: "-10px"
-                })) : h.css({
-                    height: z + 155,
+                    height: z,
                     width: y,
                     position: "absolute",
                     right: "",
-                    left: w
+                    left: "25%"
+                })) : h.css({
+                    height: z,
+                    width: y,
+                    position: "absolute",
+                    right: "",
+                    left: "25%"
                 })
             } else {
                 var y = 640,
