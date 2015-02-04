@@ -659,7 +659,6 @@ margin: 0 auto 50px;
 }
 
 .bl-top-elm {
-    cursor: pointer;
     position: relative;
     width: 100%;
     height: auto;
@@ -731,6 +730,7 @@ margin: 0 auto 50px;
     font-family: 'RE45';
     cursor: pointer;
     margin-top: 15px;
+    display: none;
 }
 
 .bl-top-elm:hover .bl-top-text {
