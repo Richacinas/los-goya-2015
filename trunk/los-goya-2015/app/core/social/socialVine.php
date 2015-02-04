@@ -40,19 +40,31 @@ function getVine($query) {
     'img' => $result->data ->records[0]->thumbnailUrl,
     'link' => $query,
     'id' => $id,
-    'net' => 'vn');
-  if(isset($result->data ->records[0]->videoDashUrl)){
-    $data['video'] = $result->data ->records[0] ->videoDashUrl;
-  }
+    'net' => 'vn',
+    'video' => $result->data ->records[0] ->videoDashUrl);
 
-  if(isset($result->data ->records[0] ->comments ->records[0])){
-    $data['text'] = $result->data ->records[0] ->comments ->records[0] ->comment;
-    $data['usr'] = $result->data ->records[0] ->comments ->records[0] ->username;
-    $data['usr_img'] = $result->data ->records[0] ->comments ->records[0] ->user ->avatarUrl;
+  if(isset($result->data ->records[0] ->username)){
+    $data['usr'] = $result->data ->records[0] ->username;
   }
-  
+  else
+  {
+    $data['usr'] = "";
+  }
+  if(isset($result->data ->records[0] ->description)){
+    $data['text'] = $result->data ->records[0] ->description;
+  }
+  else
+  {
+    $data['text'] = "";
+  }
+  if(isset($result->data ->records[0] ->avatarUrl)){
+    $data['usr_img'] = $result->data ->records[0] ->avatarUrl;
+  }
+  else
+  {
+    $data['usr_img'] = "";
+  }
     return $data;
-  // }
 
 }
 
