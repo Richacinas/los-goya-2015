@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    position: fixed;
+    position: absolute;
     z-index: 4;
     max-width: 2545px;
     min-width: 960px;
