@@ -1,6 +1,6 @@
 <?php
 
-include '../_partials/utils.php';
+include '../partials/utils.php';
 $files = $_FILES;
 
 //Se guardan en sesión todos los valores presentes en el formulario
@@ -52,6 +52,7 @@ foreach ($files as $key => $values) {
         // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($values['tmp_name'], $target_file)) {
+                chmod($target_file,0777);
                 error_log(date('d/m/Y h:i:s') + "La imagen ". $target_file. " ha sido subida.\n", 3, "../php.log");
             } else {
                 error_log(date('d/m/Y h:i:s') + "Ha habido un error subiendo alguna de la/s imagen/es.\n", 3, "../php.log");
@@ -77,7 +78,7 @@ if ($uploadOk == 1 ) {
     $message = "Ha habido un error al subir la/s foto/s.";
 }
 
-header('Location: /los-goya-2015/alfombra-roja/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d&r='.$message);
+header('Location: /test-los-goya-2015/alfombra-roja/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d&r='.$message);
 exit();
 
 ?>
