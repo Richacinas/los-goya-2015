@@ -4277,12 +4277,20 @@ var gC = {
                 "undefined" != typeof d && "undefined" != typeof d[0] && $("#filtro-invitados").append("<option value=" + a + ">" + d[0] + "</option>")
             }
         }), $("#filtro-invitados").selectBox() && $("#filtro-invitados").selectBox("refresh");
-        $("#filtro-invitados option").size() - 1
+        $("#filtro-invitados option").size() - 1;
     },
     bindFiltro: function() {
         $("#filtro-invitados").selectBox(), $("#filtro-invitados").change(function() {
             gC.data.filter = parseInt($(this).val(), 10), gC.data.filter > -1 ? (gC.data.search = $(this).find("option:selected").html(), _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO", gC.data.search])) : (gC.data.search = "", _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "FILTRO", "Inicio"])), gC.restartDrawing(), gC.drawFixedElms(gC.data.ok.length, gC.cache.pageElms, !0);
             $(".enlace-goyas-en-las-redes:first").trigger("click");
+            if (parseInt($(this).val(), 10) > -1) 
+            {
+                $("#clearFilter").show();      
+            }
+            else
+            {
+                $("#clearFilter").hide();
+            }
         });
     },
     bindFavorite: function() {
@@ -4472,3 +4480,8 @@ labTools.fns = {
 }, $(document).ready(function() {
     return gC.init(), !1
 });/*, -1 != document.URL.indexOf("82.223.133.87") && (gC.data.dataFolder = gC.data.dataFloderPre), -1 != document.URL.indexOf("lab.rtve.es/los-goya-2015/radar") && (gC.data.dataFolder = gC.data.dataFloderPro), $(document).keydown(labTools.fns.keyboard.keyboardEvent);*/
+function clearFilter (){
+    $("#clearFilter").hide();
+    $("#filtro-invitados").selectBox("refresh");
+    $(".selectBox").trigger("change");
+}
