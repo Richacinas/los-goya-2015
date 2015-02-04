@@ -4064,6 +4064,7 @@ var gC = {
         			var twitterUsername = twitterUrlArray[twitterUrlArray.length - 1];
           			targetFavorite.find('a').show().attr('href', favoriteData['twitterUrl']).html('@'+twitterUsername);
         		}
+                targetFavorite.find('.filter-tweets').show();
           	});
           	if (topTen.length < 10) {
           		var leftIndex = 10;
