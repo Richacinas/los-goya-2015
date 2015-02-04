@@ -4481,7 +4481,5 @@ labTools.fns = {
     return gC.init(), !1
 });/*, -1 != document.URL.indexOf("82.223.133.87") && (gC.data.dataFolder = gC.data.dataFloderPre), -1 != document.URL.indexOf("lab.rtve.es/los-goya-2015/radar") && (gC.data.dataFolder = gC.data.dataFloderPro), $(document).keydown(labTools.fns.keyboard.keyboardEvent);*/
 function clearFilter (){
-    $("#clearFilter").hide();
-    $("#filtro-invitados").selectBox("refresh");
-    $(".selectBox").trigger("change");
+    location.reload();
 }
