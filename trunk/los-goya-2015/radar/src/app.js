@@ -4381,7 +4381,7 @@ var gC = {
                         b.hasClass(".bl-tl-elm") || (b = b.parents(".bl-tl-elm"));
                         c = b.data();
                     }
-                    if (c && c.time && c.value) {
+                    if (c && c.time && (c.value || c.value==0)) {
                         var d = c.value.toLocaleString() + '<br/><span class="white">Tuits a las ' + c.time.substring(4, 6) + ":" + c.time.substring(6, 8) + "</span>";
                         gC.tl.cache.$tlTtip.html(d)
                     }
