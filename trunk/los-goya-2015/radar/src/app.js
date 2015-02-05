@@ -4376,6 +4376,11 @@ var gC = {
                     var b = $(a.target);
                     b.hasClass(".bl-tl-elm") || (b = b.parents(".bl-tl-elm"));
                     var c = b.data();
+                    if (c == null) {
+                        b = $(a.target).children(0);
+                        b.hasClass(".bl-tl-elm") || (b = b.parents(".bl-tl-elm"));
+                        c = b.data();
+                    }
                     if (c && c.time && c.value) {
                         var d = c.value.toLocaleString() + '<br/><span class="white">Tuits a las ' + c.time.substring(4, 6) + ":" + c.time.substring(6, 8) + "</span>";
                         gC.tl.cache.$tlTtip.html(d)
