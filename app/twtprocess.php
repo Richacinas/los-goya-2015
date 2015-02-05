@@ -22,7 +22,6 @@ define('SITE_ROOT', dirname(__FILE__));
 
 // deshabilita limite de tiempo
 set_time_limit(0);
-session_start();
 
 
 // Ruta de los ficheros de funciones PHP que cargamos
@@ -66,6 +65,33 @@ $timeJSON           = $jsonSearchTerms_a["time"];         // Indica cuando se ha
 $tags               = $jsonSearchTerms_a["tags"];         // Tags a procesar
 $search             = $jsonSearchTerms_a["search"];       // Cadenas de busqueda a procesar
 $filter             = $jsonSearchTerms_a["filter"];       // Indica si el Filtro esta activo
+
+// Token de seguridad CSRF
+if (isset($_POST['token'])) {
+    $token['csrf_token'] = $_POST['token'];
+} else if (isset($_GET['token'])) {
+    $token['csrf_token'] = $_GET['token'];
+} else {
+    $token['csrf_token'] = $jsonSearchTerms_a["token"];       
+}
+
+
+
+session_start(); 
+
+require_once('core/class/NoCsrf.php');
+try
+{
+    // CSRF check, sobre el POST, en modo excepción, nunca expira, y en modo "una vez".
+    NoCSRF::check( 'csrf_token', $token, true, null, true );
+    // Si se llega a este punto, significa que las validaciones han resultado correctas
+}
+catch ( Exception $e )
+{
+    echo $e->getMessage();
+    exit();
+}
+
 
 if(isset($argv) && isset($argv[1])) {
   $method = $argv[1];
@@ -364,7 +390,7 @@ switch ($method) {
 
     // añade post de text
   case 'add-text':
-	initializaDatos();
+    initializaDatos();
     if(isset($_GET['json'])){
     	$twt = json_decode($_GET['json'], true);
       	$link = $twt['link'];
@@ -386,7 +412,6 @@ switch ($method) {
 
     // elimina un post
   case 'delete':
-
     initializaDatos();
 
     if(isset($_GET['json'])){
@@ -402,21 +427,13 @@ switch ($method) {
 
     break;
   case 'cleanData':
-    if (isset($_POST['csrf'])) {
-      $csrf = $_POST['csrf'];
-      $sessionCSRF = $_SESSION['csrf'];
-      if ($csrf === $sessionCSRF) {
-        $rightClean = cleanData();
-        if ($rightClean) {
-          print("<div style='color:green;'>-- Clean DONE --</div><br/>");
-          print("<a href='/los-goya-2015/radar/backoffice'><button><< OK! Volver</button></a>");
-        } else {
-          print("<div style='color:red;'>-- Clean ERROR --</div><br/>");
-          print("<a href='/los-goya-2015/radar/backoffice'><button><< Volver</button></a>");
-        }
-      }
+    $rightClean = cleanData();
+    if ($rightClean) {
+      print("<div style='color:green;'>-- Clean DONE --</div><br/>");
+      print("<a href='/los-goya-2015/radar/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d'><button><< OK! Volver</button></a>");
     } else {
-      print_r("NO ACTION POSSIBLE!");
+      print("<div style='color:red;'>-- Clean ERROR --</div><br/>");
+      print("<a href='/los-goya-2015/radar/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d'><button><< Volver</button></a>");
     }
     break;
   default:
