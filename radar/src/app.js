@@ -4407,7 +4407,7 @@ var gC = {
                         right: e - (a.pageX - d)
                     }, 300))
                 }).find(".bl-tl-media").bind("mouseenter", function() {
-                    var a = parseInt(gC.tl.data.media).toLocaleString() + '<br/><span class="white">tweets/minuto</span><span></span>';
+                    var a = parseInt(gC.tl.data.media).toLocaleString() + '<br/><span class="white">Tuits/Minuto</span><span></span>';
                     gC.tl.cache.$tlTtip.html(a).stop(!0, !0).animate({
                         right: 0
                     }, 800)
