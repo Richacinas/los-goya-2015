@@ -4434,14 +4434,14 @@ var gC = {
             if (b.length) b.css({
                 width: gC.tl.cache.elmWidth
             }).data("time", a).data("value", gC.tl.data.totals[a]).find(".bl-tl-elm-inn").animate({
-                height: gC.tl.cache.elmHeight * (gC.tl.data.totals[a] / gC.tl.data.maxVal)
+                height: (gC.tl.data.totals[a] === 0) ? 1 : gC.tl.cache.elmHeight * (gC.tl.data.totals[a] / gC.tl.data.maxVal)
             });
             else {
                 var c = $('<div class="bl-tl-elm bl-tl-' + a + '"><div class="bl-tl-elm-inn"></div></div>');
                 gC.tl.cache.$tlData.append(c), c.css({
                     width: gC.tl.cache.elmWidth
                 }).data("time", a).data("value", gC.tl.data.totals[a]).find(".bl-tl-elm-inn").animate({
-                    height: gC.tl.cache.elmHeight * (gC.tl.data.totals[a] / gC.tl.data.maxVal)
+                    height: (gC.tl.data.totals[a] === 0) ? 1 : gC.tl.cache.elmHeight * (gC.tl.data.totals[a] / gC.tl.data.maxVal)
                 })
             }
         },
@@ -4457,7 +4457,7 @@ var gC = {
                 a.stop(!1, !1).css({
                     width: gC.tl.cache.elmWidth
                 }).find(".bl-tl-elm-inn").css({
-                    height: gC.tl.cache.elmHeight * (gC.tl.data.totals[b] / gC.tl.data.maxVal)
+                    height: (gC.tl.data.totals[b] === 0) ? 1 : gC.tl.cache.elmHeight * (gC.tl.data.totals[b] / gC.tl.data.maxVal)
                 })
             })
         }
