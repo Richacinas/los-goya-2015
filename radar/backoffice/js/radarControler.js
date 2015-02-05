@@ -719,7 +719,12 @@
         };
         return false;
       }
-      $("#streaming").trigger("click");
+      //Solo se recarga el panel principal en caso de que estemos con backoffice recién abierto o bien Elementos enviados esté seleccionado.
+      if (($(".twt-list").length == 0) || ($(".twt-list h2").text() == "Envios procesados:")) {
+          if (($("#config-list").hasClass("config-elm-disable")) && ($("#config-streaming").hasClass("config-elm-disable"))) {
+              $("#streaming").trigger("click");
+          } 
+      }
     },
     processTimelineError: function(){
       console.log('la promesa falló, lalalalal lala');
