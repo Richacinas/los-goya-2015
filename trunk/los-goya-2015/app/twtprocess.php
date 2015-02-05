@@ -79,6 +79,11 @@ if(isset($argv) && isset($argv[1])) {
 
   // según el parámetro method haremos una cosa u otra;
 switch ($method) {
+  case 'completeGlobals':
+    $timeline = json_decode(file_get_contents($GLOBALS['totalsJson']),true);
+    $timelineGlobal = $timeline['global'];
+    completeTimelineWithEmptyMoments($timelineGlobal);
+  break;
     // fuerza a procesar 
   case 'refresh':
     initializaDatos();
@@ -696,11 +701,13 @@ function saveData(){
     $timeline['global'] = array();
   }
 
+  $timelineGlobal = completeTimelineWithEmptyMoments($timeline['global']);
+
   writeJson($GLOBALS['saveDataminute'], array(
     'data' => transformPosts($GLOBALS['data']['minute']), 
     'time' =>  $GLOBALS['currTime'], 
     'ended' => false,
-    'timeline' => $timeline['global'],
+    'timeline' => $timelineGlobal,
     'search' => $GLOBALS['search'],
     'filter' => $GLOBALS['filter'],
     'supercount' => $countFinal
@@ -711,7 +718,7 @@ function saveData(){
     'data' => transformPosts($GLOBALS['data']['all']), 
     'time' =>  $GLOBALS['currTime'], 
     'ended' => false,
-    'timeline' => $timeline['global'],
+    'timeline' => $timelineGlobal,
     'search' => $GLOBALS['search'],
     'filter' => $GLOBALS['filter'],
     'supercount' => $countFinal
@@ -726,6 +733,72 @@ function saveData(){
 
   $GLOBALS['data']['minute'] = array();
 
+}
+
+function completeTimelineWithEmptyMoments($timelineGlobal) {
+  $completedGlobals = array();
+  $firstTime = 0;
+  $lastTime = 0;
+  $i=0;
+  foreach ($timelineGlobal as $time=>$quantity) {
+    if ($i === 0){
+      $firstTime = $time;
+    } else if ($i === sizeof($timelineGlobal)-1) {
+      $lastTime = $time;
+    }
+    $i++;
+  }
+
+  $currentTime = $firstTime;
+  
+  $maxMinutes = 400;
+  $minute = 0;
+  while(strcmp($currentTime, $lastTime) !== 0) {
+    if ($minute >= $maxMinutes) {
+      break;
+    }
+    if (isset($timelineGlobal[$currentTime])) {
+      // Insert current existing time
+      $completedGlobals[$currentTime] = $timelineGlobal[$currentTime];
+    } else {
+      // Create current time if it does not exist
+      $completedGlobals[$currentTime] = 0;
+    }
+    $currentTime = nextCurrentTime($currentTime);
+    $minute++;
+  }
+  return $completedGlobals;
+}
+
+function nextCurrentTime($currentTime) {
+  if (substr($currentTime, -4, 4) === "2359") {
+    $month = substr($currentTime,0,2);
+    $dayInt = (int)(substr($currentTime,2,2))+1;
+    $day = numToString($dayInt);
+    $hour = "00";
+    $minute = "00";
+  } else if (substr($currentTime, -2, 2) === "59") {
+    $month = substr($currentTime,0,2);
+    $day = substr($currentTime,2,2);
+    $hourInt = (int)(substr($currentTime,4,2))+1;
+    $hour = numToString($hourInt);
+    $minute = "00";
+  } else {
+    $month = substr($currentTime,0,2);
+    $day = substr($currentTime,2,2);
+    $hour = substr($currentTime,4,2);
+    $minuteInt = (int)(substr($currentTime,6,2))+1;
+    $minute = numToString($minuteInt);
+  }
+  return $month.$day.$hour.$minute;
+}
+
+function numToString($num) {
+  if ($num < 10) {
+    return "0".$num;
+  } else {
+    return $num;
+  }
 }
 
   // cogemos el 

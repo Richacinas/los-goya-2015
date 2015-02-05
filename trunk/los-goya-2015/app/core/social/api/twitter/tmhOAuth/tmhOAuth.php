@@ -48,11 +48,17 @@ class tmhOAuthExample extends tmhOAuth {
       array(
 
         // change the values below to ones for your application
+        /* LAB ACCOUNT */
         'consumer_key'    => '7HjGMKVJHbdrmpkyIMQxQ',
         'consumer_secret' => 'xRXroO5ant6DIYYKFR92m9qfDZZgrLO9Lc10BWPHM',
         'token'           => '259677053-cvS8qULAQSWunpkg4Tyhn0DNwz8HkzfUeKfZ3sIl',
         'secret'          => 'CX7NYOBKiqDjr3S6CgJoLrKO2dnDEjaprBdJKsWcmog',
         'bearer'          => '3909221-oMATUFEK9FjYT4frFHFBBwvmaPrHB9LRWufa3omrs',
+        /* raulevoluciona ACCOUNT */
+        /*'consumer_key' => "mFVeLDipgToi9TyFR4NIrn7q2",
+        'consumer_secret' => "2VB6AbuU6qYV25dslll0OQwIu8JghGga1WOuzlJWvDOsmgSnFT",
+        'token' => "259333400-xJU6MZW2srmBNfpUUApolSLtarP8WvE0c22kwOfq",
+        'secret' => "vkcCQWOZSsk6ZyEXI6ElvXbKxZ9AB8AperADjsLfz2g40",*/
 
         'user_agent'      => 'tmhOAuth ' . parent::VERSION . ' Examples 0.1',
       ),

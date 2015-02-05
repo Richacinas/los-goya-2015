@@ -733,10 +733,6 @@ margin: 0 auto 50px;
     display: none;
 }
 
-.bl-top-elm:hover .bl-top-text {
-    bottom: 0;
-}
-
 .bl-top-elm h2 {
     padding-bottom: 7px;
 }
@@ -1417,22 +1413,22 @@ background: #75a5a0;
 
 @media (min-width:900px) {
     .bl-tabs-wrap .wk-col-l {
-        width: 77%;
-        margin: 0 14%;
+        width: 55%;
+        margin: 0 20%;
     }
 }
 
 @media (min-width:1200px) {
     .bl-tabs-wrap .wk-col-l {
-        width: 60%;
-        margin: 0 18%;
+        width: 40%;
+        margin: 0 28.5%;
     }
 }
 
 @media (min-width:1600px) {
     .bl-tabs-wrap .wk-col-l {
-        width: 45%;
-        margin: 0 26%;
+        width: 31%;
+        margin: 0 33%;
     }
 }
 
@@ -1440,7 +1436,7 @@ background: #75a5a0;
 /* END MENU MEDIAQUERIES */
 
 .selectBox-dropdown {
-    min-width: 245px;
+    min-width: 215px;
     position: relative;
     text-decoration: none;
     text-align: left;
@@ -1661,6 +1657,7 @@ h3.comingSoon span {
 }
 
 #clearFilter {
+    position: absolute;
     color: white;
     background-color: #75a5a0;
     border-color: white;

@@ -4133,9 +4133,6 @@ var gC = {
     muestraPopup: function(a) {
         var b, c = $("body").scrollTop(),
             d = ($(document).height(), $(document).width(), c - 200);
-            console.log(d);
-            console.log($(document).height());
-            console.log($(document).width());
         $("#bl-stream").find(".bl-pop").remove();
         var e = $(a.currentTarget),
             f = gC.getPost(e.data("id")),
@@ -4190,7 +4187,7 @@ var gC = {
             h.append('<hr class="orange_bar">');
             var k = '<div id="datos_user" style="width:100%;height:55px;margin-top:-20px;background:white">',
                 l = $(k);
-            f.usr_img && l.append("/imagenes/" == f.usr_img.substring(0, 10) ? '<img id="avatar_ig" src="http://img.irtve.es' + f.usr_img + '">' : '<img id="avatar_ig" src="' + f.usr_img + '">'), f.usr && l.append('<span class="username_ig">@' + f.usr + "</span"), h.append(l), f.text && h.append('<span class="description" style="padding-top:30px">' + f.text + "</span>"), f.link && (h.append('<a class="detalles" target="other" href=' + f.link + ">Detalles</a>"), h.find(".detalles").bind("click", function() {
+            f.usr_img && l.append("/imagenes/" == f.usr_img.substring(0, 10) ? '<img id="avatar_ig" src="http://img.irtve.es' + f.usr_img + '">' : '<img id="avatar_ig" src="' + f.usr_img + '">'), f.usr && l.append('<span class="username_ig">@' + f.usr + "</span"), h.append(l), f.text && h.append('<span class="description" style="margin-top:30px">' + f.text + "</span>"), f.link && (h.append('<a class="detalles" target="other" href=' + f.link + ">Detalles</a>"), h.find(".detalles").bind("click", function() {
                 _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "DETALLES_+TVE", f.id])
             }))
         } else if ("vn" == f.net) {
@@ -4237,21 +4234,21 @@ var gC = {
                 s = (gC.cache.$window.height(), $("#bl-stream").width()),
                 x = $("video#videoficha");
             if ("+t" == f.net) {
-                var y = "50%",
-                    z = "auto",
+                var y = 480,
+                    z = 270,
                     w = (s - y) / 2;
                 y >= r ? (y = r, z = x.height(), h.css({
-                    height: z,
-                    width: y,
+                    height: z + 235,
+                    width: y - 50,
                     position: "absolute",
                     right: "",
-                    left: "25%"
+                    left: "-10px"
                 })) : h.css({
-                    height: z,
+                    height: z + 155,
                     width: y,
                     position: "absolute",
                     right: "",
-                    left: "25%"
+                    left: w
                 })
             } else {
                 var y = 640,
@@ -4274,7 +4271,7 @@ var gC = {
         }
     },
     processFilter: function(a, b) {
-        $("#filtro-invitados").empty().append('<option value="-1">Filtrar por invitados</option>'), $.each(a, function(a, c) {
+        $("#filtro-invitados").empty().append('<option value="-1">Filtrar por </option>'), $.each(a, function(a, c) {
             if (labTools.utils.parseToBoolean(b[a])) {
                 var d = c.split(", ");
                 "undefined" != typeof d && "undefined" != typeof d[0] && $("#filtro-invitados").append("<option value=" + a + ">" + d[0] + "</option>")
@@ -4311,9 +4308,9 @@ var gC = {
             var filterButtonHeight = $(this).find('button.filter-tweets:first').height();
             var centerBlockHeight = parseInt(nameHeight) + parseInt(tweetsHeight) + parseInt(filterButtonHeight);
             var blPadding = ($(blTopElement).height()-centerBlockHeight)/2;
-            $(this).find(".bl-top-text").css('padding-top', blPadding+"px");
+            $(this).find(".bl-top-text").css({'padding-top': blPadding+"px", 'bottom':'0'});
         }).on("mouseleave", function() {
-            $(this).find('.bl-top-text').css('padding-top','10px');
+            $(this).find('.bl-top-text').attr("style", "").css('padding-top','10px');
         });
     },
     getActorData: function(a) {
