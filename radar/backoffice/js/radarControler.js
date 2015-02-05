@@ -138,10 +138,11 @@
 
         if ( confirm("¿Estas seguro que quieres reiniciar el evento?")) {
 
-          var url = radarControler.settings.twtprocessor + "?method=wipeout";
+          var url           = radarControler.settings.twtprocessor + "?method=wipeout";
+          var token         = $('#csrf_token').val();
 
           // Realizamos el metodo POST pasandole el JSON con los datos
-          $.post(url, {}, function(data) {  
+          $.post(url, {token: token}, function(data) {  
             
             console.log("Reiniciando");
             $('#bl-sidebar-list, #bl-sidebar-list-stream').html('');
@@ -251,6 +252,7 @@
           var tags          = $("input[name=tags]",form).val();
           var search        = $('input[name^="search"]');
           var filter        = $('input[name^="filter"]');
+          var token         = $('#csrf_token').val();
 
           var url           = form.attr("action");
 
@@ -282,7 +284,7 @@
           }          
 
           // Realizamos el metodo POST pasandole el JSON con los datos
-          $.post(url, {tags:tags, search: searchString, filter: filterString}, function(data) {
+          $.post(url, {tags:tags, search: searchString, filter: filterString, token: token}, function(data) {
             console.log("done");
             $("#mensajeTags").html("Cambios realizados");
           });
@@ -421,17 +423,19 @@
           } else if($this.hasClass('wipeout')){
             method = 'delete';
           }
+          var token = $('#csrf_token').val();
 
           var request = $.ajax({
             timeout: 10000,
             type: "GET",
             url: radarControler.settings.twtprocessor,
             data: {
-              'method': method,
-              'json': JSON.stringify(datos),
-              'tag': query,
-              'time': time,
-              'id' : id
+              'method'  : method,
+              'json'    : JSON.stringify(datos),
+              'tag'     : query,
+              'time'    : time,
+              'id'      : id,
+              'token'   : token
             },                        
           }).done( function(data, status) {
               if (method = 'delete' && $wrap.hasClass('twt-wipe') && status === "success"){
@@ -500,15 +504,19 @@
         }
 
         // Guardamos el objeto para el procesamiento posterior
-        var $that = $("#paste-url");
+        var $that   = $("#paste-url");
+        // También se guarda el token para comprobación en destino
+        var token   = $('#csrf_token').val();
 
         // Procesamos la url
         $.ajax( radarControler.settings.twtprocessor, {
           data: {
-            'method': 'check',
-            'link': link,
-            'type': type,
-            'tag': tag
+            'method'    : 'check',
+            'link'      : link,
+            'type'      : type,
+            'tag'       : tag,
+            'token'     : token
+            
           },
           success: function(data, status){
             console.log(data);
@@ -568,13 +576,16 @@
               var newOrderElemsJSON = JSON.stringify(newOrderElems);
 
               var method = 'move';
+              var token  = $('#csrf_token').val();
               var request = $.ajax({
                 timeout: 10000,
                 type: "GET",
                 url: radarControler.settings.twtprocessor,
                 data: {
-                  'method': method,
-                  'newOrderElems' : newOrderElemsJSON
+                  'method'          : method,
+                  'newOrderElems'   : newOrderElemsJSON,
+                  'token'           : token
+                  
                 },                        
               }).done( function(data, status) {
                 console.log("MoveItems update: ");
