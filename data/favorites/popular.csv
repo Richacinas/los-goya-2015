@@ -1,16 +1,16 @@
 id;name;image;search;twitter;twitter2;instagram
 1;Alberto Rodríguez;alberto-rodriguez.jpg;albertorodriguez;https://twitter.com/777albertor;;
-2;Carlos Vermut;carlos-vermut.jpg;CarlosVermut,tema;https://twitter.com/magicalgirlfilm;;
+2;Carlos Vermut;carlos-vermut.jpg;CarlosVermut;https://twitter.com/magicalgirlfilm;;
 3;Daniel Monzón;daniel-monzon.jpg;DanielMonzon;https://twitter.com/elnino_pelicula;;
 4;Damián Szifrón;damian-szifron.jpg;;https://twitter.com/DamianSzifron;;
-5;Carlos Marques-Marcet;carlos-marques-marcet.jpg;;;;
+5;Carlos Marques-Marcet;carlos-marques-marcet;;;;
 6;Beatriz Sanchís;beatriz-sanchis.jpg;;https://twitter.com/beatriz_sanchis;;
 7;Juanfer Andrés y Esteban Roel;juanfer-esteban.jpg;;https://twitter.com/juanferandres ;https://twitter.com/estebanroel;
 8;Curro Sánchez Varela;curro-sanchez-varela.jpg;;;;
-9;Javier Gutiérrez;javier-gutierrez.jpg;;https://twitter.com/javiergutialva;;
+9;Javier Gutiérrez;javier-gutierrez;;https://twitter.com/javiergutialva;;
 10;Raúl Arévalo;raul-arevalo.jpg;Raúl Arévalo;https://twitter.com/RaulArevaloZ;;
-11;Luis Bermejo;luis-bermejo.jpg;;https://twitter.com/bermejoluis;;
-12;Ricardo Darín;ricardo-darin.jpg;Rdarin;https://twitter.com/RicardoDarinOk;;
+11;Luis Bermejo;luis-bermejo;;https://twitter.com/bermejoluis;;
+12;Ricardo Darín;ricardo-darin;Rdarin;https://twitter.com/RicardoDarinOk;;
 13;José Sacristán;jose-sacristan.jpg;;;;
 14;Eduard Fernández;eduard-fernandez.jpg;;;;
 15;Karra Elejalde;karra-elejalde.jpg;;;;
@@ -108,10 +108,10 @@ id;name;image;search;twitter;twitter2;instagram
 107;David Delfin;;David Delfin, davidelfin_co;https://twitter.com/davidelfin_co;;http://instagram.com/davidelfin_co
 108;Pelayo Díaz;;Pelayo Díaz, princepelayo;https://twitter.com/princepelayo;;http://instagram.com/princepelayo
 109;Bimba Bosé;;Bimba Bosé, bimbasecas;https://twitter.com/bimbasecas;;http://instagram.com/bimbasecas
-110;Belén Rueda;belen-rueda.jpg;Belén Rueda;;;
-111;Alejandro Amenábar;alejandro-amenabar.jpg;Alejandro Amenábar;;;
-112;Aída Folch;aida-folch.jpg;Aída Folch, AidaFolch1;https://twitter.com/AidaFolch1;;http://instagram.com/aidafolch
-113;Marisa Paredes;marisa-paredes.jpg;Marisa Paredes;;;
+110;Belén Rueda;belen-rueda;Belén Rueda;;;
+111;Alejandro Amenábar;alejandro-amenabar;Alejandro Amenábar;;;
+112;Aída Folch;aida-folch;Aída Folch, AidaFolch1;https://twitter.com/AidaFolch1;;http://instagram.com/aidafolch
+113;Marisa Paredes;marisa-paredes;Marisa Paredes;;;
 114;Mar Saura;mar-saura.jpg;Mar Saura, marsaura;https://twitter.com/marsaura;;http://instagram.com/marsaura
 115;Candela Peña;candela-pena.jpg;Candela Peña;;;
 116;Carlos Areces;carlos-areces.jpg;Carlos Areces;;;
@@ -153,13 +153,13 @@ id;name;image;search;twitter;twitter2;instagram
 152;Kira Miró;kira-miro.jpg;Kira Miró, KiraMiro;https://twitter.com/KiraMiro;;http://instagram.com/kiramiro
 153;Tristán Ulloa;tristan-ulloa.jpg;Tristán Ulloa, TrisUlloa;https://twitter.com/TrisUlloa;;
 154;José Corbacho;jose-corbacho.jpg;José Corbacho, josecorbacho;https://twitter.com/josecorbacho;;
-155;Estrella Morente;estrella-morente.jpg;Estrella Morente, EstrellaMorente;https://twitter.com/EstrellaMorente;;
+155;Estrella Morente;estrella-morente;Estrella Morente, EstrellaMorente;https://twitter.com/EstrellaMorente;;
 156;Jorge Drexler;;Jorge Drexler, drexlerjorge;https://twitter.com/drexlerjorge;;
 157;Cayetana Guillén Cuervo;cayetana-guillen.jpg;Cayetana Guillén Cuervo, cayetanagc;https://twitter.com/cayetanagc;;
 158;Rodrigo Cortés;rodrigo-cortes.jpg;Rodrigo Cortés, rodrigocor7es;https://twitter.com/rodrigocor7es;;
 159;Fernando Guillén Cuervo;;Fernando Guillén Cuervo, _FernandoGC_;https://twitter.com/_FernandoGC_;;
 160;Ana Millán;ana-millan.jpg;Ana Millán, _ANAMILAN_;https://twitter.com/_ANAMILAN_;;
-161;Verónica Sánchez;veronica-sanchez.jpg;Verónica Sánchez, Sanchez_Ver;https://twitter.com/Sanchez_Ver;;
+161;Verónica Sánchez;veronica-sanchez;Verónica Sánchez, Sanchez_Ver;https://twitter.com/Sanchez_Ver;;
 162;Montxo Armendariz;;Montxo Armendariz, montxoarmendari;https://twitter.com/montxoarmendari;;
 163;David Bustamente;;David Bustamente, David_Busta;https://twitter.com/David_Busta;;http://instagram.com/davibusta
 164;Boris Izaguirre;;Boris Izaguirre, Borisizaguirre;https://twitter.com/Borisizaguirre;;
@@ -208,3 +208,48 @@ id;name;image;search;twitter;twitter2;instagram
 207;David Delfin;;davidelfin_co;https://twitter.com/davidelfin_co;;http://instagram.com/davidelfin_co
 208;Ana Locking;;AnaLocking;https://twitter.com/AnaLocking;;http://instagram.com/AnaLocking
 209;DevotayLomba;;devotaylomba;https://twitter.com/devotaylomba;;
+210;Borja Cobeaga;;;https://twitter.com/borjacobeaga;;
+211;Carles Francino;;;https://twitter.com/carles_francino;;
+212;Adrian Rodriguez;;;https://twitter.com/adrirodriguez8;;
+213;Begoña Maestre;;;https://twitter.com/BegonaMaestre_;;
+214;Sr Paco Tomás;;;https://twitter.com/srpacotomas;;http://instagram.com/p/yCwbZ4R_hw/
+215;Beatriz Peñalver;;;https://twitter.com/bepenalver;;http://instagram.com/bepenalver
+216;Javier Reyes (peluquero);;;;;http://instagram.com/javierreyes1/
+217;Lolita;;Lolita Flores;https://twitter.com/sarandonga55;;
+218;Fran Perea;;;https://twitter.com/frnperea;;
+219;miguel poveda;;Poveda;https://twitter.com/MPOVEDAOficial;;
+220;Angeles Gonzalez Sinde;;Sinde;https://twitter.com/angelesgsr;;
+221;Marta Hazas;;;https://twitter.com/Martahazas;;http://instagram.com/martahazas/
+222;Daniel Guzman;;;https://twitter.com/_DaniGuzman_;;
+223;Judith Colell;;;https://twitter.com/ColellJudith;;
+224;Hiba Abouk;;;https://twitter.com/HibaAbouk;;
+225;Celia Freijeiro;;;https://twitter.com/CeliaFreijeiro;;http://instagram.com/celiafreijeiro/
+226;Blanca Romero;;;https://twitter.com/BlancaromeroE;;http://instagram.com/blancaromeroe/
+227;Clara Lago;;;https://twitter.com/ClaraLago1;;
+228;Adriana Ozores;;;https://twitter.com/LorraineSharp88;;
+229;El Langui;;;https://twitter.com/Langui_Oficial;;
+230;Ernesto Alterio;;;https://twitter.com/YoAlter;;
+231;José Luis Cuerda;;;https://twitter.com/cuerda1936;;
+232;Vogue España;;;https://twitter.com/VogueSpain;;http://instagram.com/voguespain
+233;Vanity Fair;;;https://twitter.com/VanityFairSpain;;http://instagram.com/VanityFairSpain
+234;Elle España;;;https://twitter.com/elle_es;;
+235;Telva;;;https://twitter.com/telva;;http://instagram.com/Telva
+236;Yodona;;;https://twitter.com/yo_dona;;http://instagram.com/Yodona
+237;Ismael Recio;;;https://twitter.com/enbabia;;
+238;Cosmopolitan;;;https://twitter.com/Cosmopolitan_es;;http://instagram.com/Cosmopolitan
+239;Glamour España;;;https://twitter.com/GlamourSpain;;http://instagram.com/GlamourSpain
+240;Fele Martínez;;;https://twitter.com/felemanypon;;
+241;Pablo Carbonell;;;https://twitter.com/Carbonellsg;;
+242;Carlos Santos;;;https://twitter.com/carlos_santos_r;;
+243;Paco Tous;;;https://twitter.com/pacotous;;
+244;Antonio Zabalburu;;;https://twitter.com/A_Zabalburu;;
+245;Diana Palazón;;;https://twitter.com/PalazonDiana;;http://instagram.com/impalazon/
+246;Luis Callejo;;;https://twitter.com/Luis_Callejo;;
+247;William Miller;;;https://twitter.com/williammiller5;;
+248;Irene Visedo;;;https://twitter.com/ivisedo;;
+249;Pablo Derqui;;;https://twitter.com/PabloDerqui;;
+250;Lujan Argüelles;;;https://twitter.com/LUJAN_AR;;
+251;Nathalie Pozas;;;https://twitter.com/PozaNathalie;;
+252;Premios Feroz;;;https://twitter.com/PremiosFeroz;;
+253;MAS TVE;;;https://twitter.com/mas_TVE;;
+254;GoyArggg;;;https://twitter.com/GoyArggg;;

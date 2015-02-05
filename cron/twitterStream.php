@@ -82,6 +82,7 @@ if(!$subtotals) { // si no hay subtotales generamos el array
 }
 
   // llamada al Stream!!
+file_put_contents(SITE_ROOT.'/../log/twitterStream.log', "Twitter Stream: Create Connection with ".implode(',', $tags)."<br/>", FILE_APPEND);
 $code = $tmhOAuth->streaming_request(
   'GET',
   'https://stream.twitter.com/1.1/statuses/filter.json',
@@ -99,6 +100,7 @@ function isTagInTweet($tweet, $text) {
 
   // callback que se ejecuta para cada tweet que nos llega
 function my_streaming_callback($data, $length, $metrics) {
+  file_put_contents(SITE_ROOT.'/../log/twitterStream.log', "Stream callback...<br/>", FILE_APPEND);
 
   $subtotals    = &$GLOBALS['subtotals'];
   $time         = date("mdHi");

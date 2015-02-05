@@ -38,6 +38,15 @@ require_once('api/twitter/TwitterAPIExchange.php');
 function getTwitterSettings() {
 
   /** Set access tokens here - see: https://dev.twitter.com/apps/ **/
+  /* raulevoluciona ACCOUNT*/
+  /*return array(
+      'oauth_access_token' => "259333400-xJU6MZW2srmBNfpUUApolSLtarP8WvE0c22kwOfq",
+      'oauth_access_token_secret' => "vkcCQWOZSsk6ZyEXI6ElvXbKxZ9AB8AperADjsLfz2g40",
+      'consumer_key' => "mFVeLDipgToi9TyFR4NIrn7q2",
+      'consumer_secret' => "2VB6AbuU6qYV25dslll0OQwIu8JghGga1WOuzlJWvDOsmgSnFT"
+      //,'bearer'          => '3909221-oMATUFEK9FjYT4frFHFBBwvmaPrHB9LRWufa3omrs'
+  );*/
+  /* LAB ACCOUNT */
   return array(
       'oauth_access_token' => "2306537383-gzz6KIq0I1jI9lLWXMOtl8HEEyDszGNuVqqf55A",
       'oauth_access_token_secret' => "frKRCNB8S9lRpxuh2CG1GHRZRqtEStvjbIt8b9MmHoRgP",

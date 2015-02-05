@@ -335,6 +335,12 @@
             $select.find('option').remove();
             $select.append('<option value="-1">Untagged</option>');
 
+            json["search"].sort(function SortByName(a, b){
+              var aName = a.toLowerCase();
+              var bName = b.toLowerCase(); 
+              return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+            });
+
             $.each(json["search"], function(posicion, elemento){
 
               $select.append('<option value="'+posicion+'">'+elemento.split(',')[0]+'</option>');
