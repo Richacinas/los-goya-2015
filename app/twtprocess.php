@@ -75,22 +75,8 @@ if (isset($_POST['token'])) {
     $token['csrf_token'] = $jsonSearchTerms_a["token"];       
 }
 
-
-
 session_start(); 
-
 require_once('core/class/NoCsrf.php');
-try
-{
-    // CSRF check, sobre el POST, en modo excepción, nunca expira, y en modo "una vez".
-    NoCSRF::check( 'csrf_token', $token, true, null, true );
-    // Si se llega a este punto, significa que las validaciones han resultado correctas
-}
-catch ( Exception $e )
-{
-    echo $e->getMessage();
-    exit();
-}
 
 
 if(isset($argv) && isset($argv[1])) {
@@ -119,7 +105,7 @@ switch ($method) {
 
     // actualiza los terminos de busqueda
   case 'update':
-
+    checkToken($token);      
     initializaDatos();
 
     // Actualizamos los valores
@@ -136,6 +122,7 @@ switch ($method) {
 
     // borra un elemento
   case 'delete':
+    checkToken($token);
     initializaDatos();
 
     $id = $_GET['id'];
@@ -171,7 +158,7 @@ switch ($method) {
     break;
     // checkea links
   case 'check':
-
+    checkToken($token);
     if(!isset($_GET['link']) || !isset($_GET['type']) || !isset($_GET['tag'])) die('error en los parámetros recibidos');
 
       // cargamos datos de tweets
@@ -334,6 +321,7 @@ switch ($method) {
   break;
   // mueve un post de posicion
   case 'move':
+    checkToken($token);
     initializaDatos();
 
     $newOrderElems = $_GET['newOrderElems'];
@@ -346,7 +334,9 @@ switch ($method) {
   break;
     // añade post de imagen grande
   case 'add-big':
+    checkToken($token);
     initializaDatos();
+    
     if(isset($_GET['json'])){
     	$twt = json_decode($_GET['json'], true);
       	$link = $twt['link'];
@@ -368,7 +358,9 @@ switch ($method) {
 
     // añade post de imagen grande
   case 'add-small':
-	initializaDatos();
+    checkToken($token);
+    initializaDatos();
+    
     if(isset($_GET['json'])){
     	$twt = json_decode($_GET['json'], true);
       	$link = $twt['link'];
@@ -390,7 +382,9 @@ switch ($method) {
 
     // añade post de text
   case 'add-text':
+    checkToken($token);
     initializaDatos();
+    
     if(isset($_GET['json'])){
     	$twt = json_decode($_GET['json'], true);
       	$link = $twt['link'];
@@ -412,6 +406,7 @@ switch ($method) {
 
     // elimina un post
   case 'delete':
+    checkToken($token);
     initializaDatos();
 
     if(isset($_GET['json'])){
@@ -427,6 +422,8 @@ switch ($method) {
 
     break;
   case 'cleanData':
+    checkToken($token);
+      
     $rightClean = cleanData();
     if ($rightClean) {
       print("<div style='color:green;'>-- Clean DONE --</div><br/>");
@@ -885,4 +882,18 @@ function returnJson($array){
   header('Content-type: text/json');
   echo json_encode($array);
   return;
+}
+
+function checkToken($token) {
+    try
+    {
+        // CSRF check, sobre el POST, en modo excepción, nunca expira, y en modo "una vez".
+        NoCSRF::check( 'csrf_token', $token, true, null, true );
+        // Si se llega a este punto, significa que las validaciones han resultado correctas
+    }
+    catch ( Exception $e )
+    {
+        echo $e->getMessage();
+        exit();
+    }
 }
