@@ -3,6 +3,7 @@
 $tags 		= $_POST["tags"];
 $search 	= json_decode($_POST["search"]);
 $filter 	= json_decode($_POST["filter"]);
+$token          = $_POST["token"];
 
 /*
 
@@ -39,7 +40,8 @@ $array = array(
   'time' => $date,
   'tags' => explode(", ", $tags),
   'search' => array_filter($search),
-  'filter' => $filter
+  'filter' => $filter,
+  'token' => $token
 );
 
 // Codificamos el array en forma de JSON
