@@ -4052,7 +4052,7 @@ var gC = {
        		var topTen = gC.orderTopTen(data);
           	$.each(topTen, function(index, favorite) {
           		var favoriteId = favorite.id;
-          		var favoriteData = gC.data.favorites[favoriteId];
+          		var favoriteData = gC.data.favorites[favoriteId - 1];
           		var favoriteTotal = favorite.total;
           		var targetFavorite = $(favorites[index]);
           		targetFavorite.find('img').attr('src', './fotos-personajes/' + favoriteData['image']);
@@ -4108,7 +4108,7 @@ var gC = {
     			dataByTotal.push(favorite);
     		} else {
     			$.each(dataByTotal, function(j, topElem) {
-    				if (j === dataByTotal.length-1) {
+    				if ((j === dataByTotal.length-1) && (j != 0)) {
     					// Last elem
     					dataByTotal.push(favorite);
     				} else {
