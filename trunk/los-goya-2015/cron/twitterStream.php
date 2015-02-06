@@ -82,7 +82,7 @@ if(!$subtotals) { // si no hay subtotales generamos el array
 }
 
   // llamada al Stream!!
-file_put_contents(SITE_ROOT.'/../log/twitterStream.log', "Twitter Stream: Create Connection with ".implode(',', $tags)."<br/>", FILE_APPEND);
+file_put_contents(SITE_ROOT.'/../log/twitterStream.log', date("d/m/Y H:i:s")." Twitter Stream: Create Connection with ".implode(',', $tags)."\n", FILE_APPEND);
 $code = $tmhOAuth->streaming_request(
   'GET',
   'https://stream.twitter.com/1.1/statuses/filter.json',
@@ -100,7 +100,7 @@ function isTagInTweet($tweet, $text) {
 
   // callback que se ejecuta para cada tweet que nos llega
 function my_streaming_callback($data, $length, $metrics) {
-  file_put_contents(SITE_ROOT.'/../log/twitterStream.log', "Stream callback...<br/>", FILE_APPEND);
+  file_put_contents(SITE_ROOT.'/../log/twitterStream.log', date("d/m/Y H:i:s")." Stream callback... \n", FILE_APPEND);
 
   $subtotals    = &$GLOBALS['subtotals'];
   $time         = date("mdHi");
@@ -109,9 +109,10 @@ function my_streaming_callback($data, $length, $metrics) {
   $datum        = &$GLOBALS['data'];
   $users        = &$GLOBALS['data']['users'];
 
+  file_put_contents(SITE_ROOT.'/../log/twitterStream.log', date("d/m/Y H:i:s")." Se comprueba \$time != \$GLOBALS['currTime'] , valores = ".$time. " != ".$GLOBALS['currTime']."\n", FILE_APPEND);
   // código a ejecutar una si estamos en un MINUTO NUEVO (osea que por lo menos se ejecute una vez al minuto)
   if($time != $GLOBALS['currTime']) {
-
+    file_put_contents(SITE_ROOT.'/../log/twitterStream.log', date("d/m/Y H:i:s")." Entramos en IF. Minuto nuevo. \n", FILE_APPEND);
       // reiniciamos timestamp
     $GLOBALS['currTime'] = $time;
 
@@ -119,8 +120,10 @@ function my_streaming_callback($data, $length, $metrics) {
     $jsonSearchTerms_aux_a = json_decode(file_get_contents($GLOBALS['file_SearchTerms']), true);
     $timeJSON_aux = $jsonSearchTerms_aux_a["time"];
 
+    file_put_contents(SITE_ROOT.'/../log/twitterStream.log', date("d/m/Y H:i:s")." Se comprueba \$timeJSON_aux != \$GLOBALS['timeJSON'] \n", FILE_APPEND);
         // han cambiado los terminos de búsqueda? -> los reemplazamos
     if ( $timeJSON_aux != $GLOBALS['timeJSON'] ) {
+        file_put_contents(SITE_ROOT.'/../log/twitterStream.log', date("d/m/Y H:i:s")." Entramos en IF. Han cambiado términos de búsqueda \n", FILE_APPEND);
         // guardamos para la próxima
       $GLOBALS['timeJSON'] = $timeJSON_aux;
 
@@ -131,6 +134,7 @@ function my_streaming_callback($data, $length, $metrics) {
       if($GLOBALS['logging']) echo PHP_EOL.'Se generaron nuevos terminos de busqueda '.PHP_EOL;
     }
 
+    file_put_contents(SITE_ROOT.'/../log/twitterStream.log', date("d/m/Y H:i:s")." Se comprueba isset(\$datum['search']). \n", FILE_APPEND);
     if(isset($datum['search'])) { // si no hay datos en $datum searh, no hay ningún post, por lo que no escribimos
 
         // log de archivos procesados (timeline.json)
@@ -138,6 +142,7 @@ function my_streaming_callback($data, $length, $metrics) {
       array_push($log, $time);
 
       if($GLOBALS['logging']) echo PHP_EOL.'escrito '.$time.'.json'.PHP_EOL;
+      file_put_contents(SITE_ROOT.'/../log/twitterStream.log', date("d/m/Y H:i:s")." Entramos en IF. Se escriben ficheros\n", FILE_APPEND);
 
         // escribimos los archivos
       writeJson($GLOBALS['dataFolder'] . $time . '.json', $datum);
