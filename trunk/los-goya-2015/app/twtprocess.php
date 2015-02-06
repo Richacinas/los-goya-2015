@@ -524,7 +524,7 @@ function cleanSavedPostsData() {
 function cleanPopularData() {
   global $favoritesFolder;
   // clean /data/favorites/favorites-appearances.json with an empty array []
-    writeJson($favoritesFolder.'favorites-appearances.json', array());
+    copy($favoritesFolder.'favorites-appearances-reset.json', $favoritesFolder.'favorites-appearances.json');
     print('Limpiando '.$favoritesFolder.'favorites-appearances.json ...<br/>');
 }
 function setPermissionsToDataFiles() {
