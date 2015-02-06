@@ -2329,7 +2329,7 @@ if (function(a, b) {
                 return this.domManip(arguments, function(a) {
                     if (1 === this.nodeType || 11 === this.nodeType || 9 === this.nodeType) {
                         var b = o(this, a);
-                        b.appendChild(a)
+                        b.appendChild(a);
                     }
                 })
             },
@@ -4485,7 +4485,26 @@ labTools.fns = {
     }
 }, $(document).ready(function() {
     return gC.init(), !1
-});/*, -1 != document.URL.indexOf("82.223.133.87") && (gC.data.dataFolder = gC.data.dataFloderPre), -1 != document.URL.indexOf("lab.rtve.es/los-goya-2015/radar") && (gC.data.dataFolder = gC.data.dataFloderPro), $(document).keydown(labTools.fns.keyboard.keyboardEvent);*/
+}),$(window).load(function() {
+    //Mostrar solo los tag que esstán definidos desde el backoffice
+    $("#filtro-menu").click(function(){
+        $.getJSON('final/total.json', function(fileTotal){
+            var comprobarTag;
+                $.each($(".selectBox-dropdown-menu li"),function(i, val){    
+                    comprobarTag=$(this);
+                    $.each(fileTotal.data, function(i, elemento){
+                        if (val.textContent!==elemento.tags[0])
+                        {
+                            comprobarTag.hide();
+                        }
+                });
+            });
+        });
+    });
+});
+
+
+;/*, -1 != document.URL.indexOf("82.223.133.87") && (gC.data.dataFolder = gC.data.dataFloderPre), -1 != document.URL.indexOf("lab.rtve.es/los-goya-2015/radar") && (gC.data.dataFolder = gC.data.dataFloderPro), $(document).keydown(labTools.fns.keyboard.keyboardEvent);*/
 function clearFilter (){
     location.reload();
 }
