@@ -4285,7 +4285,8 @@ var gC = {
             $(".enlace-goyas-en-las-redes:first").trigger("click");
             if (parseInt($(this).val(), 10) > -1) 
             {
-                $("#clearFilter").show();      
+                $("#clearFilter").show();
+                $(".selectBox-dropdown-menu li:first").hide();
             }
             else
             {
