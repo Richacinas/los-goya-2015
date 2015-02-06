@@ -1,7 +1,22 @@
 <?php
+session_start();
 
+require_once('../../app/core/class/NoCsrf.php');
 include '../partials/utils.php';
 $files = $_FILES;
+
+try
+{
+    // CSRF check, sobre el POST, en modo excepción, nunca expira, y en modo "una vez".
+    NoCSRF::check( 'csrf_token', $_POST, true, null, true );
+    // Si se llega a este punto, significa que las validaciones han resultado correctas
+}
+catch ( Exception $e )
+{
+    echo $e->getMessage();
+    exit();
+}
+
 
 //Se guardan en sesión todos los valores presentes en el formulario
 //if( $_POST != null ){
@@ -78,7 +93,7 @@ if ($uploadOk == 1 ) {
     $message = "Ha habido un error al subir la/s foto/s.";
 }
 
-header('Location: /test-los-goya-2015/alfombra-roja/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d&r='.$message);
+header('Location: /los-goya-2015/alfombra-roja/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d&r='.$message);
 exit();
 
 ?>
