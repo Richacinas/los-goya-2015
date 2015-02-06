@@ -1,17 +1,21 @@
 <?php
+session_start();
 
+require_once('../../app/core/class/NoCsrf.php');
 include '../partials/utils.php';
+
 $password = isset($_GET['p']) ? $_GET['p'] : '';
 $result = isset($_GET['r']) ? $_GET['r'] : '';
 
-var_dump($_POST);
-
 if ($password != '' && isValidMd5($password)) {
-    
+
    if ($password == md5('dRtVe2015goyA')) {
-       $data = getCarouselData();
+      
+       $data = getCarouselData(false);
        $aCarousel = $data[0];
        
+       $fecha = date_create();
+       $token = NoCSRF::generate( 'csrf_token' );
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -36,6 +40,7 @@ if ($password != '' && isValidMd5($password)) {
                     <li>Para los nombres, se aconseja utilizar el formato: <strong>Nombre Apellido.</strong></li>
                     <li><strong>La primera columna (posición) sirve para alterar el orden de los elementos.</strong> Se introduce el índice de cada elemento y hay que asegurarse de que no se repiten.</li>
                     <li>Se consideran los tamaños de las fotos del año pasado como ideales, para foto zoom 2091x3422 (96dpi) y para foto normal 550x900 (96dpi). Alrededor de esas resoluciones estará bien.</li>
+                    <li>Máximo <strong>3mb</strong> por foto.</li>
                     <li>Si se desea resaltar alguna parte del texto de pie de foto (columna texto), se puede "rodear" con el tag &lt;strong&gt;. Ejemplo: Jennifer Lopez optó por un escotado vestido de <strong> &lt;strong&gt;Zuhair Murad&lt;strong&gt; </strong>que le... </li>
                     <li>Para enlazar una palabra de la descripción, sitúate delante de la palabra y pega este código: <strong>&lt;a href="URL DE LA NOTICIA QUE QUIERES ENLAZAR"&gt; palabra que quieres enlazar &lt;/a&gt; </strong></li>
                     <li>Los botones de la derecha sirven para <strong>eliminar y añadir</strong> un nuevo elemento (Papelera, Sumar).</li>
@@ -60,8 +65,8 @@ if ($password != '' && isValidMd5($password)) {
                     <tr id="row<?php print($key); ?>">
                         <td class="position_cell"><input type="text" class="input_short" id="position<?php print($key); ?>" name="position<?php print($key); ?>" value="<?php echo isset($_POST['position'.$key]) ? $_POST['position'.$key] : $aElement[0]; ?>"/></td>
                         <td class="name_cell"><input type="text" class="input_medium" id="name<?php print($key); ?>" name="name<?php print($key); ?>" value="<?php echo isset($_POST['name'.$key]) ? $_POST['name'.$key] : $aElement[2]; ?>"/></td>
-                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key); ?>" name="image_large<?php print($key); ?>" src="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotos/zoom/<?php print($aElement[1]); ?>" onError="handleImageError(this);"/><input class="select_image_large" id="select_image_large<?php print($key); ?>" name="select_image_large<?php print($key); ?>" type="file" value="Examinar"/></td>
-                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key); ?>" name="image_medium<?php print($key); ?>" src="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotos/<?php print($aElement[1]); ?>" onError="handleImageError(this);"/><input class="select_image_medium" id="select_image_medium<?php print($key); ?>" name="select_image_medium<?php print($key); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key); ?>" name="image_large<?php print($key); ?>" src="<?php echo $baseUrl; ?>fotos/zoom/<?php print($aElement[1]); ?>?t=<?php echo date_timestamp_get($fecha); ?>" onError="handleImageError(this);"/><input class="select_image_large" id="select_image_large<?php print($key); ?>" name="select_image_large<?php print($key); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key); ?>" name="image_medium<?php print($key); ?>" src="<?php echo $baseUrl; ?>fotos/<?php print($aElement[1]); ?>?t=<?php echo date_timestamp_get($fecha); ?>" onError="handleImageError(this);"/><input class="select_image_medium" id="select_image_medium<?php print($key); ?>" name="select_image_medium<?php print($key); ?>" type="file" value="Examinar"/></td>
                         <td class="photographer_cell"><input type="text" class="input_medium" id="photographer<?php print($key); ?>" name="photographer<?php print($key); ?>" value="<?php echo isset($_POST['photographer'.$key]) ? $_POST['photographer'.$key] : $aElement[3]; ?>"/></td>
                         <td class="text_cell"><textarea id="text<?php print($key); ?>" name="text<?php print($key); ?>" rows="6" cols="35"><?php echo isset($_POST['text'.$key]) ? $_POST['text'.$key] : $aElement[4]; ?></textarea></td>
                         <td class="id_cell"><input type="text" class="carousel_element_id" id="id<?php print($key); ?>" name="id<?php print($key); ?>" value="<?php echo isset($_POST['id'.$key]) ? $_POST['id'.$key] : $aElement[5]; ?>"/></td>
@@ -72,8 +77,8 @@ if ($password != '' && isValidMd5($password)) {
                     <tr id="row<?php print($key + 1); ?>">
                         <td class="position_cell"><input type="text" class="input_short" id="position<?php print($key + 1); ?>" name="position<?php print($key + 1); ?>" value=""/></td>
                         <td class="name_cell"><input type="text" class="input_medium" id="name<?php print($key + 1); ?>" name="name<?php print($key + 1); ?>" value=""/></td>
-                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key + 1); ?>" name="image_large<?php print($key + 1); ?>" src="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotos/zoom/silueta.jpg"/><input class="select_image_large" id="select_image_large<?php print($key + 1); ?>" name="select_image_large<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
-                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key + 1); ?>" name="image_medium<?php print($key + 1); ?>" src="http://origin-lab.rtve.es/test-los-goya-2015/alfombra-roja/fotos/silueta.jpg"/><input class="select_image_medium" id="select_image_medium<?php print($key + 1); ?>" name="select_image_medium<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key + 1); ?>" name="image_large<?php print($key + 1); ?>" src="<?php echo $baseUrl; ?>fotos/zoom/silueta.jpg"/><input class="select_image_large" id="select_image_large<?php print($key + 1); ?>" name="select_image_large<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key + 1); ?>" name="image_medium<?php print($key + 1); ?>" src="<?php echo $baseUrl; ?>fotos/silueta.jpg"/><input class="select_image_medium" id="select_image_medium<?php print($key + 1); ?>" name="select_image_medium<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
                         <td class="photographer_cell"><input type="text" class="input_medium" id="photographer<?php print($key + 1); ?>" name="photographer<?php print($key + 1); ?>" value=""/></td>
                         <td class="text_cell"><textarea id="text<?php print($key + 1); ?>" name="text<?php print($key + 1); ?>" rows="6" cols="35"></textarea></td>
                         <td class="id_cell"><input type="text" class="carousel_element_id" id="id<?php print($key + 1); ?>" name="id<?php print($key + 1); ?>" value=""/></td>
@@ -86,6 +91,7 @@ if ($password != '' && isValidMd5($password)) {
                 <input type="submit" id="save" name="save" value="Guardar"/>
                 <input type="submit" id="publish" name="publish" value="Publicar todo"/>
             </div>
+            <input type="hidden" name="csrf_token" value="<?php echo $token; ?>"/>
         </form>
     </div>
     </body>
@@ -93,11 +99,11 @@ if ($password != '' && isValidMd5($password)) {
 
 <?php
    } else {
-       //redirección 404
+
    }
    
 } else {
-    //redirección 404
+ 
 }
 
 ?>
