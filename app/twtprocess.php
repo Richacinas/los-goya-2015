@@ -505,10 +505,10 @@ function cleanBackofficeFavoritesStreamTwitterPosts() {
 function cleanRadarHomeInfo() {
   global $radarDataFolder;
   // clean /radar/final/total.json with an empty array []
-  // clean /radar/final/minute.json with an empty array []
+  // clean /radar/final/minute.json copying a version of the "reset" file
     writeJson($radarDataFolder.'minute.json', array());
     print('Limpiando '.$radarDataFolder.'minute.json ...<br/>');
-    writeJson($radarDataFolder.'total.json', array());
+    copy($radarDataFolder.'total-reset.json', $radarDataFolder.'total.json');
     print('Limpiando '.$radarDataFolder.'total.json ...<br/>');
 }
 function cleanRadarHomePosts() {
@@ -525,7 +525,7 @@ function cleanSavedPostsData() {
 }
 function cleanPopularData() {
   global $favoritesFolder;
-  // clean /data/favorites/favorites-appearances.json with an empty array []
+  // clean /data/favorites/favorites-appearances.json copying a version of the "reset" file
     copy($favoritesFolder.'favorites-appearances-reset.json', $favoritesFolder.'favorites-appearances.json');
     print('Limpiando '.$favoritesFolder.'favorites-appearances.json ...<br/>');
 }
