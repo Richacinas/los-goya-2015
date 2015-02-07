@@ -4052,6 +4052,7 @@ var gC = {
        		var topTen = gC.orderTopTen(data);
           	$.each(topTen, function(index, favorite) {
           		var favoriteId = favorite.id;
+                if (gC.data.favorites.length > 0) {
           		var favoriteData = gC.data.favorites[favoriteId - 1];
           		var favoriteTotal = favorite.total;
           		var targetFavorite = $(favorites[index]);
@@ -4065,6 +4066,7 @@ var gC = {
           			targetFavorite.find('a').show().attr('href', favoriteData['twitterUrl']).html('@'+twitterUsername);
         		}
                 targetFavorite.find('.filter-tweets').show();
+                }
           	});
           	if (topTen.length < 10) {
           		var leftIndex = 10;

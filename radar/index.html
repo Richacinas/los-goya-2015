@@ -96,7 +96,7 @@
       <div class="bl-tabs-wrap">
         <div class="bl-tabs-wrap-wrap">
           <div class="menu wk-col-l">
-            <div class="menu-item enlace-goyas-en-las-redes act"><div class="menu-item-inside">Muro</div></div>
+            <div class="menu-item enlace-goyas-en-las-redes act"><div class="menu-item-inside">Lo último</div></div>
             <div class="menu-item enlace-los-mas-populares"><div class="menu-item-inside">Los + tuiteados</div></div>
             <div class="menu-item">
                 <select id="filtro-invitados">
@@ -107,7 +107,7 @@
           </div>
 
           <div class="menu menu-small wk-col-l">
-            <div class="menu-item enlace-goyas-en-las-redes act"><div class="menu-item-inside">Muro</div></div>
+            <div class="menu-item enlace-goyas-en-las-redes act"><div class="menu-item-inside">Lo último</div></div>
             <div class="menu-item enlace-los-mas-populares"><div class="menu-item-inside">+ tuiteados</div></div>
             <div class="menu-item">
                 <select id="filtro-invitados">
@@ -298,7 +298,11 @@
 
 
   <script src="src/app.js"></script>
-  <!--script src="src/base.js"></script-->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(window).resize(); // To prevent bad posts location in front-end radar
+    });
+  </script>
 
 </body>
 </html>
