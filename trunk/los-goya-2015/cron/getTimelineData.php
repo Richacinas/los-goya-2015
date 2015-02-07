@@ -84,7 +84,7 @@ if($twrest->newTweetsProcessed() || !$igrest->newIgPostsProcessed()) {
 	$twData = $twrest->getTwData();
 	$igData = $igrest->getIgData();
 	$data['search'] = array_merge($twData['search'], $igData['search']);
-	if(sizeOf($data['search']) > 0){
+	if(isset($data) && $data != null){
 		// Store <current-timestamp>.json
   		writeJson($outputFolder . $currTime . '.json', $data);
   		// Store timeline.json (logfile)

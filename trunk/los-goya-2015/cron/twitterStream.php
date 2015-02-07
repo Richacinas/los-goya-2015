@@ -177,7 +177,7 @@ function my_streaming_callback($data, $length, $metrics) {
     if(!isset($subtotals['global'][$time])) {
       $subtotals['global'][$time] = 0;
     }
-    //$subtotals['global'][$time] ++;
+    $subtotals['global'][$time] ++;
 
     $found = false;
     $tags = array();

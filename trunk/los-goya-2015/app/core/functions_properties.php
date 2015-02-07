@@ -117,7 +117,11 @@ class MyConfig
     {
     	define("FILE_PUT_CONTENTS_ATOMIC_MODE", 0777);
         $config = var_export($config, true);
-        file_put_contents($filename, "<?php return $config ;");        
+        echo("JUSTO ANTES \n \n \n \n");
+        var_dump($config);
+      
+        echo "RESULTADO DEL FILE PUT CONTENTS";
+        echo file_put_contents($filename, "<?php return $config ;");        
     }
 }
 
