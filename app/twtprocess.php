@@ -125,7 +125,7 @@ switch ($method) {
     //checkToken($token);
     initializaDatos();
 
-    $id = $_GET['id'];
+    $id = $_POST['id'];
 
     //$string = file_get_contents($saveDatatotal);
     //$json_a = json_decode($string, true);
@@ -159,14 +159,14 @@ switch ($method) {
     // checkea links
   case 'check':
     //checkToken($token);
-    if(!isset($_GET['link']) || !isset($_GET['type']) || !isset($_GET['tag'])) die('error en los parámetros recibidos');
+    if(!isset($_POST['link']) || !isset($_POST['type']) || !isset($_POST['tag'])) die('error en los parámetros recibidos');
 
       // cargamos datos de tweets
     initializaDatos();
 
-    $link = $_GET['link'];
-    $type = $_GET['type'];
-    $tag = $_GET['tag'];
+    $link = $_POST['link'];
+    $type = $_POST['type'];
+    $tag = $_POST['tag'];
     /*
     echo "\n\n----------\n\n";
 
@@ -324,7 +324,7 @@ switch ($method) {
     //checkToken($token);
     initializaDatos();
 
-    $newOrderElems = $_GET['newOrderElems'];
+    $newOrderElems = $_POST['newOrderElems'];
     moveData(json_decode($newOrderElems));
     $done = esHoraDeActualizar();
     
@@ -337,8 +337,8 @@ switch ($method) {
     //checkToken($token);
     initializaDatos();
     
-    if(isset($_GET['json'])){
-    	$twt = json_decode($_GET['json'], true);
+    if(isset($_POST['json'])){
+    	$twt = json_decode($_POST['json'], true);
       	$link = $twt['link'];
       	$twtFull = getTweetFullWithLink($link);
       	if ( $twtFull ) {
@@ -363,8 +363,8 @@ switch ($method) {
     //checkToken($token);
     initializaDatos();
     
-    if(isset($_GET['json'])){
-    	$twt = json_decode($_GET['json'], true);
+    if(isset($_POST['json'])){
+    	$twt = json_decode($_POST['json'], true);
       	$link = $twt['link'];
       	$twtFull = getTweetFullWithLink($link);
       	if ( $twtFull ) {
@@ -387,8 +387,8 @@ switch ($method) {
     //checkToken($token);
     initializaDatos();
     
-    if(isset($_GET['json'])){
-    	$twt = json_decode($_GET['json'], true);
+    if(isset($_POST['json'])){
+    	$twt = json_decode($_POST['json'], true);
       	$link = $twt['link'];
       	$twtFull = getTweetFullWithLink($link);
       	if ( $twtFull ) {
@@ -411,9 +411,9 @@ switch ($method) {
     //checkToken($token);
     initializaDatos();
 
-    if(isset($_GET['json'])){
+    if(isset($_POST['json'])){
 
-      $twt = json_decode($_GET['json'], true);
+      $twt = json_decode($_POST['json'], true);
 
       if(isset($twt['id'])) return deleteData($twt['id']);
 

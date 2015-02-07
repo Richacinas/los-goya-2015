@@ -11,8 +11,8 @@ require_once 'Favorite.php';
 class FavoritesHandler {
 
 	/* Favorites CSV file path to be accessed */
-	const FAVORITES_CSV = "/data/favorites/popular.csv";
-	const FAVORITES_APPEARANCES = "/data/favorites/favorites-appearances.json";
+	const FAVORITES_CSV = "/../../../data/favorites/popular.csv";
+	const FAVORITES_APPEARANCES = "/../../../data/favorites/favorites-appearances.json";
 
 	private $favorites;
 	private $favoritesModified;
@@ -123,9 +123,9 @@ class FavoritesHandler {
 	* @return array(Favorite) : list of favorites founded in the CSV
 	**/
 	private function fetchFavorites() {
-		$csvData = file_get_contents($_SERVER['DOCUMENT_ROOT']."/los-goya-2015".self::FAVORITES_CSV);
+		$csvData = file_get_contents(self::FAVORITES_CSV);
 
-		$this->appearancesData = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."/los-goya-2015".self::FAVORITES_APPEARANCES));
+		$this->appearancesData = json_decode(file_get_contents(self::FAVORITES_APPEARANCES));
 		$popularPeopleCSVLines = explode(PHP_EOL, $csvData);
 		$people = array();
 		foreach ($popularPeopleCSVLines as $i=>$line) {
@@ -184,7 +184,9 @@ class FavoritesHandler {
 	**/
 	private function storeFavorites() {
 		$appearancesJson = json_encode($this->appearancesData);
-		$fd = fopen($_SERVER['DOCUMENT_ROOT']."/los-goya-2015".self::FAVORITES_APPEARANCES, 'w');
+                echo "APPEARANCES JSON WRITING.... \n\n\n";
+                var_dump($appearancesJson);
+		$fd = fopen(self::FAVORITES_APPEARANCES, 'w');
   		fwrite($fd, $appearancesJson);
   		fclose($fd);
 	}
