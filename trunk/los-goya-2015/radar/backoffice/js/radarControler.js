@@ -427,7 +427,7 @@
 
           var request = $.ajax({
             timeout: 10000,
-            type: "GET",
+            type: "POST",
             url: radarControler.settings.twtprocessor,
             data: {
               'method'  : method,
@@ -510,6 +510,7 @@
 
         // Procesamos la url
         $.ajax( radarControler.settings.twtprocessor, {
+          type:"POST",
           data: {
             'method'    : 'check',
             'link'      : link,
@@ -579,7 +580,7 @@
               var token  = $('#csrf_token').val();
               var request = $.ajax({
                 timeout: 10000,
-                type: "GET",
+                type: "POST",
                 url: radarControler.settings.twtprocessor,
                 data: {
                   'method'          : method,
