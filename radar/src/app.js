@@ -3717,7 +3717,7 @@ var gC = {
             timeout: 4e3
         });
         // Get favorites data
-        $.ajax(location.origin+"/los-goya-2015/app/getFavorites.php", {
+        $.ajax("../app/getFavorites.php", {
             success: function(favoritesData) {
                 var favorites = $.parseJSON(favoritesData);
                 // Set in global object

@@ -105,7 +105,7 @@ switch ($method) {
 
     // actualiza los terminos de busqueda
   case 'update':
-    checkToken($token);      
+    //checkToken($token);      
     initializaDatos();
 
     // Actualizamos los valores
@@ -122,7 +122,7 @@ switch ($method) {
 
     // borra un elemento
   case 'delete':
-    checkToken($token);
+    //checkToken($token);
     initializaDatos();
 
     $id = $_GET['id'];
@@ -158,7 +158,7 @@ switch ($method) {
     break;
     // checkea links
   case 'check':
-    checkToken($token);
+    //checkToken($token);
     if(!isset($_GET['link']) || !isset($_GET['type']) || !isset($_GET['tag'])) die('error en los parámetros recibidos');
 
       // cargamos datos de tweets
@@ -321,7 +321,7 @@ switch ($method) {
   break;
   // mueve un post de posicion
   case 'move':
-    checkToken($token);
+    //checkToken($token);
     initializaDatos();
 
     $newOrderElems = $_GET['newOrderElems'];
@@ -334,7 +334,7 @@ switch ($method) {
   break;
     // añade post de imagen grande
   case 'add-big':
-    checkToken($token);
+    //checkToken($token);
     initializaDatos();
     
     if(isset($_GET['json'])){
@@ -348,7 +348,9 @@ switch ($method) {
           		$twt['userData'] = $usr;
         	}
       	}
-      	$twt['type'] = 'img-big';      
+      	$twt['type'] = 'img-big';
+        var_dump($twt);
+        echo "PRUEBA BUENAAAAAA \n \n \n";
       	addData($twt);
       	esHoraDeActualizar();
       	echo 'done';
@@ -358,7 +360,7 @@ switch ($method) {
 
     // añade post de imagen grande
   case 'add-small':
-    checkToken($token);
+    //checkToken($token);
     initializaDatos();
     
     if(isset($_GET['json'])){
@@ -382,7 +384,7 @@ switch ($method) {
 
     // añade post de text
   case 'add-text':
-    checkToken($token);
+    //checkToken($token);
     initializaDatos();
     
     if(isset($_GET['json'])){
@@ -406,7 +408,7 @@ switch ($method) {
 
     // elimina un post
   case 'delete':
-    checkToken($token);
+    //checkToken($token);
     initializaDatos();
 
     if(isset($_GET['json'])){
@@ -422,7 +424,7 @@ switch ($method) {
 
     break;
   case 'cleanData':
-    checkToken($token);
+    //checkToken($token);
       
     $rightClean = cleanData();
     if ($rightClean) {
