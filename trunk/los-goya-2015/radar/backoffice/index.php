@@ -11,7 +11,7 @@ if ($password != '' && isValidMd5($password)) {
     if ($password == md5('dRtVe2015goyA')) {
         //Se da valor al token
         $token = NoCSRF::generate( 'csrf_token' );
-        $host = "http://lab.rtve.es/mis-goya';
+        $host = "http://lab.rtve.es/los-goya-2015";
 
 ?>
 

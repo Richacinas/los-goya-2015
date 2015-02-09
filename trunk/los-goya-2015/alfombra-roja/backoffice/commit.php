@@ -66,8 +66,10 @@ foreach ($files as $key => $values) {
             error_log(date('d/m/Y h:i:s') + " Ha habido un error en el salvado de datos.\n", 3, "../php.log");
         // if everything is ok, try to upload file
         } else {
+
             if (move_uploaded_file($values['tmp_name'], $target_file)) {
                 chmod($target_file,0777);
+
                 error_log(date('d/m/Y h:i:s') + "La imagen ". $target_file. " ha sido subida.\n", 3, "../php.log");
             } else {
                 error_log(date('d/m/Y h:i:s') + "Ha habido un error subiendo alguna de la/s imagen/es.\n", 3, "../php.log");

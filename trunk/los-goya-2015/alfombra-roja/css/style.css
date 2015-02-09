@@ -4,8 +4,8 @@
 
 .zoomContainer {z-index: 10000}
 
-.slide-left { position: absolute; top: 0px; right: 875px; height: 980px; width: 30px; background:#ffffff;}
-.slide-right { position: absolute; top: 0px; left: 880px; height: 980px; width: 30px; background:#ffffff;}
+.slide-left { position: absolute; top: 0px; right: 875px; height: 995px; width: 30px; background:#ffffff;}
+.slide-right { position: absolute; top: 0px; left: 880px; height: 995px; width: 30px; background:#ffffff;}
 
 .slide-left, .slide-left a, .slide-right, .slide-right a { cursor: pointer; }
 
@@ -14,7 +14,7 @@
 .slide-right a { position: absolute; /* left: 8px; */ top:48%; width: 12px; height: 21px; background: url("slide-arrow_r.png") 0 0px no-repeat; z-index:9999;}
 .slide-left a  { position: absolute; right: 0px; top:48%; width: 12px; height: 21px; background: url("slide-arrow_l.png") 0 0px no-repeat;  z-index:9999;}
 
-.slide-pager { display: block; width:928px; height: auto; margin-left: auto; margin-right: auto; font-family: Arial; font-weight: normal; font-size: 14px; text-align: center; margin-top:0; position:absolute; top:10px;}
+.slide-pager { display: block; width:928px; height: auto; margin-left: auto; margin-right: auto; font-family: Arial; font-weight: normal; font-size: 14px; text-align: center; margin-top:0; position:absolute; top:15px;}
 .slide-pager li { float: left; display: block; width: 23px; height: 23px; color: #fff; cursor: pointer; line-height: 23px; border:1PX SOLID #000000; margin-right:3px; background:#000000;-moz-border-radius: 15px; border-radius: 15px;}
 .slide-pager li:hover {background: #d09d03; color:#fff;border-color:#d09d03;}
 .slide-pager li.selected { background: #d09d03; color:#fff; cursor: default;border:2PX SOLID #d09d03;}
@@ -34,7 +34,7 @@
 #carousel-image { background:url("loader.gif") no-repeat 50% 50% #EAEAEA; }
 .clear { clear:both; }
 .content { clear:both; }
-.stage { width:100%; float:left;}
+.stage { width:100%; float:left; padding-top: 15px;}
 .foto { border: 1px solid #EEEEEE; float: left; height: 900px;  width: 550px;}
 .foto img { height: 900px; width: 550px; float:left;}
 .txt { float:left; margin:5px 0 0 15px; padding:0; width:260px;}
@@ -261,4 +261,18 @@ span.zoom { width:32px; height:32px; background:url("zoom.png") no-repeat 50% 50
 }
 #backoffice table tr.changed_row {
     background: #F5C9C9;
+}
+.zoom_info {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    font-size: 16px;
+    background-image: url("zoom.png");
+    background-repeat: no-repeat;
+    margin: 50px 0 0 15px;
+    padding-left: 40px;
+    height: 50px;
+    line-height: 1.1;
+    float: left;
+    display: inline;
+    width: 260px;
 }

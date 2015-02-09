@@ -49,6 +49,9 @@ $fecha = date_create();
         </tr>
       </table>
       </div>
+      <p class="zoom_info">
+          Pasa el ratón sobre la foto para hacer zoom
+      </p>
     </div>
 </div>
 <div class="slide-left">
@@ -74,6 +77,8 @@ $fecha = date_create();
 <script>
 if ( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) == false )  {
     $("#carousel-image").elevateZoom({ zoomType: "lens", lensShape: "round", lensSize: 300, containLensZoom: true, loadingIcon: "css/loader.gif" });
+} else {
+    $(".zoom_info").hide();
 }
 </script>
 

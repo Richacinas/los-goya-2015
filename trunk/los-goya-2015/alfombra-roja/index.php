@@ -148,14 +148,17 @@ else {
                                       <meta itemprop="author" content="<?php echo count(explode("/", $aCarousel[$carouselIndex + 1][3])) > 1 ? array_pop(explode("/", $aCarousel[$carouselIndex + 1][3])) : ""; ?>" />
                                     </div>
                                 </div>
-                              <div class="socialshare">
-                              <table width="100%" border="0">
-                                <tr>
-                                  <td><div class="fb-share-button" data-href="<?php echo $shareUrl; echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-layout="button_count"></div></td>
-                                  <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $shareUrl; echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-text="<?php echo $aCarousel[$carouselIndex + 1][2]; ?>, en la alfombra roja de los Goya 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
-                                </tr>
-                              </table>
-                              </div>
+                                <div class="socialshare">
+                                <table width="100%" border="0">
+                                  <tr>
+                                    <td><div class="fb-share-button" data-href="<?php echo $shareUrl; echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-layout="button_count"></div></td>
+                                    <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $shareUrl; echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-text="<?php echo $aCarousel[$carouselIndex + 1][2]; ?>, en la alfombra roja de los Goya 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+                                  </tr>
+                                </table>
+                                </div>
+                                <p class="zoom_info">
+                                    Pasa el ratón sobre la foto para hacer zoom
+                                </p>
                             </div>
                         </div>
                         <div class="slide-left">
@@ -190,6 +193,7 @@ if ( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
     $("#carousel-image").elevateZoom({ zoomType: "lens", lensShape: "round", lensSize: 300, containLensZoom: true, loadingIcon: "css/loader.gif" });
 } else {
     document.write("\<script type='text\/javascript' src='js\/jquery.mobile.custom.min.js'\>\<\/script>");
+    $(".zoom_info").hide();
 }
 </script>
 </body>

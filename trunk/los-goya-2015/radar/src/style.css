@@ -136,20 +136,26 @@ strong {
     display: inline;
     float: left;
     background-color: #dfdfdf;
-    width: 35.5%;
+    width: 37.5%;
+    position: absolute;
+    left: 0;
 }
 
 .bl-tl-foot .wk-col-c {
     display: inline;
     background-color: #cdcdcd;
-    width: 45%;
+    width: 51.5%;
+    position: absolute;
+    left: 37.5%;
 }
 
 .bl-tl-foot .wk-col-r {
     display: inline;
     float: right;
     background-color: #dfdfdf;
-    width: 19.5%;
+    width: 11%;
+    position: absolute;
+    right: 0;
 }
 
 .bl-tabs-wrap .wk-col-l {
@@ -1280,15 +1286,16 @@ background: #75a5a0;
 
     .col-top-3,.col-top-4 {
         width: 100%;
+        float: left;
     }
 
     .col-top-3 .bl-top-elm {
-        width: 33.33333%;
+        width: 30%;
         float: left;
     }
 
     .col-top-4 .bl-top-elm {
-        width: 25%;
+        width: 22%;
         float: left;
     }
 }

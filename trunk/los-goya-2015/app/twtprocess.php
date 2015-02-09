@@ -11,9 +11,9 @@ setlocale(LC_ALL,"es_ES");
 
 header('Content-Type: text/html; charset=utf-8');
 
-ini_set("display_startup_errors ",1); 
+ini_set("display_startup_errors ",0); 
 ini_set("error_reporting",E_ALL); 
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 date_default_timezone_set('Europe/Madrid');
 
 ob_start('ob_gzhandler');
@@ -711,6 +711,7 @@ function saveData(){
   $GLOBALS['data']['time'] = $GLOBALS['currTime'];
 
   $timeline = json_decode(file_get_contents($GLOBALS['totalsJson']),true);
+
 
   $countFinal = processTimeline($timeline);
   if (!isset($timeline['global'])) {
