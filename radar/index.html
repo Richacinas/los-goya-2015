@@ -86,7 +86,7 @@
     <div class="bl-tl-foot bold">
       <div class="bl-tl-foot-ini bl-tl-foot-elm wk-col-l"><span>19:30</span>Alfombra roja</div>
       <div class="bl-tl-foot-med bl-tl-foot-elm wk-col-c"><span>22:00</span>La Gala</div>
-      <div class="bl-tl-foot-fin bl-tl-foot-elm wk-col-r"><span>01:00</span>Post-Gala</div>
+      <div class="bl-tl-foot-fin bl-tl-foot-elm wk-col-r"><span>01:48</span>Post-Gala</div>
     </div>
     
   </div>
@@ -97,23 +97,23 @@
         <div class="bl-tabs-wrap-wrap">
           <div class="menu wk-col-l">
             <div class="menu-item enlace-goyas-en-las-redes act"><div class="menu-item-inside">Lo último</div></div>
-            <div class="menu-item enlace-los-mas-populares"><div class="menu-item-inside">Los + tuiteados</div></div>
-            <div class="menu-item">
+            <!--<div class="menu-item enlace-los-mas-populares"><div class="menu-item-inside">Los + tuiteados</div></div>-->
+            <!--<div class="menu-item" id="filtro-menu">
                 <select id="filtro-invitados">
                   <option value="-1">Filtrar por </option>
                 </select>
             </div>
-            <input id="clearFilter" type="button" value="Limpiar filtro" onClick="clearFilter();" style="display:none"></input>
+            <input id="clearFilter" type="button" value="Limpiar filtro" onClick="clearFilter();" style="display:none"></input>-->
           </div>
 
           <div class="menu menu-small wk-col-l">
             <div class="menu-item enlace-goyas-en-las-redes act"><div class="menu-item-inside">Lo último</div></div>
-            <div class="menu-item enlace-los-mas-populares"><div class="menu-item-inside">+ tuiteados</div></div>
-            <div class="menu-item">
+            <!--<div class="menu-item enlace-los-mas-populares"><div class="menu-item-inside">+ tuiteados</div></div>
+            <div class="menu-item" id="filtro-menu">
                 <select id="filtro-invitados">
                   <option value="-1">Filtrar por </option>
                 </select>
-            </div>
+            </div>-->
           </div>
 
           
@@ -300,7 +300,17 @@
   <script src="src/app.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      $(window).resize(); // To prevent bad posts location in front-end radar
+        $(window).resize(); // To prevent bad posts location in front-end radar
+	console.log("loaded");
+	setTimeout(function() {
+           $(".bl-tl-elm").each(function() {
+        if ($(this).hasClass("bl-tl-02071930")) {
+		return false;
+	}
+	$(this).hide();
+	});
+	},500);
+        
     });
   </script>
 

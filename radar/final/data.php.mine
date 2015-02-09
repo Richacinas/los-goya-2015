@@ -1,0 +1,174 @@
+<?php return array (
+  'time' => '02051622',
+  'totals' => 
+  array (
+  ),
+  'all' => 
+  array (
+    0 => 
+    array (
+      'user' => '301968389',
+      'screen_name' => 'Lady_Decadencia',
+      'text' => 'RT @spainpandereta: Ya no reparan las aceras antes de las elecciones, dan VALES DE COMIDA. 
+Como cambian las cosas #TerremotoElectoralM4 ht…',
+      'id' => '563340128916340736',
+      'link' => 'http://twitter.com/Lady_Decadencia/status/563340128916340736',
+      'net' => 'tw',
+      'media' => 
+      array (
+        0 => 'http://pbs.twimg.com/media/B9FPbxZIcAAiBFB.jpg',
+      ),
+      'tags' => 
+      array (
+      ),
+      'userData' => 
+      array (
+        'name' => 'Lady Decadencia',
+        'screen_name' => 'Lady_Decadencia',
+        'location' => '',
+        'followers_count' => 131,
+        'profile_image_url' => 'http://pbs.twimg.com/profile_images/1361978103/splashpage_redu_normal.jpg',
+        'net' => 'tw',
+      ),
+      'type' => 'img-small',
+    ),
+    1 => 
+    array (
+      'user' => '783395646',
+      'screen_name' => 'AliGoodDay',
+      'text' => 'RT @subversivos_: Traducido: Las empresas se forraran mas y los trabajadores mas pobres #TerremotoElectoralM4 
+http://t.co/V6cCDEdb0a http:…',
+      'id' => '563340164744097792',
+      'link' => 'http://twitter.com/AliGoodDay/status/563340164744097792',
+      'net' => 'tw',
+      'media' => 
+      array (
+        0 => 'http://pbs.twimg.com/media/B9FJyPKIEAE7EH_.jpg',
+      ),
+      'tags' => 
+      array (
+      ),
+      'userData' => 
+      array (
+        'name' => 'Hedonismobot',
+        'screen_name' => 'AliGoodDay',
+        'location' => 'Vivo en tu mente si me piensas',
+        'followers_count' => 135,
+        'profile_image_url' => 'http://pbs.twimg.com/profile_images/378800000386365524/5c8e5b7f495d4e7b09e970f9ec5f4530_normal.jpeg',
+        'net' => 'tw',
+      ),
+      'type' => 'img-small',
+    ),
+    2 => 
+    array (
+      'user' => '52401992',
+      'screen_name' => 'smoda',
+      'text' => 'Vestidos de (premio) #Goya2015: candidatos y actores explican el reto de vestir a un personaje http://t.co/18beyDr4qe http://t.co/ldYmWIio1B',
+      'id' => '562327202713583616',
+      'link' => 'http://twitter.com/smoda/status/562327202713583616',
+      'net' => 'tw',
+      'media' => 
+      array (
+        0 => 'http://pbs.twimg.com/media/B83JnG-IYAAF-66.jpg',
+      ),
+      'tags' => 
+      array (
+        0 => '',
+      ),
+      'type' => 'txt',
+      'userData' => 
+      array (
+        'name' => 'S Moda',
+        'screen_name' => 'smoda',
+        'location' => 'España',
+        'followers_count' => 121560,
+        'profile_image_url' => 'http://pbs.twimg.com/profile_images/458888907044552704/bzW-pgkK_normal.png',
+        'net' => 'tw',
+      ),
+    ),
+    3 => 
+    array (
+      'user' => '52401992',
+      'screen_name' => 'smoda',
+      'text' => 'Vestidos de (premio) #Goya2015: candidatos y actores explican el reto de vestir a un personaje http://t.co/18beyDr4qe http://t.co/ldYmWIio1B',
+      'id' => '562327202713583616',
+      'link' => 'http://twitter.com/smoda/status/562327202713583616',
+      'net' => 'tw',
+      'media' => 
+      array (
+        0 => 'http://pbs.twimg.com/media/B83JnG-IYAAF-66.jpg',
+      ),
+      'tags' => 
+      array (
+        0 => '',
+      ),
+      'type' => 'img-big',
+      'userData' => 
+      array (
+        'name' => 'S Moda',
+        'screen_name' => 'smoda',
+        'location' => 'España',
+        'followers_count' => 121560,
+        'profile_image_url' => 'http://pbs.twimg.com/profile_images/458888907044552704/bzW-pgkK_normal.png',
+        'net' => 'tw',
+      ),
+    ),
+    4 => 
+    array (
+      'user' => '52401992',
+      'screen_name' => 'smoda',
+      'text' => 'Vestidos de (premio) #Goya2015: candidatos y actores explican el reto de vestir a un personaje http://t.co/18beyDr4qe http://t.co/ldYmWIio1B',
+      'id' => '562327202713583616',
+      'link' => 'http://twitter.com/smoda/status/562327202713583616',
+      'net' => 'tw',
+      'media' => 
+      array (
+        0 => 'http://pbs.twimg.com/media/B83JnG-IYAAF-66.jpg',
+      ),
+      'tags' => 
+      array (
+        0 => '',
+      ),
+      'type' => 'img-small',
+      'userData' => 
+      array (
+        'name' => 'S Moda',
+        'screen_name' => 'smoda',
+        'location' => 'España',
+        'followers_count' => 121560,
+        'profile_image_url' => 'http://pbs.twimg.com/profile_images/458888907044552704/bzW-pgkK_normal.png',
+        'net' => 'tw',
+      ),
+    ),
+    5 => 
+    array (
+      'user' => '52401992',
+      'screen_name' => 'smoda',
+      'text' => 'Vestidos de (premio) #Goya2015: candidatos y actores explican el reto de vestir a un personaje http://t.co/18beyDr4qe http://t.co/ldYmWIio1B',
+      'id' => '562327202713583616',
+      'link' => 'http://twitter.com/smoda/status/562327202713583616',
+      'net' => 'tw',
+      'media' => 
+      array (
+        0 => 'http://pbs.twimg.com/media/B83JnG-IYAAF-66.jpg',
+      ),
+      'tags' => 
+      array (
+        0 => '',
+      ),
+      'type' => 'img-small',
+      'userData' => 
+      array (
+        'name' => 'S Moda',
+        'screen_name' => 'smoda',
+        'location' => 'España',
+        'followers_count' => 121560,
+        'profile_image_url' => 'http://pbs.twimg.com/profile_images/458888907044552704/bzW-pgkK_normal.png',
+        'net' => 'tw',
+      ),
+    ),
+  ),
+  'minute' => 
+  array (
+  ),
+) ;

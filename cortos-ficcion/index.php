@@ -60,7 +60,7 @@
 				<div class="share-icon">
 					<a href="https://plus.google.com/share?url=http://lab.rtve.es/los-goya-2015/cortos-ficcion" target="_blank" title="Google+"><button class="icon"><img src="images/gplus-icon.png"/></button></a>
 					<a href="https://www.facebook.com/dialog/feed?app_id=857963194246392&picture=http://lab.rtve.es/los-goya-2015/cortos-ficcion/images/redessociales.png&link=http://lab.rtve.es/los-goya-2015/cortos-ficcion&description=Descubre cómo es el proceso de creación de un cortometraje de ficción de la mano de los nominados a los Goya 2015. Lab RTVE.es&redirect_uri=http://lab.rtve.es/los-goya-2015/cortos-ficcion" target="_blank" title="Facebook"><button class="icon"><img src="images/facebook-icon.png"/></button></a>
-					<a href="https://twitter.com/intent/tweet?button_hashtag=Goyas2015&amp;via=lab_rtvees&amp;text=De la idea al Goya en 4 pasos: Entrevista a los nominados a mejor corto de ficción&amp;url=http://lab.rtve.es/los-goya-2015/cortos-ficcion" target="_blank" title="Twitter"><button class="icon"><img src="images/twitter-icon.png"/></button></a>
+					<a href="https://twitter.com/intent/tweet?button_hashtag=Goya2015&amp;via=lab_rtvees&amp;text=De la idea al Goya en 4 pasos: Entrevista a los nominados a mejor corto de ficción&amp;url=http://lab.rtve.es/los-goya-2015/cortos-ficcion" target="_blank" title="Twitter"><button class="icon"><img src="images/twitter-icon.png"/></button></a>
 				</div>
 			</div>
 			<!-- Menu -->

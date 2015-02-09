@@ -144,6 +144,22 @@ $(function() {
     
     $("input[id^='id']").last().val(getMaxRowElement("backoffice_table", "id"));
     $("input[id^='position']").last().val(getMaxRowElement("backoffice_table", "position"));
+    
+    $('#backoffice').on('submit', function(e) { 
+        $('.image_large').each(function(){
+            if (this.src.indexOf("data:image") == -1) {
+               $("#"+this.id+"").attr("disabled", true);
+               $("#"+this.id+"").siblings().attr("disabled", true);
+            } 
+        });
+        $('.image_medium').each(function(){
+            if (this.src.indexOf("data:image") == -1) {
+               $("#"+this.id+"").attr("disabled", true);
+               $("#"+this.id+"").siblings().attr("disabled", true);
+            } 
+        });
+        return true;
+    });
 });
 
 

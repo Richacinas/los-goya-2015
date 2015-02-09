@@ -39,7 +39,7 @@ if ($password != '' && isValidMd5($password)) {
                 <ul>
                     <li>Para los nombres, se aconseja utilizar el formato: <strong>Nombre Apellido.</strong></li>
                     <li><strong>La primera columna (posición) sirve para alterar el orden de los elementos.</strong> Se introduce el índice de cada elemento y hay que asegurarse de que no se repiten.</li>
-                    <li>Se consideran los tamaños de las fotos del año pasado como ideales, para foto zoom 2091x3422 (96dpi) y para foto normal 550x900 (96dpi). Alrededor de esas resoluciones estará bien.</li>
+                    <li>Se consideran los tamaños de las fotos del año pasado como ideales, para foto zoom 1177x1926 (96dpi) y para foto normal 550x900 (96dpi). Alrededor de esas resoluciones estará bien.</li>
                     <li>Máximo <strong>3mb</strong> por foto.</li>
                     <li>Si se desea resaltar alguna parte del texto de pie de foto (columna texto), se puede "rodear" con el tag &lt;strong&gt;. Ejemplo: Jennifer Lopez optó por un escotado vestido de <strong> &lt;strong&gt;Zuhair Murad&lt;strong&gt; </strong>que le... </li>
                     <li>Para enlazar una palabra de la descripción, sitúate delante de la palabra y pega este código: <strong>&lt;a href="URL DE LA NOTICIA QUE QUIERES ENLAZAR"&gt; palabra que quieres enlazar &lt;/a&gt; </strong></li>

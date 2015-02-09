@@ -1,8 +1,8 @@
 <?php
 
-$shareUrl = "http://lab.pre.rtve.es/los-goya-2015/alfombra-roja/";
-$baseUrl = "http://lab.pre.rtve.es/los-goya-2015/alfombra-roja/";
-$twitterAccount = "raulevoluciona";
+$shareUrl = "http://lab.rtve.es/los-goya-2015/alfombra-roja/";
+$baseUrl = "http://lab.rtve.es/los-goya-2015/alfombra-roja/";
+$twitterAccount = "lab_rtvees";
 
 function getCarouselData($getPublished = false)
 {
@@ -11,9 +11,9 @@ function getCarouselData($getPublished = false)
     $aNameIndex = array();
     $aIdIndex = array();
     if (!$getPublished) {
-        $dataPath = 'http://lab.pre.rtve.es/los-goya-2015/alfombra-roja/data.csv';
+        $dataPath = 'http://origin-lab.rtve.es/los-goya-2015/alfombra-roja/data.csv';
     } else {
-        $dataPath = 'http://lab.pre.rtve.es/los-goya-2015/alfombra-roja/data-published.csv';
+        $dataPath = 'http://origin-lab.rtve.es/los-goya-2015/alfombra-roja/data-published.csv';
     }
     $aLines = file( $dataPath );
     

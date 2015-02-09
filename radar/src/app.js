@@ -3705,7 +3705,7 @@ var gC = {
     },
     getInitialData: function() {
     	// Get radar totals data
-        $.ajax(gC.data.dataFolder + "total.json", {
+        $.ajax("../radar/final/total.json", {
             success: function(a) {
                 gC.loadPostsIdsInTemplate(a.data);
                 gC.processFilter(a.search, a.filter), gC.data.superCount = gC.processSuperCount(a.supercount), a.ended || (gC.data.lastTime = a.time), gC.cache.timelineActive && gC.tl.processGraph(a), gC.processInitialData(a)
@@ -3717,24 +3717,24 @@ var gC = {
             timeout: 4e3
         });
         // Get favorites data
-        $.ajax("../app/getFavorites.php", {
-            success: function(favoritesData) {
-                var favorites = $.parseJSON(favoritesData);
-                // Set in global object
-                gC.data.favorites = favorites;
-            },
-            error: function(e) {
-            	console.log(e);
-                return console.log("error recibiendo datos de favoritos!"), !1
-            },
-            timeout: 4e3
-        });
+        // $.ajax("../app/getFavorites.php", {
+            // success: function(favoritesData) {
+                // var favorites = $.parseJSON(favoritesData);
+                // // Set in global object
+                // gC.data.favorites = favorites;
+            // },
+            // error: function(e) {
+            	// console.log(e);
+                // return console.log("error recibiendo datos de favoritos!"), !1
+            // },
+            // timeout: 4e3
+        // });
     },
     // request para el total de tweets archivados nuevos
     getNewData: function() {
     
         // er request
-        $.ajax(gC.data.dataFolder + 'total.json', {
+        $.ajax('../radar/final/total.json', {
     
             success: function(data, status) {
                 gC.loadPostsIdsInTemplate(data.data);
@@ -3769,7 +3769,7 @@ var gC = {
     },
     reloadRadar: function() {
         // Get total.json data file
-        $.ajax(gC.data.dataFolder + 'total.json', {
+        $.ajax('../radar/final/total.json', {
         	success: function(data, status) {
         		// Get last post ID
         		var homePosts = gC.getHomeLastPosts();
@@ -3803,10 +3803,12 @@ var gC = {
     },
     getNewPosts: function(data, homePosts) {
     	var newPosts = new Array();
-       	$.each(data.data, function(index, obj) {
-        	if ($.inArray(obj.id.toString(), homePosts) < 0) {
-        		newPosts.push(obj);
-        	}
+       	$.each(data.data, function(index, obj) {	
+            if (obj.id !== undefined) {
+               if ($.inArray(obj.id.toString(), homePosts) < 0) {
+       	          newPosts.push(obj);
+       	       }
+            }        
         });
         return newPosts;
     },
@@ -4354,7 +4356,7 @@ var gC = {
     },
     tl: {
         settings: {
-            length: 400 /* 6 hours and 40 minutes */
+            length: 400 /* 6 hours and 21 minutes */
         },
         data: {
             queries: {},
@@ -4488,19 +4490,32 @@ labTools.fns = {
 }, $(document).ready(function() {
     return gC.init(), !1
 }),$(window).load(function() {
-    //Mostrar solo los tag que esstán definidos desde el backoffice
+    // Mostrar solo los tag que esst�n definidos desde el backoffice
     $("#filtro-menu").click(function(){
         $.getJSON('final/total.json', function(fileTotal){
             var comprobarTag;
-                $.each($(".selectBox-dropdown-menu li"),function(i, val){    
+                $.each($(".selectBox-dropdown-menu li"),function(i, val){    
                     comprobarTag=$(this);
                     $.each(fileTotal.data, function(i, elemento){
                         if (val.textContent!==elemento.tags[0])
                         {
                             comprobarTag.hide();
                         }
-                });
+                        else
+                        {
+                            comprobarTag.show();
+                            return false;
+                        }   
+                });
             });
+        var duplicados="";
+         $.each($(".selectBox-dropdown-menu li:visible"),function(i, val){    
+            if (val.textContent==duplicados)
+            {
+                $(this).hide();
+            }
+            duplicados=val.textContent;
+         });
         });
     });
 });
