@@ -3701,14 +3701,19 @@ var gC = {
                 scrollTop: 0
             }, 500), $(this).removeClass("active"))
         });
-        setInterval(gC.reloadRadar, 10000); // each 10s
+        //Se comenta esta línea puesto que ya no se introduce nueva información y por lo tanto no es necesario el reload
+        //setInterval(gC.reloadRadar, 10000); // each 10s
     },
     getInitialData: function() {
     	// Get radar totals data
         $.ajax("../radar/final/total.json", {
             success: function(a) {
                 gC.loadPostsIdsInTemplate(a.data);
-                gC.processFilter(a.search, a.filter), gC.data.superCount = gC.processSuperCount(a.supercount), a.ended || (gC.data.lastTime = a.time), gC.cache.timelineActive && gC.tl.processGraph(a), gC.processInitialData(a)
+                gC.processFilter(a.search, a.filter);
+                gC.data.superCount = gC.processSuperCount(a.supercount);
+                a.ended || (gC.data.lastTime = a.time);
+                gC.cache.timelineActive && gC.tl.processGraph(a); 
+                gC.processInitialData(a)
             },
             error: function() {
                 return console.log("error recibiendo datos!"), !1
@@ -4420,15 +4425,37 @@ var gC = {
             }
         },
         processGraph: function(a) {
+            //Esta función ha sido optimizada para trabajar de manera más eficiente. Se eliminaron animaciones (addData) así como llamadas innecesarias que se hacían al superar el número de minutos máximos (gC.tl.settings.length)
             if (!a.timeline) return void console.log("no timeline");
             var b = a.timeline,
                 c = 0;
-            var numOfTimelineBars = $(".bl-tl-elm").length;
-            var settingsLength = gC.tl.settings.length;
-            for (var d in b) b.hasOwnProperty(d) && (c++, gC.tl.data.totals[d] || (gC.tl.data.totals[d] = b[d], gC.tl.data.total += b[d], b[d] > gC.tl.data.maxVal && gC.tl.updateMaxval(b[d]), gC.tl.addData(d, b[d])));
-            c > settingsLength && (settingsLength = c, gC.tl.updateSizes(), gC.tl.redrawBars(), console.log("redraw")), gC.tl.data.media = gC.tl.data.total / c, gC.tl.updateMedia();
+            for (var d in b) {
+                if (b.hasOwnProperty(d)) {
+                    c++; 
+                    gC.tl.data.totals[d] || (gC.tl.data.totals[d] = b[d], gC.tl.data.total += b[d], b[d] > gC.tl.data.maxVal && gC.tl.updateMaxval(b[d]), gC.tl.addData(d, b[d]));
+                }  
+            }
+            gC.tl.updateSizes(); 
+            gC.tl.redrawBars();
+            
+            gC.tl.data.media = gC.tl.data.total / c;
+            gC.tl.updateMedia();
+            
+            gC.tl.hideElements();
+            
             var e = gC.tl.data.total + ' <span>tuits</span><br/><span class="white">Tuits de Los Goya</span><span></span>';
-            gC.tl.cache.$tlTtip.html(e)
+            gC.tl.cache.$tlTtip.html(e);
+        },
+        //Función añadida para controlar qué barras del timeline se muestran y cuales no. A partir de las 19.30 no se muestran.
+        hideElements: function() {
+            setTimeout(function() {
+                $(".bl-tl-elm").each(function() {
+                    if ($(this).hasClass("bl-tl-02071930")) {
+                            return false;
+                    }
+                    $(this).hide();
+                });
+            },500);
         },
         updateMedia: function() {
             var a = gC.tl.cache.$timeline.find(".bl-tl-media");
@@ -4437,28 +4464,30 @@ var gC = {
             }, 300)
         },
         updateMaxval: function(a) {
-            gC.tl.data.maxVal = a, gC.tl.updateSizes(), gC.tl.redrawBars()
+            gC.tl.data.maxVal = a;
         },
         addData: function(a) {
+            //Se han comentado las animaciones porque no estaban tomando efecto y por razones de eficiencia
             var b = gC.tl.cache.$tlData.find(".bl-tl-" + a);
             if (b.length) b.css({
                 width: gC.tl.cache.elmWidth
-            }).data("time", a).data("value", gC.tl.data.totals[a]).find(".bl-tl-elm-inn").animate({
-                height: (gC.tl.data.totals[a] === 0) ? 1 : gC.tl.cache.elmHeight * (gC.tl.data.totals[a] / gC.tl.data.maxVal)
-            });
+            }).data("time", a).data("value", gC.tl.data.totals[a]);//.find(".bl-tl-elm-inn").animate({
+                //height: (gC.tl.data.totals[a] === 0) ? 1 : gC.tl.cache.elmHeight * (gC.tl.data.totals[a] / gC.tl.data.maxVal)
+            //});
             else {
                 var c = $('<div class="bl-tl-elm bl-tl-' + a + '"><div class="bl-tl-elm-inn"></div></div>');
                 gC.tl.cache.$tlData.append(c), c.css({
                     width: gC.tl.cache.elmWidth
-                }).data("time", a).data("value", gC.tl.data.totals[a]).find(".bl-tl-elm-inn").animate({
-                    height: (gC.tl.data.totals[a] === 0) ? 1 : gC.tl.cache.elmHeight * (gC.tl.data.totals[a] / gC.tl.data.maxVal)
-                })
+                }).data("time", a).data("value", gC.tl.data.totals[a])//.find(".bl-tl-elm-inn").animate({
+                    //height: (gC.tl.data.totals[a] === 0) ? 1 : gC.tl.cache.elmHeight * (gC.tl.data.totals[a] / gC.tl.data.maxVal)
+                //})
             }
         },
         updateSizes: function() {
-            var numOfTimelineBars = $(".bl-tl-elm").length;
+            //var numOfTimelineBars = $(".bl-tl-elm").length;
             var settingsLength = gC.tl.settings.length;
-            gC.tl.cache.elmWidth = gC.tl.cache.$tlData.width() / settingsLength, gC.tl.cache.elmHeight = gC.tl.cache.$tlData.height(), gC.tl.cache.redrawTimeline && clearTimeout(gC.tl.cache.redrawTimeline), gC.tl.cache.redrawTimeline = setTimeout(gC.tl.redrawBars, 100)
+            //Se restan 16px al ancho total debido al padding de los laterales
+            gC.tl.cache.elmWidth = (gC.tl.cache.$tlData.width() - 16) / settingsLength, gC.tl.cache.elmHeight = gC.tl.cache.$tlData.height()//, gC.tl.cache.redrawTimeline && clearTimeout(gC.tl.cache.redrawTimeline), gC.tl.cache.redrawTimeline = setTimeout(gC.tl.redrawBars, 100)
         },
         redrawBars: function() {
             gC.tl.cache.$tlData.find(".bl-tl-elm").each(function() {
