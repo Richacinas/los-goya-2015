@@ -69,7 +69,7 @@ function sendTweet($userTw){
         /** Perform a POST request and echo the response **/
         echo ($mensaje);
         $data = new TwitterAPIExchange($settings);
-        return $data->buildOauth($url, $requestMethod)->setPostfields($postfields)->performRequest();
+        $data->buildOauth($url, $requestMethod)->setPostfields($postfields)->performRequest();
 }
 
 
