@@ -3705,8 +3705,12 @@ var gC = {
         //setInterval(gC.reloadRadar, 10000); // each 10s
     },
     getInitialData: function() {
+        //Primero se esconden ambas capas
+        $("#bl-stream").hide();
+        $("#bl-topten").hide();
+        
     	// Get radar totals data
-        $.ajax("http://lab.rtve.es/mis-goya/radar/final/total.json", {
+        $.ajax("../radar/final/total.json", {
             success: function(a) {
                 gC.loadPostsIdsInTemplate(a.data);
                 gC.processFilter(a.search, a.filter);
@@ -3739,7 +3743,7 @@ var gC = {
     getNewData: function() {
     
         // er request
-        $.ajax('http://lab.rtve.es/mis-goya/radar/final/total.json', {
+        $.ajax('../radar/final/total.json', {
     
             success: function(data, status) {
                 gC.loadPostsIdsInTemplate(data.data);
@@ -3774,7 +3778,7 @@ var gC = {
     },
     reloadRadar: function() {
         // Get total.json data file
-        $.ajax('http://lab.rtve.es/mis-goya/radar/final/total.json', {
+        $.ajax('..radar/final/total.json', {
         	success: function(data, status) {
         		// Get last post ID
         		var homePosts = gC.getHomeLastPosts();
@@ -4038,17 +4042,32 @@ var gC = {
             height: c / 2
         }), gC.cache.numCols && gC.cache.numCols == b || (a.find(".col-strm").removeClass("strem-wdth-" + gC.cache.numCols).addClass("strem-wdth-" + b), gC.cache.numCols = b, gC.restartDrawing(), gC.drawPage(!0))
     },
+    fixUrl: function(tabSelector) {
+        var uri = window.location.href;
+        var cleanUri = "";
+        if (tabSelector == 0) {
+            cleanUri = uri.substring(0, uri.indexOf("mas-comentados"));
+        } else if (tabSelector == 1) {
+            if (uri.indexOf("mas-comentados") == -1) {
+                cleanUri = uri + "mas-comentados";
+            } else {
+                cleanUri = uri;
+            }
+        } else {
+            cleanUri = uri.substring(0,uri.indexOf("mas-comentados"));
+        }
+        window.history.replaceState({}, document.title, cleanUri);
+    },
     bindMenu: function() {
         $(".enlace-los-mas-populares").bind("click", function() {
             _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "SALIR_TOP", "SALIR_TOP"]), gC.generateTopTen(), gC.resizeTopTen(), $("#bl-stream").slideUp(800, function() {
                 $("#bl-topten").slideDown(800)
-            }), $(".bl-tabs-wrap .act").removeClass("act"), $(".enlace-los-mas-populares").addClass("act"), $("#alldone").fadeOut(400), gC.cache.topTenShown = !0
+            }), $(".bl-tabs-wrap .act").removeClass("act"), $(".enlace-los-mas-populares").addClass("act"), $("#alldone").fadeOut(400), gC.cache.topTenShown = !0, gC.fixUrl(1)
         }), $(".enlace-goyas-en-las-redes").bind("click", function() {
             _gaq && _gaq.push(["_trackEvent", "RADAR_SOCIAL_GOYA", "VER_TOP", "VER_TOP"]), $("#bl-topten").slideUp(800, function() {
                 $("#bl-stream").slideDown(800)
-            }), $(".bl-tabs-wrap .act").removeClass("act"), $(".enlace-goyas-en-las-redes").addClass("act"), $("#alldone").fadeIn(400), gC.cache.topTenShown = !1
+            }), $(".bl-tabs-wrap .act").removeClass("act"), $(".enlace-goyas-en-las-redes").addClass("act"), $("#alldone").fadeIn(400), gC.cache.topTenShown = !1, gC.fixUrl(0)
         });
-
     },
     generateTopTen: function() {
     	/* Get Top10 favorites */
@@ -4072,7 +4091,7 @@ var gC = {
         			var twitterUsername = twitterUrlArray[twitterUrlArray.length - 1];
           			targetFavorite.find('a').show().attr('href', favoriteData['twitterUrl']).html('@'+twitterUsername);
         		}
-                targetFavorite.find('.filter-tweets').show();
+                //targetFavorite.find('.filter-tweets').show();
                 }
           	});
           	if (topTen.length < 10) {
@@ -4521,7 +4540,7 @@ labTools.fns = {
 }),$(window).load(function() {
     // Mostrar solo los tag que esst�n definidos desde el backoffice
     $("#filtro-menu").click(function(){
-        $.getJSON('http://lab.rtve.es/mis-goya/radar/final/total.json', function(fileTotal){
+        $.getJSON('..radar/final/total.json', function(fileTotal){
             var comprobarTag;
                 $.each($(".selectBox-dropdown-menu li"),function(i, val){    
                     comprobarTag=$(this);
@@ -4547,6 +4566,13 @@ labTools.fns = {
          });
         });
     });
+    
+    //Aquí se controla si llega parámetro tab en la url, en estos momentos podría traer valor: mas-comentados
+    if (window.location.href.indexOf("radar/mas-comentados") != -1) {
+        $(".enlace-los-mas-populares:first").trigger("click");
+    } else {
+        $(".enlace-goyas-en-las-redes:first").trigger("click");
+    }
 });
 
 
