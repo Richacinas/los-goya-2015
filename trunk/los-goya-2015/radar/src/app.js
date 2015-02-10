@@ -3706,7 +3706,7 @@ var gC = {
     },
     getInitialData: function() {
     	// Get radar totals data
-        $.ajax("../radar/final/total.json", {
+        $.ajax("http://lab.rtve.es/mis-goya/radar/final/total.json", {
             success: function(a) {
                 gC.loadPostsIdsInTemplate(a.data);
                 gC.processFilter(a.search, a.filter);
@@ -3722,24 +3722,24 @@ var gC = {
             timeout: 4e3
         });
         // Get favorites data
-        // $.ajax("../app/getFavorites.php", {
-            // success: function(favoritesData) {
-                // var favorites = $.parseJSON(favoritesData);
-                // // Set in global object
-                // gC.data.favorites = favorites;
-            // },
-            // error: function(e) {
-            	// console.log(e);
-                // return console.log("error recibiendo datos de favoritos!"), !1
-            // },
-            // timeout: 4e3
-        // });
+        $.ajax("../app/getFavorites.php", {
+            success: function(favoritesData) {
+                var favorites = $.parseJSON(favoritesData);
+                // Set in global object
+                gC.data.favorites = favorites;
+            },
+            error: function(e) {
+            	console.log(e);
+                return console.log("error recibiendo datos de favoritos!"), !1
+            },
+            timeout: 4e3
+        });
     },
     // request para el total de tweets archivados nuevos
     getNewData: function() {
     
         // er request
-        $.ajax('../radar/final/total.json', {
+        $.ajax('http://lab.rtve.es/mis-goya/radar/final/total.json', {
     
             success: function(data, status) {
                 gC.loadPostsIdsInTemplate(data.data);
@@ -3774,7 +3774,7 @@ var gC = {
     },
     reloadRadar: function() {
         // Get total.json data file
-        $.ajax('../radar/final/total.json', {
+        $.ajax('http://lab.rtve.es/mis-goya/radar/final/total.json', {
         	success: function(data, status) {
         		// Get last post ID
         		var homePosts = gC.getHomeLastPosts();
@@ -4521,7 +4521,7 @@ labTools.fns = {
 }),$(window).load(function() {
     // Mostrar solo los tag que esst�n definidos desde el backoffice
     $("#filtro-menu").click(function(){
-        $.getJSON('final/total.json', function(fileTotal){
+        $.getJSON('http://lab.rtve.es/mis-goya/radar/final/total.json', function(fileTotal){
             var comprobarTag;
                 $.each($(".selectBox-dropdown-menu li"),function(i, val){    
                     comprobarTag=$(this);
