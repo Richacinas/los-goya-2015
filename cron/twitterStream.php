@@ -182,11 +182,6 @@ function my_streaming_callback($data, $length, $metrics) {
     $found = false;
     $tags = array();
 
-
-    /* Searching favorites in tweet and saving/increasing appeareances */
-    $favoritesHandler = $GLOBALS['favoritesHandler'];
-    $favoritesHandler->handleAppearancesInTweet($twt->text);
-
       // buscamos nuestras palabras en el tweet
     for ($i=0; $i < count($search); $i++) {
 

@@ -1276,7 +1276,7 @@ background: #75a5a0;
 @media (min-width:600px) {
     .col-top-1 img {
         position: relative;
-        left: -40%;
+        left: 0;
     }
 
     .col-top-1,.col-top-2 {

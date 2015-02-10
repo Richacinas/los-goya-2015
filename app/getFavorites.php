@@ -1,10 +1,14 @@
 <?php 
 
+/* Action to get Favorites file and create a JSON string from it */
+
 require_once "core/class/FavoritesHandler.php";
 
 $favoritesHandle = new FavoritesHandler();
+// Getting Favorites
 $favorites = $favoritesHandle->getFavorites();
 
+// Construct Favorites final JSON
 $favoritesJson = "[";
 foreach ($favorites as $i=>$favorite) {
 	$favoritesJson .= "{";
