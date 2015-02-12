@@ -1,5 +1,5 @@
 <?php return array (
-  'time' => '02111223',
+  'time' => '02121813',
   'totals' => 
   array (
   ),
@@ -41,7 +41,8 @@
       'link' => 'http://twitter.com/HistoriasDeLuz/status/564091526649614337',
       'net' => 'tw',
       'tags' => 
-      array (),
+      array (
+      ),
       'userData' => 
       array (
         'name' => 'Historias de Luz',
@@ -8612,29 +8613,6 @@ http://t.co/19ZF3mpSEd
     ),
     351 => 
     array (
-      'user' => '502305306',
-      'screen_name' => 'Daniel_fernan9',
-      'text' => 'Nunca un goya supo tan bien #Goya2015 #KarraElejalde #OchoApellidosVascos',
-      'id' => '564189225210621952',
-      'link' => 'http://twitter.com/Daniel_fernan9/status/564189225210621952',
-      'net' => 'tw',
-      'tags' => 
-      array (
-        0 => 'Karra Elejalde',
-      ),
-      'type' => 'txt',
-      'userData' => 
-      array (
-        'name' => 'Daniel Fernández ',
-        'screen_name' => 'Daniel_fernan9',
-        'location' => 'De Cordoba a Madrid y al cielo',
-        'followers_count' => 228,
-        'profile_image_url' => 'http://pbs.twimg.com/profile_images/559406548678881281/__bOiFHI_normal.jpeg',
-        'net' => 'tw',
-      ),
-    ),
-    352 => 
-    array (
       'time' => '07-02-2015 23:28:20',
       'img' => 'http://img.irtve.es/momento/imagen/1/3/3/2/TVE_LA1_20150207232331.jpg',
       'link' => 'http://www.rtve.es/mt/12698453',
@@ -8650,7 +8628,7 @@ http://t.co/19ZF3mpSEd
       ),
       'type' => 'img-big',
     ),
-    353 => 
+    352 => 
     array (
       'user' => '58482349',
       'screen_name' => 'ilomana',
@@ -8677,7 +8655,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    354 => 
+    353 => 
     array (
       'user' => '242769656',
       'screen_name' => 'Beth_moi',
@@ -8704,7 +8682,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    355 => 
+    354 => 
     array (
       'id' => '915434304781020776_301137938',
       'created_time' => '1423348294',
@@ -8730,7 +8708,7 @@ http://t.co/19ZF3mpSEd
         0 => 'Celia Freijeiro',
       ),
     ),
-    356 => 
+    355 => 
     array (
       'user' => '161310009',
       'screen_name' => 'agusalonsog',
@@ -8753,7 +8731,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    357 => 
+    356 => 
     array (
       'user' => '246906743',
       'screen_name' => 'GuilleLEP',
@@ -8776,7 +8754,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    358 => 
+    357 => 
     array (
       'user' => '70374109',
       'screen_name' => 'anti000',
@@ -8799,7 +8777,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    359 => 
+    358 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -8826,7 +8804,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    360 => 
+    359 => 
     array (
       'user' => '70374109',
       'screen_name' => 'anti000',
@@ -8849,7 +8827,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    361 => 
+    360 => 
     array (
       'time' => '07-02-2015 23:27:09',
       'img' => 'http://img.irtve.es/momento/imagen/6/3/0/2/IRTVE16_20150207232036.jpg',
@@ -8866,7 +8844,7 @@ http://t.co/19ZF3mpSEd
       ),
       'type' => 'img-big',
     ),
-    362 => 
+    361 => 
     array (
       'user' => '41776130',
       'screen_name' => 'juanmafdez',
@@ -8889,7 +8867,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    363 => 
+    362 => 
     array (
       'user' => '19565216',
       'screen_name' => 'yo_dona',
@@ -8916,7 +8894,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    364 => 
+    363 => 
     array (
       'time' => '07-02-2015 23:34:47',
       'img' => 'http://img.irtve.es/momento/imagen/5/4/8/2/IRTVE16_20150207232845.jpg',
@@ -8933,7 +8911,7 @@ http://t.co/19ZF3mpSEd
       ),
       'type' => 'img-big',
     ),
-    365 => 
+    364 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -8960,7 +8938,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    366 => 
+    365 => 
     array (
       'user' => '1030836444',
       'screen_name' => '8_7_98',
@@ -8984,7 +8962,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    367 => 
+    366 => 
     array (
       'user' => '20489812',
       'screen_name' => 'DanielGJabonero',
@@ -9007,7 +8985,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    368 => 
+    367 => 
     array (
       'user' => '58482349',
       'screen_name' => 'ilomana',
@@ -9034,7 +9012,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    369 => 
+    368 => 
     array (
       'time' => '07-02-2015 23:37:44',
       'img' => 'http://img.irtve.es/momento/imagen/1/3/2/3/TVE_LA1_20150207233231.jpg',
@@ -9051,7 +9029,7 @@ http://t.co/19ZF3mpSEd
       ),
       'type' => 'img-big',
     ),
-    370 => 
+    369 => 
     array (
       'user' => '198540769',
       'screen_name' => 'BegoALL',
@@ -9074,7 +9052,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    371 => 
+    370 => 
     array (
       'user' => '2589869347',
       'screen_name' => 'elnino_pelicula',
@@ -9101,7 +9079,7 @@ http://t.co/19ZF3mpSEd
       ),
       'type' => 'img-small',
     ),
-    372 => 
+    371 => 
     array (
       'user' => '240665461',
       'screen_name' => 'PremiosGoyaEs',
@@ -9128,7 +9106,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    373 => 
+    372 => 
     array (
       'user' => '166507237',
       'screen_name' => 'elEconomistaes',
@@ -9155,7 +9133,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    374 => 
+    373 => 
     array (
       'user' => '326912627',
       'screen_name' => 'NuriaCSopena',
@@ -9182,7 +9160,7 @@ http://t.co/19ZF3mpSEd
         'net' => 'tw',
       ),
     ),
-    375 => 
+    374 => 
     array (
       'user' => '310776296',
       'screen_name' => 'Mariiiiaa96',
@@ -9210,7 +9188,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
       ),
       'type' => 'img-small',
     ),
-    376 => 
+    375 => 
     array (
       'user' => '319064664',
       'screen_name' => 'rustish1978',
@@ -9237,7 +9215,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    377 => 
+    376 => 
     array (
       'user' => '57981270',
       'screen_name' => 'La1_tve',
@@ -9260,7 +9238,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    378 => 
+    377 => 
     array (
       'time' => '07-02-2015 23:40:00',
       'img' => 'http://img.irtve.es/momento/imagen/1/3/5/3/TVE_LA1_20150207233531.jpg',
@@ -9277,7 +9255,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
       ),
       'type' => 'img-big',
     ),
-    379 => 
+    378 => 
     array (
       'time' => '07-02-2015 22:43:58',
       'img' => 'http://img.irtve.es/momento/imagen/5/1/9/3/IRTVE16_20150207223915.jpg',
@@ -9294,7 +9272,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
       ),
       'type' => 'img-big',
     ),
-    380 => 
+    379 => 
     array (
       'user' => '66634026',
       'screen_name' => 'Pepino_Marino',
@@ -9321,7 +9299,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    381 => 
+    380 => 
     array (
       'user' => '116844758',
       'screen_name' => 'mizonatv',
@@ -9348,7 +9326,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    382 => 
+    381 => 
     array (
       'user' => '97932833',
       'screen_name' => 'josealvarezc',
@@ -9371,7 +9349,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    383 => 
+    382 => 
     array (
       'user' => '139479492',
       'screen_name' => 'bebfresita',
@@ -9394,7 +9372,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    384 => 
+    383 => 
     array (
       'user' => '3019585156',
       'screen_name' => 'GoyArggg',
@@ -9417,7 +9395,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    385 => 
+    384 => 
     array (
       'time' => '07-02-2015 23:49:30',
       'img' => 'http://img.irtve.es/momento/imagen/0/0/4/4/TVE_LA1_20150207234400.jpg',
@@ -9434,7 +9412,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
       ),
       'type' => 'img-big',
     ),
-    386 => 
+    385 => 
     array (
       'user' => '66634026',
       'screen_name' => 'Pepino_Marino',
@@ -9461,7 +9439,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    387 => 
+    386 => 
     array (
       'user' => '302521413',
       'screen_name' => 'danielgalindo78',
@@ -9484,7 +9462,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    388 => 
+    387 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -9511,7 +9489,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    389 => 
+    388 => 
     array (
       'user' => '22811495',
       'screen_name' => 'rtvees',
@@ -9534,7 +9512,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    390 => 
+    389 => 
     array (
       'id' => '915442192480423047_1918282',
       'created_time' => '1423349235',
@@ -9560,7 +9538,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         0 => 'Blanca Suárez',
       ),
     ),
-    391 => 
+    390 => 
     array (
       'user' => '58482349',
       'screen_name' => 'ilomana',
@@ -9587,7 +9565,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    392 => 
+    391 => 
     array (
       'user' => '110947285',
       'screen_name' => 'magicoviaje',
@@ -9614,7 +9592,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    393 => 
+    392 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -9637,7 +9615,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    394 => 
+    393 => 
     array (
       'user' => '57981270',
       'screen_name' => 'La1_tve',
@@ -9660,7 +9638,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    395 => 
+    394 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -9687,7 +9665,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    396 => 
+    395 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -9714,7 +9692,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    397 => 
+    396 => 
     array (
       'user' => '273642655',
       'screen_name' => 'SheilaLjungberg',
@@ -9742,7 +9720,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    398 => 
+    397 => 
     array (
       'time' => '07-02-2015 23:55:22',
       'img' => 'http://img.irtve.es/momento/imagen/5/4/9/4/IRTVE16_20150207234945.jpg',
@@ -9759,7 +9737,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
       ),
       'type' => 'img-big',
     ),
-    399 => 
+    398 => 
     array (
       'user' => '2858807777',
       'screen_name' => 'antoniobanderas',
@@ -9786,7 +9764,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    400 => 
+    399 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -9813,7 +9791,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    401 => 
+    400 => 
     array (
       'user' => '2972384074',
       'screen_name' => 'Susana_Chl',
@@ -9839,7 +9817,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
       ),
       'type' => 'img-small',
     ),
-    402 => 
+    401 => 
     array (
       'user' => '1498703953',
       'screen_name' => 'alba1997_ar',
@@ -9865,7 +9843,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
       ),
       'type' => 'img-small',
     ),
-    403 => 
+    402 => 
     array (
       'user' => '301161344',
       'screen_name' => 'anamartinplaza',
@@ -9888,7 +9866,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
         'net' => 'tw',
       ),
     ),
-    404 => 
+    403 => 
     array (
       'user' => '77336111',
       'screen_name' => 'j_alcove',
@@ -9914,7 +9892,7 @@ Sr. #Wert ,usted no está incluido en esta categoría" Zasca!!!
       ),
       'type' => 'img-small',
     ),
-    405 => 
+    404 => 
     array (
       'user' => '97467741',
       'screen_name' => 'manu_tenorio1',
@@ -9938,7 +9916,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    406 => 
+    405 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -9965,7 +9943,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    407 => 
+    406 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -9992,7 +9970,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    408 => 
+    407 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -10019,7 +9997,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    409 => 
+    408 => 
     array (
       'user' => '250345007',
       'screen_name' => 'AnaSanchezNieta',
@@ -10042,7 +10020,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    410 => 
+    409 => 
     array (
       'user' => '17208926',
       'screen_name' => 'trendencias',
@@ -10069,7 +10047,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    411 => 
+    410 => 
     array (
       'user' => '240665461',
       'screen_name' => 'PremiosGoyaEs',
@@ -10096,7 +10074,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    412 => 
+    411 => 
     array (
       'user' => '22811495',
       'screen_name' => 'rtvees',
@@ -10119,7 +10097,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    413 => 
+    412 => 
     array (
       'id' => '915447546778857507_388084203',
       'created_time' => '1423349873',
@@ -10145,7 +10123,7 @@ No se le acaba el talento!!  #Goya2015',
         0 => 'Nieves Álvarez',
       ),
     ),
-    414 => 
+    413 => 
     array (
       'user' => '248747685',
       'screen_name' => 'jorge_jungle',
@@ -10172,7 +10150,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    415 => 
+    414 => 
     array (
       'user' => '38751006',
       'screen_name' => 'FabiScherer',
@@ -10198,7 +10176,7 @@ No se le acaba el talento!!  #Goya2015',
       ),
       'type' => 'img-small',
     ),
-    416 => 
+    415 => 
     array (
       'user' => '77684905',
       'screen_name' => 'PlanetaOtaku',
@@ -10224,7 +10202,7 @@ No se le acaba el talento!!  #Goya2015',
       ),
       'type' => 'img-small',
     ),
-    417 => 
+    416 => 
     array (
       'user' => '57981270',
       'screen_name' => 'La1_tve',
@@ -10251,7 +10229,7 @@ No se le acaba el talento!!  #Goya2015',
         'net' => 'tw',
       ),
     ),
-    418 => 
+    417 => 
     array (
       'user' => '583915789',
       'screen_name' => 'pacomvc97',
@@ -10279,7 +10257,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-small',
     ),
-    419 => 
+    418 => 
     array (
       'user' => '826969880',
       'screen_name' => 'Grazia_es',
@@ -10306,7 +10284,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    420 => 
+    419 => 
     array (
       'user' => '150782811',
       'screen_name' => 'nachoguerreros',
@@ -10329,7 +10307,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    421 => 
+    420 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -10356,7 +10334,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    422 => 
+    421 => 
     array (
       'time' => '08-02-2015 00:11:33',
       'img' => 'http://img.irtve.es/momento/imagen/5/1/6/0/IRTVE16_20150208000615.jpg',
@@ -10373,7 +10351,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-big',
     ),
-    423 => 
+    422 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -10400,7 +10378,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    424 => 
+    423 => 
     array (
       'user' => '43586109',
       'screen_name' => 'caoticalucie',
@@ -10423,7 +10401,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    425 => 
+    424 => 
     array (
       'time' => '08-02-2015 00:10:51',
       'img' => 'http://img.irtve.es/momento/imagen/1/5/5/0/TVE_LA1_20150208000551.jpg',
@@ -10440,7 +10418,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-big',
     ),
-    426 => 
+    425 => 
     array (
       'user' => '29454737',
       'screen_name' => 'Norihouse',
@@ -10467,7 +10445,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    427 => 
+    426 => 
     array (
       'user' => '230537167',
       'screen_name' => 'pacoleonbarrios',
@@ -10490,7 +10468,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    428 => 
+    427 => 
     array (
       'user' => '296890749',
       'screen_name' => 'DiasDeCine',
@@ -10513,7 +10491,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    429 => 
+    428 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -10540,7 +10518,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    430 => 
+    429 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -10564,6 +10542,29 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'location' => 'Madrid, España',
         'followers_count' => 781290,
         'profile_image_url' => 'http://pbs.twimg.com/profile_images/449524195529981952/6uemF5nU_normal.jpeg',
+        'net' => 'tw',
+      ),
+    ),
+    430 => 
+    array (
+      'user' => '624107328',
+      'screen_name' => 'ogentilcar',
+      'text' => 'Lo que me estoy riendo con los #GoyasGolfos',
+      'id' => '564202238877634561',
+      'link' => 'http://twitter.com/ogentilcar/status/564202238877634561',
+      'net' => 'tw',
+      'tags' => 
+      array (
+        0 => '',
+      ),
+      'type' => 'txt',
+      'userData' => 
+      array (
+        'name' => 'Olga Gentil',
+        'screen_name' => 'ogentilcar',
+        'location' => 'Sevilla',
+        'followers_count' => 407,
+        'profile_image_url' => 'http://pbs.twimg.com/profile_images/561546243458215936/MNoLcwUC_normal.jpeg',
         'net' => 'tw',
       ),
     ),
@@ -10592,29 +10593,6 @@ FAV: NO http://t.co/L4X8lbDBEy',
     ),
     432 => 
     array (
-      'user' => '624107328',
-      'screen_name' => 'ogentilcar',
-      'text' => 'Lo que me estoy riendo con los #GoyasGolfos',
-      'id' => '564202238877634561',
-      'link' => 'http://twitter.com/ogentilcar/status/564202238877634561',
-      'net' => 'tw',
-      'tags' => 
-      array (
-        0 => '',
-      ),
-      'type' => 'txt',
-      'userData' => 
-      array (
-        'name' => 'Olga Gentil',
-        'screen_name' => 'ogentilcar',
-        'location' => 'Sevilla',
-        'followers_count' => 407,
-        'profile_image_url' => 'http://pbs.twimg.com/profile_images/561546243458215936/MNoLcwUC_normal.jpeg',
-        'net' => 'tw',
-      ),
-    ),
-    433 => 
-    array (
       'user' => '262135360',
       'screen_name' => 'sergiomurlopez',
       'text' => 'Gracias #GoyasGolfos Así sí!! 😄😄 😂😜😜',
@@ -10636,7 +10614,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    434 => 
+    433 => 
     array (
       'user' => '464874808',
       'screen_name' => 'Patisukiya',
@@ -10662,7 +10640,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-small',
     ),
-    435 => 
+    434 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -10689,7 +10667,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    436 => 
+    435 => 
     array (
       'user' => '756431',
       'screen_name' => 'ajpaniagua',
@@ -10712,7 +10690,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    437 => 
+    436 => 
     array (
       'user' => '73085246',
       'screen_name' => 'Damibp',
@@ -10735,7 +10713,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    438 => 
+    437 => 
     array (
       'user' => '269998173',
       'screen_name' => 'cgarcias94',
@@ -10758,7 +10736,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    439 => 
+    438 => 
     array (
       'user' => '17634874',
       'screen_name' => 'FormulaTV',
@@ -10785,7 +10763,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    440 => 
+    439 => 
     array (
       'user' => '22811495',
       'screen_name' => 'rtvees',
@@ -10812,7 +10790,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    441 => 
+    440 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -10839,7 +10817,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    442 => 
+    441 => 
     array (
       'user' => '22811495',
       'screen_name' => 'rtvees',
@@ -10862,7 +10840,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    443 => 
+    442 => 
     array (
       'user' => '2161731',
       'screen_name' => 'jeanbedel',
@@ -10885,7 +10863,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    444 => 
+    443 => 
     array (
       'user' => '124149119',
       'screen_name' => 'MariaJ_MC',
@@ -10908,7 +10886,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    445 => 
+    444 => 
     array (
       'user' => '110942823',
       'screen_name' => 'Vertele',
@@ -10935,7 +10913,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    446 => 
+    445 => 
     array (
       'user' => '57981270',
       'screen_name' => 'La1_tve',
@@ -10958,7 +10936,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    447 => 
+    446 => 
     array (
       'user' => '963014280',
       'screen_name' => 'Anagarcito',
@@ -10984,7 +10962,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-small',
     ),
-    448 => 
+    447 => 
     array (
       'user' => '548363791',
       'screen_name' => 'Jaime_Algorri',
@@ -11010,7 +10988,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-small',
     ),
-    449 => 
+    448 => 
     array (
       'user' => '904466856',
       'screen_name' => 'angelasr99',
@@ -11036,7 +11014,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-small',
     ),
-    450 => 
+    449 => 
     array (
       'time' => '08-02-2015 00:32:38',
       'img' => 'http://img.irtve.es/momento/imagen/0/2/6/2/TVE_LA1_20150208002620.jpg',
@@ -11053,7 +11031,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-big',
     ),
-    451 => 
+    450 => 
     array (
       'user' => '146236068',
       'screen_name' => 'policarpoaroca',
@@ -11079,7 +11057,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-small',
     ),
-    452 => 
+    451 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -11106,7 +11084,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    453 => 
+    452 => 
     array (
       'time' => '08-02-2015 00:37:35',
       'img' => 'http://img.irtve.es/momento/imagen/1/5/8/2/TVE_LA1_20150208002851.jpg',
@@ -11123,7 +11101,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
       ),
       'type' => 'img-big',
     ),
-    454 => 
+    453 => 
     array (
       'user' => '170128289',
       'screen_name' => 'GafasAmarillas',
@@ -11146,7 +11124,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    455 => 
+    454 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -11173,7 +11151,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    456 => 
+    455 => 
     array (
       'user' => '238489127',
       'screen_name' => 'TAKENOBUTEAM',
@@ -11200,7 +11178,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    457 => 
+    456 => 
     array (
       'user' => '116844758',
       'screen_name' => 'mizonatv',
@@ -11227,7 +11205,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    458 => 
+    457 => 
     array (
       'user' => '116844758',
       'screen_name' => 'mizonatv',
@@ -11254,7 +11232,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    459 => 
+    458 => 
     array (
       'user' => '1931856607',
       'screen_name' => 'Cesar_Valla',
@@ -11277,7 +11255,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    460 => 
+    459 => 
     array (
       'user' => '58482349',
       'screen_name' => 'ilomana',
@@ -11304,7 +11282,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    461 => 
+    460 => 
     array (
       'user' => '1934007289',
       'screen_name' => 'ZelebSpain',
@@ -11331,7 +11309,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    462 => 
+    461 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -11358,7 +11336,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    463 => 
+    462 => 
     array (
       'user' => '19963431',
       'screen_name' => 'elle_es',
@@ -11385,7 +11363,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    464 => 
+    463 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -11412,7 +11390,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    465 => 
+    464 => 
     array (
       'user' => '753779250',
       'screen_name' => 'gabnunpad_el',
@@ -11435,7 +11413,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    466 => 
+    465 => 
     array (
       'user' => '1485728412',
       'screen_name' => 'MacGuffilmsblog',
@@ -11462,7 +11440,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    467 => 
+    466 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -11489,7 +11467,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    468 => 
+    467 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -11516,7 +11494,7 @@ FAV: NO http://t.co/L4X8lbDBEy',
         'net' => 'tw',
       ),
     ),
-    469 => 
+    468 => 
     array (
       'user' => '271054922',
       'screen_name' => 'AdryLeNoir',
@@ -11545,7 +11523,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    470 => 
+    469 => 
     array (
       'user' => '125173420',
       'screen_name' => 'miss_xi',
@@ -11568,7 +11546,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    471 => 
+    470 => 
     array (
       'user' => '51479637',
       'screen_name' => 'madeinbicho',
@@ -11595,7 +11573,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    472 => 
+    471 => 
     array (
       'user' => '240665461',
       'screen_name' => 'PremiosGoyaEs',
@@ -11622,7 +11600,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    473 => 
+    472 => 
     array (
       'user' => '240665461',
       'screen_name' => 'PremiosGoyaEs',
@@ -11649,7 +11627,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    474 => 
+    473 => 
     array (
       'user' => '240665461',
       'screen_name' => 'PremiosGoyaEs',
@@ -11676,7 +11654,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    475 => 
+    474 => 
     array (
       'user' => '240665461',
       'screen_name' => 'PremiosGoyaEs',
@@ -11703,7 +11681,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    476 => 
+    475 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -11730,7 +11708,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    477 => 
+    476 => 
     array (
       'time' => '07-02-2015 22:39:29',
       'img' => 'http://img.irtve.es/momento/imagen/5/2/4/3/IRTVE16_20150207223425.jpg',
@@ -11747,7 +11725,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-big',
     ),
-    478 => 
+    477 => 
     array (
       'user' => '2858807777',
       'screen_name' => 'antoniobanderas',
@@ -11774,7 +11752,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    479 => 
+    478 => 
     array (
       'user' => '240665461',
       'screen_name' => 'PremiosGoyaEs',
@@ -11800,7 +11778,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-small',
     ),
-    480 => 
+    479 => 
     array (
       'time' => '08-02-2015 00:58:28',
       'img' => 'http://img.irtve.es/momento/imagen/6/4/2/5/IRTVE16_20150208005246.jpg',
@@ -11817,7 +11795,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-big',
     ),
-    481 => 
+    480 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -11844,7 +11822,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    482 => 
+    481 => 
     array (
       'user' => '283716080',
       'screen_name' => 'shinefile',
@@ -11867,7 +11845,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    483 => 
+    482 => 
     array (
       'time' => '08-02-2015 00:54:58',
       'img' => 'http://img.irtve.es/momento/imagen/6/5/9/4/IRTVE16_20150208004956.jpg',
@@ -11884,7 +11862,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-big',
     ),
-    484 => 
+    483 => 
     array (
       'time' => '08-02-2015 01:08:42',
       'img' => 'http://img.irtve.es/momento/imagen/5/0/3/0/IRTVE16_20150208010305.jpg',
@@ -11901,7 +11879,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-big',
     ),
-    485 => 
+    484 => 
     array (
       'user' => '910369495',
       'screen_name' => 'aqmarropa',
@@ -11928,7 +11906,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    486 => 
+    485 => 
     array (
       'user' => '16514160',
       'screen_name' => 'informativost5',
@@ -11955,7 +11933,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    487 => 
+    486 => 
     array (
       'user' => '38118079',
       'screen_name' => 'vicsalazar',
@@ -11981,7 +11959,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-small',
     ),
-    488 => 
+    487 => 
     array (
       'user' => '2286410535',
       'screen_name' => 'demetrio_rich',
@@ -12007,7 +11985,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-small',
     ),
-    489 => 
+    488 => 
     array (
       'user' => '549273099',
       'screen_name' => 'Mikan9098',
@@ -12033,7 +12011,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-small',
     ),
-    490 => 
+    489 => 
     array (
       'user' => '592845050',
       'screen_name' => 'cristianvd3105',
@@ -12059,7 +12037,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-small',
     ),
-    491 => 
+    490 => 
     array (
       'time' => '08-02-2015 01:13:41',
       'img' => 'http://img.irtve.es/momento/imagen/1/4/7/0/TVE_LA1_20150208010741.jpg',
@@ -12076,7 +12054,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-big',
     ),
-    492 => 
+    491 => 
     array (
       'time' => '08-02-2015 01:18:43',
       'img' => 'http://img.irtve.es/momento/imagen/2/0/3/1/TVE_LA1_20150208011302.jpg',
@@ -12093,7 +12071,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-big',
     ),
-    493 => 
+    492 => 
     array (
       'user' => '45834574',
       'screen_name' => 'borjateran',
@@ -12116,7 +12094,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    494 => 
+    493 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12139,7 +12117,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    495 => 
+    494 => 
     array (
       'user' => '240665461',
       'screen_name' => 'PremiosGoyaEs',
@@ -12166,7 +12144,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    496 => 
+    495 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12193,7 +12171,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    497 => 
+    496 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12220,7 +12198,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    498 => 
+    497 => 
     array (
       'user' => '240665461',
       'screen_name' => 'PremiosGoyaEs',
@@ -12243,7 +12221,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    499 => 
+    498 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12270,7 +12248,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    500 => 
+    499 => 
     array (
       'time' => '08-02-2015 01:28:30',
       'img' => 'http://img.irtve.es/momento/imagen/0/1/3/2/TVE_LA1_20150208012310.jpg',
@@ -12287,7 +12265,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-big',
     ),
-    501 => 
+    500 => 
     array (
       'user' => '756431',
       'screen_name' => 'ajpaniagua',
@@ -12310,7 +12288,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    502 => 
+    501 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12337,7 +12315,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    503 => 
+    502 => 
     array (
       'user' => '467649607',
       'screen_name' => 'teleaudiencias',
@@ -12364,7 +12342,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    504 => 
+    503 => 
     array (
       'user' => '253681815',
       'screen_name' => 'jmarcosso',
@@ -12390,7 +12368,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-small',
     ),
-    505 => 
+    504 => 
     array (
       'user' => '216366353',
       'screen_name' => 'RVilarinoEva',
@@ -12416,7 +12394,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-small',
     ),
-    506 => 
+    505 => 
     array (
       'time' => '08-02-2015 01:32:01',
       'img' => 'http://img.irtve.es/momento/imagen/6/0/6/2/IRTVE16_20150208012606.jpg',
@@ -12433,7 +12411,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-big',
     ),
-    507 => 
+    506 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12460,7 +12438,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    508 => 
+    507 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12487,7 +12465,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    509 => 
+    508 => 
     array (
       'time' => '08-02-2015 01:32:57',
       'img' => 'http://img.irtve.es/momento/imagen/2/0/6/2/TVE_LA1_20150208012602.jpg',
@@ -12504,7 +12482,7 @@ http://t.co/AIMpExLByE
       ),
       'type' => 'img-big',
     ),
-    510 => 
+    509 => 
     array (
       'user' => '470630057',
       'screen_name' => 'des_viados',
@@ -12527,7 +12505,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    511 => 
+    510 => 
     array (
       'user' => '1965505802',
       'screen_name' => 'EstoyIdeal',
@@ -12554,7 +12532,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    512 => 
+    511 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12581,7 +12559,7 @@ http://t.co/AIMpExLByE
         'net' => 'tw',
       ),
     ),
-    513 => 
+    512 => 
     array (
       'user' => '359977166',
       'screen_name' => 'Martahazas',
@@ -12611,7 +12589,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
       ),
       'type' => 'img-small',
     ),
-    514 => 
+    513 => 
     array (
       'user' => '27995771',
       'screen_name' => 'VB_VictorBlanco',
@@ -12638,7 +12616,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
       ),
       'type' => 'img-small',
     ),
-    515 => 
+    514 => 
     array (
       'user' => '27995771',
       'screen_name' => 'VB_VictorBlanco',
@@ -12665,7 +12643,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
       ),
       'type' => 'img-small',
     ),
-    516 => 
+    515 => 
     array (
       'user' => '27995771',
       'screen_name' => 'VB_VictorBlanco',
@@ -12692,7 +12670,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
       ),
       'type' => 'img-small',
     ),
-    517 => 
+    516 => 
     array (
       'user' => '138901117',
       'screen_name' => 'ChristianG_7',
@@ -12719,7 +12697,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
       ),
       'type' => 'img-big',
     ),
-    518 => 
+    517 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12746,6 +12724,23 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
         'net' => 'tw',
       ),
     ),
+    518 => 
+    array (
+      'time' => '08-02-2015 01:38:19',
+      'img' => 'http://img.irtve.es/momento/imagen/1/0/3/3/TVE_LA1_20150208013301.jpg',
+      'link' => 'http://www.rtve.es/mt/12701557',
+      'id' => 12701557,
+      'net' => '+t',
+      'video' => 'http://vmastve.rtve.es/momento/video/geo/1/0/3/3/TVE_LA1_20150208013301.mp4',
+      'text' => 'Ovación del auditorio para Penélope Cruz',
+      'usr' => 'La1_tve',
+      'usr_img' => 'http://pbs.twimg.com/profile_images/323237600/tve1_normal.png',
+      'tags' => 
+      array (
+        0 => 'Penélope Cruz',
+      ),
+      'type' => 'img-big',
+    ),
     519 => 
     array (
       'time' => '08-02-2015 01:38:19',
@@ -12764,23 +12759,6 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
       'type' => 'img-big',
     ),
     520 => 
-    array (
-      'time' => '08-02-2015 01:38:19',
-      'img' => 'http://img.irtve.es/momento/imagen/1/0/3/3/TVE_LA1_20150208013301.jpg',
-      'link' => 'http://www.rtve.es/mt/12701557',
-      'id' => 12701557,
-      'net' => '+t',
-      'video' => 'http://vmastve.rtve.es/momento/video/geo/1/0/3/3/TVE_LA1_20150208013301.mp4',
-      'text' => 'Ovación del auditorio para Penélope Cruz',
-      'usr' => 'La1_tve',
-      'usr_img' => 'http://pbs.twimg.com/profile_images/323237600/tve1_normal.png',
-      'tags' => 
-      array (
-        0 => 'Penélope Cruz',
-      ),
-      'type' => 'img-big',
-    ),
-    521 => 
     array (
       'user' => '276075104',
       'screen_name' => 'ManuDs81',
@@ -12803,7 +12781,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
         'net' => 'tw',
       ),
     ),
-    522 => 
+    521 => 
     array (
       'time' => '08-02-2015 01:42:30',
       'img' => 'http://img.irtve.es/momento/imagen/5/3/7/3/IRTVE16_20150208013735.jpg',
@@ -12820,7 +12798,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
       ),
       'type' => 'img-big',
     ),
-    523 => 
+    522 => 
     array (
       'user' => '305474040',
       'screen_name' => 'SesionGolfa',
@@ -12843,7 +12821,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
         'net' => 'tw',
       ),
     ),
-    524 => 
+    523 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -12870,7 +12848,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
         'net' => 'tw',
       ),
     ),
-    525 => 
+    524 => 
     array (
       'user' => '57986415',
       'screen_name' => 'tve_tve',
@@ -12897,7 +12875,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
         'net' => 'tw',
       ),
     ),
-    526 => 
+    525 => 
     array (
       'user' => '493212551',
       'screen_name' => 'lab_rtvees',
@@ -12924,7 +12902,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
         'net' => 'tw',
       ),
     ),
-    527 => 
+    526 => 
     array (
       'user' => '45591472',
       'screen_name' => 'chuuss',
@@ -12947,7 +12925,7 @@ Sencilla, elegante, glamurosa... Old H… http://t.co/3QtsplNBrW htt…',
         'net' => 'tw',
       ),
     ),
-    528 => 
+    527 => 
     array (
       'user' => '29454737',
       'screen_name' => 'Norihouse',
@@ -12975,7 +12953,7 @@ Foto: Jose Haro http://t.co/gzYyrpaklS',
         'net' => 'tw',
       ),
     ),
-    529 => 
+    528 => 
     array (
       'user' => '20448792',
       'screen_name' => 'DiarioSUR',
@@ -13002,7 +12980,7 @@ Foto: Jose Haro http://t.co/gzYyrpaklS',
         'net' => 'tw',
       ),
     ),
-    530 => 
+    529 => 
     array (
       'time' => '08-02-2015 01:53:30',
       'img' => 'http://img.irtve.es/momento/imagen/6/2/6/4/IRTVE16_20150208014626.jpg',
@@ -13019,7 +12997,7 @@ Foto: Jose Haro http://t.co/gzYyrpaklS',
       ),
       'type' => 'img-big',
     ),
-    531 => 
+    530 => 
     array (
       'user' => '244215107',
       'screen_name' => 'Srpacotomas',
@@ -13046,7 +13024,7 @@ Foto: Jose Haro http://t.co/gzYyrpaklS',
         'net' => 'tw',
       ),
     ),
-    532 => 
+    531 => 
     array (
       'user' => '45834574',
       'screen_name' => 'borjateran',
@@ -13073,7 +13051,7 @@ Foto: Jose Haro http://t.co/gzYyrpaklS',
         'net' => 'tw',
       ),
     ),
-    533 => 
+    532 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -13100,7 +13078,7 @@ Foto: Jose Haro http://t.co/gzYyrpaklS',
         'net' => 'tw',
       ),
     ),
-    534 => 
+    533 => 
     array (
       'user' => '388934098',
       'screen_name' => 'chincheto77',
@@ -13123,7 +13101,7 @@ Foto: Jose Haro http://t.co/gzYyrpaklS',
         'net' => 'tw',
       ),
     ),
-    535 => 
+    534 => 
     array (
       'user' => '26729931',
       'screen_name' => 'rtve',
@@ -13150,7 +13128,7 @@ Foto: Jose Haro http://t.co/gzYyrpaklS',
         'net' => 'tw',
       ),
     ),
-    536 => 
+    535 => 
     array (
       'user' => '119105025',
       'screen_name' => 'GonzalodelPrado',
@@ -13177,7 +13155,7 @@ Foto: Jose Haro http://t.co/gzYyrpaklS',
         'net' => 'tw',
       ),
     ),
-    537 => 
+    536 => 
     array (
       'user' => '54961149',
       'screen_name' => 'elpais_cultura',
