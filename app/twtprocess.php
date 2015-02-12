@@ -130,6 +130,12 @@ switch ($method) {
     //$string = file_get_contents($saveDatatotal);
     //$json_a = json_decode($string, true);
 
+    $pos = positionForPostId($id, $GLOBALS['data']['all']);
+    $tags = $GLOBALS['data']['all'][$pos]['tags'];
+    $type = $GLOBALS['data']['all'][$pos]['type'];
+    
+    processTagCount($tags, $search, $tagCount, $type, sub);
+    
     // Comprobamos que el objeto este definido
     if ($id) {
       deleteData($id);
@@ -177,7 +183,7 @@ switch ($method) {
     */
     
     //Añadimos apariciones de tags al conteo tagCount
-    processTagCount(array($tag), $search, $tagCount, $type);
+    processTagCount(array($tag), $search, $tagCount, $type, add);
 
     if(strpos($link, 'twitter.com') != false && strpos($link, 'status') != false) {
       include_once($twitterFunctions);
@@ -443,14 +449,18 @@ switch ($method) {
   break;
 }
 
-function processTagCount ($twtTags, $search, &$tagCount, $type) {
+
+function add($a, $b) { return $a+$b; }
+function sub($a, $b) { return $a-$b; }
+
+function processTagCount ($twtTags, $search, &$tagCount, $type, $operator) {
     foreach ($twtTags as $k => $twtValue) {
         foreach ($search as $key => $searchValue) {
             if ($twtValue == $searchValue) {
                 if ($type == 'img-small') {
-                    $tagCount[$key] += 0.25;
+                    $tagCount[$key] = $operator($tagCount[$key], 0.25);
                 } else {
-                    $tagCount[$key]++;
+                    $tagCount[$key] = $operator($tagCount[$key], 1);
                 }
             }
         }
@@ -768,7 +778,8 @@ function saveData(){
     $timeline['global'] = array();
   }
 
-  $timelineGlobal = completeTimelineWithEmptyMoments($timeline['global']);
+  //$timelineGlobal = completeTimelineWithEmptyMoments($timeline['global']);
+  $timelineGlobal = $timeline['global'];
   
   writeJson($GLOBALS['saveDataminute'], array(
     'data' => transformPosts($GLOBALS['data']['minute']), 
