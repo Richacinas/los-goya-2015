@@ -403,6 +403,8 @@
 
           if(queryType != "total"){ // para los que no son tweets del streaming
             datos = radarControler.data.processed[queryType][data.time]['search'][data.elm];
+            //Por ahora se eliminan los tags que trae el Stream
+            datos.tags = new Array();
             datos.userData = radarControler.data.user[datos['user']];
             query = data.query;
             time = data.time;

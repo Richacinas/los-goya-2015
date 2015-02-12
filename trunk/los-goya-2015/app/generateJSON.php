@@ -1,9 +1,15 @@
 <?php
 
+//Se lee el fichero para obtener la parte de tagCount solamente. Lo demás llega en $_POST
+$file_SearchTerms       = '../data/properties/searchTerms.json';
+$jsonSearchTerms    = file_get_contents($file_SearchTerms);
+$jsonSearchTerms_a  = json_decode($jsonSearchTerms, true);
+
 $tags 		= $_POST["tags"];
 $search 	= json_decode($_POST["search"]);
 $filter 	= json_decode($_POST["filter"]);
 $token          = $_POST["token"];
+$tagCount       = $jsonSearchTerms_a['tagCount'];
 
 /*
 
@@ -27,8 +33,19 @@ foreach( $filter as $value) {
 
 */
 
+function filterElements(&$arr, &$arr2, &$arr3) {
+    foreach ($arr as $key=>$value) {
+        if ($value == "") {
+            unset($arr[$key]);
+            unset($arr2[$key]);
+            unset($arr3[$key]);
+        }
+    }
+}
+
 // Obtenemos la fecha del sistema
 $date = time();
+filterElements($search, $filter, $tagCount);
 
 // Creamos el array que sirve de base para generar el JSON con los datos con los siguientes datos
 // + time: Fecha de creacion del fichero JSON (sirve para comprobar si hay nuevos datos)
@@ -37,11 +54,12 @@ $date = time();
 // + filter: Listado de los diferentes terminos de busqueda que estan activos
 
 $array = array(
-  'time' => $date,
-  'tags' => explode(", ", $tags),
-  'search' => array_filter($search),
-  'filter' => $filter,
-  'token' => $token
+  'time'        => $date,
+  'tags'        => explode(", ", $tags),
+  'search'      => $search,
+  'filter'      => $filter,
+  'tagCount'    => $tagCount,
+  'token'       => $token
 );
 
 // Codificamos el array en forma de JSON
