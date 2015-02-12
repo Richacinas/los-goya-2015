@@ -3710,10 +3710,10 @@ var gC = {
         $("#bl-topten").hide();
         
     	// Get radar totals data
-        $.ajax("../radar/final/total.json", {
+        $.ajax(gC.data.dataFolder + "total.json", {
             success: function(a) {
                 gC.loadPostsIdsInTemplate(a.data);
-                gC.processFilter(a.search, a.filter);
+                gC.processFilter(a.search, a.filter, a.tagCount);
                 gC.data.superCount = gC.processSuperCount(a.supercount);
                 a.ended || (gC.data.lastTime = a.time);
                 gC.cache.timelineActive && gC.tl.processGraph(a); 
@@ -3743,12 +3743,12 @@ var gC = {
     getNewData: function() {
     
         // er request
-        $.ajax('../radar/final/total.json', {
+        $.ajax(gC.data.dataFolder + "total.json", {
     
             success: function(data, status) {
                 gC.loadPostsIdsInTemplate(data.data);
                 // Rellenamos el select con los invitados mostrando unicamente los activos
-                gC.processFilter(data.search, data.filter);
+                gC.processFilter(data.search, data.filter, data.tagCount);
                 gC.data.superCount = gC.processSuperCount(data.supercount);
                 // paint all current data with animation
                 $("#bl-stream").slideUp("325", function() {
@@ -3767,7 +3767,7 @@ var gC = {
     getData: function() {
         $.ajax(gC.data.dataFolder + "minute.json", {
             success: function(a) {
-                a.time != gC.data.lastTime && (gC.data.lastTime = a.time, gC.data.superCount = gC.processSuperCount(a.supercount), gC.processFilter(a.search, a.filter), gC.cache.timelineActive && gC.tl.processGraph(a), gC.processData(a))
+                a.time != gC.data.lastTime && (gC.data.lastTime = a.time, gC.data.superCount = gC.processSuperCount(a.supercount), gC.processFilter(a.search, a.filter, a.tagCount), gC.cache.timelineActive && gC.tl.processGraph(a), gC.processData(a))
             },
             error: function() {
                 return console.log("errror recibiendo datos!"), !1
@@ -3778,7 +3778,7 @@ var gC = {
     },
     reloadRadar: function() {
         // Get total.json data file
-        $.ajax('..radar/final/total.json', {
+        $.ajax(gC.data.dataFolder + "total.json", {
         	success: function(data, status) {
         		// Get last post ID
         		var homePosts = gC.getHomeLastPosts();
@@ -3984,7 +3984,8 @@ var gC = {
                         var b = d[0],
                             c = b.naturalHeight || b.height,
                             f = b.naturalWidth || b.width;
-                        f > c && (a.addClass("twt-elm-img-portreait"), a.parents(".twt-elm-wrap").length ? d.css("left", -(gC.cache.colSize * f / c - gC.cache.colSize) / 4) : d.css("left", -(gC.cache.colSize * f / c - gC.cache.colSize) / 2))
+                        if (f > c) a.addClass("twt-elm-img-portreait");
+                        a.parents(".twt-elm-wrap").length ? d.css("left", -(gC.cache.colSize * f / c - gC.cache.colSize) / 4) : d.css("left", -(gC.cache.colSize * f / c - gC.cache.colSize) / 2);
                     })
                 } else gC.posizionator(a, b, c)
         }
@@ -4298,10 +4299,10 @@ var gC = {
             }
         }
     },
-    processFilter: function(a, b) {
-        $("#filtro-invitados").empty().append('<option value="-1">Filtrar por </option>'), $.each(a, function(a, c) {
-            if (labTools.utils.parseToBoolean(b[a])) {
-                var d = c.split(", ");
+    processFilter: function(a, b, c) {
+        $("#filtro-invitados").empty().append('<option value="-1">Filtrar por </option>'), $.each(a, function(a, v) {
+            if ((labTools.utils.parseToBoolean(b[a])) && (Math.floor(c[a]) > 0)) {
+                var d = v.split(", ");
                 "undefined" != typeof d && "undefined" != typeof d[0] && $("#filtro-invitados").append("<option value=" + a + ">" + d[0] + "</option>")
             }
         }), $("#filtro-invitados").selectBox() && $("#filtro-invitados").selectBox("refresh");
@@ -4540,7 +4541,7 @@ labTools.fns = {
 }),$(window).load(function() {
     // Mostrar solo los tag que esst�n definidos desde el backoffice
     $("#filtro-menu").click(function(){
-        $.getJSON('..radar/final/total.json', function(fileTotal){
+        $.getJSON(gC.data.dataFolder + "total.json", function(fileTotal){
             var comprobarTag;
                 $.each($(".selectBox-dropdown-menu li"),function(i, val){    
                     comprobarTag=$(this);

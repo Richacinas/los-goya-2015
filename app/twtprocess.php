@@ -65,6 +65,7 @@ $timeJSON           = $jsonSearchTerms_a["time"];         // Indica cuando se ha
 $tags               = $jsonSearchTerms_a["tags"];         // Tags a procesar
 $search             = $jsonSearchTerms_a["search"];       // Cadenas de busqueda a procesar
 $filter             = $jsonSearchTerms_a["filter"];       // Indica si el Filtro esta activo
+$tagCount           = $jsonSearchTerms_a["tagCount"];     // Cuenta del número de apariciones de cada tag
 
 // Token de seguridad CSRF
 if (isset($_POST['token'])) {
@@ -109,11 +110,10 @@ switch ($method) {
     initializaDatos();
 
     // Actualizamos los valores
-    $jsonSearchTerms    = file_get_contents($file_SearchTerms);
-    $jsonSearchTerms_a  = json_decode($jsonSearchTerms, true);
 
     $GLOBALS['search']     = $jsonSearchTerms_a['search'];
     $GLOBALS['filter']     = $jsonSearchTerms_a['filter'];
+    $GLOBALS['tagCount']     = $jsonSearchTerms_a['tagCount'];
 
     esHoraDeActualizar();
 
@@ -175,6 +175,9 @@ switch ($method) {
     echo "tag: " . $tag . "\n";
 
     */
+    
+    //Añadimos apariciones de tags al conteo tagCount
+    processTagCount(array($tag), $search, $tagCount, $type);
 
     if(strpos($link, 'twitter.com') != false && strpos($link, 'status') != false) {
       include_once($twitterFunctions);
@@ -350,7 +353,7 @@ switch ($method) {
       	}
       	$twt['type'] = 'img-big';
         var_dump($twt);
-        echo "PRUEBA BUENAAAAAA \n \n \n";
+        echo "PRUEBA BUENA \n \n \n";
       	addData($twt);
       	esHoraDeActualizar();
       	echo 'done';
@@ -438,6 +441,52 @@ switch ($method) {
   default:
     die('no se indicó acción valida'.PHP_EOL);
   break;
+}
+
+function processTagCount ($twtTags, $search, &$tagCount, $type) {
+    foreach ($twtTags as $k => $twtValue) {
+        foreach ($search as $key => $searchValue) {
+            if ($twtValue == $searchValue) {
+                if ($type == 'img-small') {
+                    $tagCount[$key] += 0.25;
+                } else {
+                    $tagCount[$key]++;
+                }
+            }
+        }
+    }
+    
+    saveTagCount($tagCount);
+}
+
+function saveTagCount($tagCount) {
+    $file_SearchTerms       = '../data/properties/searchTerms.json';
+    $jsonSearchTerms    = file_get_contents($file_SearchTerms);
+    $jsonSearchTerms_a  = json_decode($jsonSearchTerms, true);
+
+    $tags           = $jsonSearchTerms_a["tags"];
+    $search         = $jsonSearchTerms_a["search"];
+    $filter         = $jsonSearchTerms_a["filter"];
+    $token          = $jsonSearchTerms_a["token"];
+
+    $date           = time();
+    
+    $array = array(
+        'time'        => $date,
+        'tags'        => $tags,
+        'search'      => $search,
+        'filter'      => $filter,
+        'tagCount'    => $tagCount,
+        'token'       => $token
+    );
+
+    // Codificamos el array en forma de JSON
+    $jsonSearchTerms = json_encode($array);
+    $fp = fopen('../data/properties/searchTerms.json', 'w');
+
+    fwrite($fp, $jsonSearchTerms);
+    fclose($fp);
+    
 }
 
 function cleanData() {
@@ -654,6 +703,7 @@ function initializaDatos() {
 
     $GLOBALS['search'] = $jsonSearchTerms_a['search'];
     $GLOBALS['filter'] = $jsonSearchTerms_a['filter']; 
+    $GLOBALS['tagCount'] = $jsonSearchTerms_a['tagCount']; 
 
   } else {
       // leemos el archivo
@@ -719,7 +769,7 @@ function saveData(){
   }
 
   $timelineGlobal = completeTimelineWithEmptyMoments($timeline['global']);
-
+  
   writeJson($GLOBALS['saveDataminute'], array(
     'data' => transformPosts($GLOBALS['data']['minute']), 
     'time' =>  $GLOBALS['currTime'], 
@@ -727,6 +777,7 @@ function saveData(){
     'timeline' => $timelineGlobal,
     'search' => $GLOBALS['search'],
     'filter' => $GLOBALS['filter'],
+    'tagCount' => $GLOBALS['tagCount'],
     'supercount' => $countFinal
   ));
 
@@ -738,6 +789,7 @@ function saveData(){
     'timeline' => $timelineGlobal,
     'search' => $GLOBALS['search'],
     'filter' => $GLOBALS['filter'],
+    'tagCount' => $GLOBALS['tagCount'],
     'supercount' => $countFinal
   ));
 
