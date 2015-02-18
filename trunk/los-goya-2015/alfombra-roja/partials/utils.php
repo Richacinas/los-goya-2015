@@ -1,8 +1,8 @@
 <?php
 
-$shareUrl = "http://lab.rtve.es/los-goya-2015/alfombra-roja/";
-$baseUrl = "http://lab.rtve.es/los-goya-2015/alfombra-roja/";
-$twitterAccount = "lab_rtvees";
+$shareUrl = "http://lab.pre.rtve.es/los-oscar-2015/alfombra-roja/";
+$baseUrl = "http://lab.pre.rtve.es/los-oscar-2015/alfombra-roja/";
+$twitterAccount = "raulevoluciona";
 
 function getCarouselData($getPublished = false)
 {
@@ -11,12 +11,13 @@ function getCarouselData($getPublished = false)
     $aNameIndex = array();
     $aIdIndex = array();
     if (!$getPublished) {
-        $dataPath = 'http://origin-lab.rtve.es/los-goya-2015/alfombra-roja/data.csv';
+        $dataPath = 'http://lab.pre.rtve.es/los-oscar-2015/alfombra-roja/data.csv';
     } else {
-        $dataPath = 'http://origin-lab.rtve.es/los-goya-2015/alfombra-roja/data-published.csv';
+        $dataPath = 'http://lab.pre.rtve.es/los-oscar-2015/alfombra-roja/data-published.csv';
     }
+
     $aLines = file( $dataPath );
-    
+
     foreach( $aLines as $line ) {
         $aElement = str_getcsv($line, ",", '"');
         //$aElement[2] = utf8_encode($aElement[2]);
@@ -38,7 +39,7 @@ function getCarouselData($getPublished = false)
 
 function formatImageName($imageName) {
     
-    $result = preg_replace(array("/\sde\s/", "/\sla\s/", "/\sdel\s/", "/\s[A-Za-z]\s/"), array(" ", " ", " ", " "), stripAccents($imageName));
+    $result = preg_replace(array("/\sde\s/", "/\sla\s/", "/\sdel\s/", "/\s[A-Za-z]\s/", "/\<|\>|\"|\?|\\|\\||\/|\*|\'/"), array(" ", " ", " ", " ", ""), stripAccents($imageName));
     $result = preg_replace("/\s+/", "-", $result);
     $result = strtolower($result);
     
@@ -85,6 +86,8 @@ function renameImage($oldName, $newName) {
 }
 function cleanupFolder($folder, $aContent) {
     $openFolder = opendir($folder);
+	echo "entramos";
+	exit();
     // don't forget to stop while-loop also
     while (($file = readdir($openFolder)) !== false) {
        if($file!="." && $file!=".." && !in_array($file, $aContent)){
@@ -111,9 +114,9 @@ function escapeArray($array){
 function addItemCsvArray(&$data, $i, $aNewValues, $aOldNames, $aOldIds) {
     $data[$i] = $aNewValues;
     //Se quitan acentos, se convierte a minúsculas y se sustituye el espacio en blanco por _
-    $imageName = formatImageName($data[$i][1])."-goya-2015.jpg";
+    $imageName = formatImageName($data[$i][1])."-los-oscar-2015.jpg";
     array_splice( $data[$i], 1, 0, $imageName );
-    
+
     //Además, hay que comprobar si hubo cambio de nombre pues de ser así hay que renombrar los ficheros de imagen
     $oldNameIndex = array_search($aNewValues[4],$aOldIds);
     if ($oldNameIndex != false) {
@@ -133,16 +136,16 @@ function setCsvArray($data, $files) {
     
     $aFormattedData = array();
     $aNewValues = array();
-    $aNewNames = array("silueta.jpg");
+    $aNewNames = array("silueta-los-oscar-2015.jpg");
     $auxPrevPosition = array_values($data);
     $prevPosition = (int)$auxPrevPosition[0];
-    
+
     //Primeramente se organizan los datos que llegan con el formulario. Habrá que incluir el nombre de la imagen (si es que se ha seleccionado una nueva)
     foreach ($data as $key => $value) {
         if (preg_match_all('!position!', $key, $result) ) {
             $position = (int)$value;
         } elseif (preg_match_all('!name!', $key, $result)) {
-            $aNewNames[] = formatImageName($value)."-goya-2015.jpg";
+            $aNewNames[] = formatImageName($value)."-los-oscar-2015.jpg";
         }
         
         if ($position !== $prevPosition) {
@@ -162,15 +165,14 @@ function setCsvArray($data, $files) {
         addItemCsvArray($aFormattedData, $prevPosition, $aNewValues, $aOldNames, $aOldIds);
     }
     //Se limpian las carpetas. Todo lo que no esté en aNewNames será eliminado.
-    cleanupFolder("../fotos/zoom/", $aNewNames);
-    cleanupFolder("../fotos/", $aNewNames);
+    //cleanupFolder("../fotos/zoom/", $aNewNames);
+    //cleanupFolder("../fotos/", $aNewNames);
     
     return $aFormattedData;
 }
 
 function generateCsv($data, $delimiter = ',', $enclosure = '"') {
-    
-       $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
+       $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-oscar-2015/alfombra-roja/data.csv';
        $handle = fopen($dataPath, 'r+');
        @ftruncate($handle, 0);
        foreach ($data as $line) {
@@ -182,8 +184,8 @@ function generateCsv($data, $delimiter = ',', $enclosure = '"') {
 }
 
 function publishCsv () {
-    $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data.csv';
-    $dataPublishedPath = $_SERVER["DOCUMENT_ROOT"] .'/los-goya-2015/alfombra-roja/data-published.csv';
+    $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-oscar-2015/alfombra-roja/data.csv';
+    $dataPublishedPath = $_SERVER["DOCUMENT_ROOT"] .'/los-oscar-2015/alfombra-roja/data-published.csv';
     copy($dataPath, $dataPublishedPath);
 }
 

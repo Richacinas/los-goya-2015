@@ -1,21 +1,21 @@
 <?php
 session_start();
 
-require_once('../../app/core/class/NoCsrf.php');
+//require_once('../../app/core/class/NoCsrf.php');
 include '../partials/utils.php';
 $files = $_FILES;
 
-try
-{
+//try
+//{
     // CSRF check, sobre el POST, en modo excepción, nunca expira, y en modo "una vez".
-    NoCSRF::check( 'csrf_token', $_POST, true, null, true );
+//    NoCSRF::check( 'csrf_token', $_POST, true, null, true );
     // Si se llega a este punto, significa que las validaciones han resultado correctas
-}
-catch ( Exception $e )
-{
-    echo $e->getMessage();
-    exit();
-}
+//}
+//catch ( Exception $e )
+//{
+//    echo $e->getMessage();
+//    exit();
+//}
 
 
 //Se guardan en sesión todos los valores presentes en el formulario
@@ -36,8 +36,9 @@ foreach ($files as $key => $values) {
         
         $position = preg_match_all('/\d+/', $splitResult[2], $match);
         $position = $match[0][0];
-        $imageName = formatImageName($_POST['name'.$position])."-goya-2015.jpg"; 
-        //Si la variable contiene large, entonces es de tipo large y se establece la ruta en fotos/zoom. Si no, entonces será fotos/ además, se renombra según la convención nombre-apellido-goya-2015.jpg por si acaso
+        $imageName = formatImageName($_POST['name'.$position])."-los-oscar-2015.jpg"; 
+
+        //Si la variable contiene large, entonces es de tipo large y se establece la ruta en fotos/zoom. Si no, entonces será fotos/ además, se renombra según la convención nombre-apellido-los-oscar-2015.jpg por si acaso
         if ($imageType == "large") {
             $target_file = "../fotos/zoom/" . $imageName;
         } else {
@@ -66,10 +67,8 @@ foreach ($files as $key => $values) {
             error_log(date('d/m/Y h:i:s') + " Ha habido un error en el salvado de datos.\n", 3, "../php.log");
         // if everything is ok, try to upload file
         } else {
-
             if (move_uploaded_file($values['tmp_name'], $target_file)) {
                 chmod($target_file,0777);
-
                 error_log(date('d/m/Y h:i:s') + "La imagen ". $target_file. " ha sido subida.\n", 3, "../php.log");
             } else {
                 error_log(date('d/m/Y h:i:s') + "Ha habido un error subiendo alguna de la/s imagen/es.\n", 3, "../php.log");
@@ -95,7 +94,7 @@ if ($uploadOk == 1 ) {
     $message = "Ha habido un error al subir la/s foto/s.";
 }
 
-header('Location: /los-goya-2015/alfombra-roja/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d&r='.$message);
+header('Location: /los-oscar-2015/alfombra-roja/backoffice/?p=cbbabb7feaf39925552bb5690c64d16d&r='.$message);
 exit();
 
 ?>

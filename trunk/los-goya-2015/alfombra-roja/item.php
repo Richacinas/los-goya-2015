@@ -14,7 +14,7 @@ unset($_POST);
 // Vienen ya ordenados de acuerdo al valor de posición
 $ogTitle = "";
 if ($name != '') {
-    $carouselIndex = array_search($name."-goya-2015.jpg", array_values($aNameIndex));
+    $carouselIndex = array_search($name."-los-oscar-2015.jpg", array_values($aNameIndex));
     if (!(is_int($carouselIndex))) {
         $carouselIndex = 0;
     } else {
@@ -27,15 +27,24 @@ else {
 $fecha = date_create();
 
 ?>
-
+<ul class="slide-pager">
+    <?php for ($i = 1; $i <= count($aCarousel); $i++):
+            if ($carouselIndex + 1 == $i) {
+                echo "<li class='selected slide-pager-option'>". $i . "<a href=".formatImageName($aCarousel[$i][2])."></a></li>";
+            } else {
+                echo "<li class='slide-pager-option'>". $i . "<a href=".formatImageName($aCarousel[$i][2])."></a></li>";
+            }
+          endfor;
+    ?>
+</ul>
 <div class="content">
     <div class="stage">
       <div itemscope itemtype="http://schema.org/ImageObject">
         <div class="foto">
-            <img id="carousel-image" title="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en Los Premios Goya 2015 - RTVE.es" src="<?php echo $baseUrl; ?>fotosPublished/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>?t=<?php echo date_timestamp_get($fecha); ?>" data-zoom-image="<?php echo $baseUrl; ?>fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>?t=<?php echo date_timestamp_get($fecha); ?>" alt="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en Los Premios Goya 2015" itemprop="image" />
+            <img id="carousel-image" title="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en los Oscar 2015 - RTVE.es" src="<?php echo $baseUrl; ?>fotosPublished/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>?t=<?php echo date_timestamp_get($fecha); ?>" data-zoom-image="<?php echo $baseUrl; ?>fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex + 1][1]; ?>?t=<?php echo date_timestamp_get($fecha); ?>" alt="<?php echo $aCarousel[$carouselIndex + 1][2]; ?> en los Oscar 2015" itemprop="image" />
         </div>
         <div class="txt">
-          <h1 class="rtv03" itemprop="name"><?php echo $aCarousel[$carouselIndex + 1][2]; ?>, en la alfombra roja de los Goya 2015</h1>
+          <h1 class="rtv03" itemprop="name"><?php echo $aCarousel[$carouselIndex + 1][2]; ?>, en la alfombra roja de los Oscar</h1>
           <span itemprop="provider"><?php echo $aCarousel[$carouselIndex + 1][3]; ?></span>
           <p itemprop="description"><?php echo str_replace("\"","'",targetBlank($aCarousel[$carouselIndex + 1][4])); ?></p>
           <meta itemprop="author" content="<?php echo count(explode("/", $aCarousel[$carouselIndex + 1][3])) > 1 ? array_pop(explode("/", $aCarousel[$carouselIndex + 1][3])) : ""; ?>" />
@@ -45,7 +54,7 @@ $fecha = date_create();
       <table width="100%" border="0">
         <tr>
           <td><div class="fb-share-button" data-href="<?php echo $shareUrl; echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-layout="button_count"></div></td>
-          <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $shareUrl; echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-text="<?php echo $aCarousel[$carouselIndex + 1][2]; ?>, en la alfombra roja de los Goya 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+          <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $shareUrl; echo formatImageName($aCarousel[$carouselIndex + 1][2]); ?>" data-text="<?php echo $aCarousel[$carouselIndex + 1][2]; ?>, en la alfombra roja de los Oscar 2015" data-via="<?php echo $twitterAccount; ?>" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
         </tr>
       </table>
       </div>
@@ -64,16 +73,6 @@ $fecha = date_create();
     <div class="overlay"></div>
     <div class="button"></div>
 </div>
-<ul class="slide-pager">
-    <?php for ($i = 1; $i <= count($aCarousel); $i++):
-            if ($carouselIndex + 1 == $i) {
-                echo "<li class='selected slide-pager-option'>". $i . "<a href=".formatImageName($aCarousel[$i][2])."></a></li>";
-            } else {
-                echo "<li class='slide-pager-option'>". $i . "<a href=".formatImageName($aCarousel[$i][2])."></a></li>";
-            }
-          endfor;
-    ?>
-</ul>
 <script>
 if ( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) == false )  {
     $("#carousel-image").elevateZoom({ zoomType: "lens", lensShape: "round", lensSize: 300, containLensZoom: true, loadingIcon: "css/loader.gif" });

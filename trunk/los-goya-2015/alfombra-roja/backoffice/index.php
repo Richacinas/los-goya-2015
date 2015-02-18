@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once('../../app/core/class/NoCsrf.php');
+//require_once('../../app/core/class/NoCsrf.php');
 include '../partials/utils.php';
 
 $password = isset($_GET['p']) ? $_GET['p'] : '';
@@ -10,12 +10,11 @@ $result = isset($_GET['r']) ? $_GET['r'] : '';
 if ($password != '' && isValidMd5($password)) {
 
    if ($password == md5('dRtVe2015goyA')) {
-      
        $data = getCarouselData(false);
        $aCarousel = $data[0];
        
        $fecha = date_create();
-       $token = NoCSRF::generate( 'csrf_token' );
+       //$token = NoCSRF::generate( 'csrf_token' );
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -23,7 +22,7 @@ if ($password != '' && isValidMd5($password)) {
     
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Backoffice - La alfombra roja de Los Premios Goya - Premios Goya 2015</title>
+    <title>Backoffice - La alfombra roja de los Oscar - Los Oscar 2015</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css"/>
 
     <script type="text/javascript" src="http://www.rtve.es/js/rtve.pack.js"></script>
@@ -45,6 +44,7 @@ if ($password != '' && isValidMd5($password)) {
                     <li>Para enlazar una palabra de la descripción, sitúate delante de la palabra y pega este código: <strong>&lt;a href="URL DE LA NOTICIA QUE QUIERES ENLAZAR"&gt; palabra que quieres enlazar &lt;/a&gt; </strong></li>
                     <li>Los botones de la derecha sirven para <strong>eliminar y añadir</strong> un nuevo elemento (Papelera, Sumar).</li>
                     <li>Una vez realizados los cambios, hay que pulsar sobre el <strong>botón Guardar</strong> de la parte inferior.</li>
+					<li>Por el momento y por razones de seguridad en el servidor de producción, sólo se pueden subir <strong>10 fotos a la vez</strong>.</li>
                 </ul>
             </div>
             <table id="backoffice_table">
@@ -77,8 +77,8 @@ if ($password != '' && isValidMd5($password)) {
                     <tr id="row<?php print($key + 1); ?>">
                         <td class="position_cell"><input type="text" class="input_short" id="position<?php print($key + 1); ?>" name="position<?php print($key + 1); ?>" value=""/></td>
                         <td class="name_cell"><input type="text" class="input_medium" id="name<?php print($key + 1); ?>" name="name<?php print($key + 1); ?>" value=""/></td>
-                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key + 1); ?>" name="image_large<?php print($key + 1); ?>" src="<?php echo $baseUrl; ?>fotos/zoom/silueta.jpg"/><input class="select_image_large" id="select_image_large<?php print($key + 1); ?>" name="select_image_large<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
-                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key + 1); ?>" name="image_medium<?php print($key + 1); ?>" src="<?php echo $baseUrl; ?>fotos/silueta.jpg"/><input class="select_image_medium" id="select_image_medium<?php print($key + 1); ?>" name="select_image_medium<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_large" id="image_large<?php print($key + 1); ?>" name="image_large<?php print($key + 1); ?>" src="<?php echo $baseUrl; ?>fotos/zoom/silueta-los-oscar-2015.jpg"/><input class="select_image_large" id="select_image_large<?php print($key + 1); ?>" name="select_image_large<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
+                        <td class="image_cell"><img class="image_medium" id="image_medium<?php print($key + 1); ?>" name="image_medium<?php print($key + 1); ?>" src="<?php echo $baseUrl; ?>fotos/silueta-los-oscar-2015.jpg"/><input class="select_image_medium" id="select_image_medium<?php print($key + 1); ?>" name="select_image_medium<?php print($key + 1); ?>" type="file" value="Examinar"/></td>
                         <td class="photographer_cell"><input type="text" class="input_medium" id="photographer<?php print($key + 1); ?>" name="photographer<?php print($key + 1); ?>" value=""/></td>
                         <td class="text_cell"><textarea id="text<?php print($key + 1); ?>" name="text<?php print($key + 1); ?>" rows="6" cols="35"></textarea></td>
                         <td class="id_cell"><input type="text" class="carousel_element_id" id="id<?php print($key + 1); ?>" name="id<?php print($key + 1); ?>" value=""/></td>
