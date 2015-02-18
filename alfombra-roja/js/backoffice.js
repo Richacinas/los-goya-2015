@@ -1,5 +1,5 @@
 function handleImageError(image) {
-        $(image).unbind("error").attr("src", "../fotos/silueta.jpg");
+        $(image).unbind("error").attr("src", "../fotos/silueta-los-oscar-2015.jpg");
     }
 
 $(function() {
@@ -111,7 +111,7 @@ $(function() {
                             elemento.selectedIndex=0;
                             break;
                         case undefined: //Si el tipo no está definido, entonces se trata de las imágenes o fotos. Con lo cual se asigna silueta.jpg por defecto.
-                            elemento.src="../fotos/silueta.jpg";
+                            elemento.src="../fotos/silueta-los-oscar-2015.jpg";
                             break;
 		}
 	}
