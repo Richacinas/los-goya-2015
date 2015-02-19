@@ -1,8 +1,8 @@
 <?php
 
-$shareUrl = "http://lab.pre.rtve.es/los-oscar-2015/alfombra-roja/";
-$baseUrl = "http://lab.pre.rtve.es/los-oscar-2015/alfombra-roja/";
-$twitterAccount = "raulevoluciona";
+$shareUrl = "http://lab.rtve.es/los-oscar-2015/alfombra-roja/";
+$baseUrl = "http://origin-lab.rtve.es/los-oscar-2015/alfombra-roja/";
+$twitterAccount = "lab_rtvees";
 
 function getCarouselData($getPublished = false)
 {
@@ -11,9 +11,9 @@ function getCarouselData($getPublished = false)
     $aNameIndex = array();
     $aIdIndex = array();
     if (!$getPublished) {
-        $dataPath = 'http://lab.pre.rtve.es/los-oscar-2015/alfombra-roja/data.csv';
+        $dataPath = 'http://origin-lab.rtve.es/los-oscar-2015/alfombra-roja/data.csv';
     } else {
-        $dataPath = 'http://lab.pre.rtve.es/los-oscar-2015/alfombra-roja/data-published.csv';
+        $dataPath = 'http://origin-lab.rtve.es/los-oscar-2015/alfombra-roja/data-published.csv';
     }
 
     $aLines = file( $dataPath );
@@ -139,7 +139,6 @@ function setCsvArray($data, $files) {
     $aNewNames = array("silueta-los-oscar-2015.jpg");
     $auxPrevPosition = array_values($data);
     $prevPosition = (int)$auxPrevPosition[0];
-
     //Primeramente se organizan los datos que llegan con el formulario. Habrá que incluir el nombre de la imagen (si es que se ha seleccionado una nueva)
     foreach ($data as $key => $value) {
         if (preg_match_all('!position!', $key, $result) ) {
@@ -172,15 +171,22 @@ function setCsvArray($data, $files) {
 }
 
 function generateCsv($data, $delimiter = ',', $enclosure = '"') {
-       $dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-oscar-2015/alfombra-roja/data.csv';
-       $handle = fopen($dataPath, 'r+');
-       @ftruncate($handle, 0);
-       foreach ($data as $line) {
-               fputcsv($handle, $line, $delimiter, $enclosure);
-       }
-       fclose($handle);
+	try {
+		$dataPath = $_SERVER["DOCUMENT_ROOT"] .'/los-oscar-2015/alfombra-roja/data.csv';
+		$handle = fopen($dataPath, 'w');
+		@ftruncate($handle, 0);
+
+		foreach ($data as $line) {
+		   fputcsv($handle, $line, $delimiter, $enclosure) or die('fputcsv failed');
+		}
+		fclose($handle);
+
+		return true;
+	} catch (Exception $e) {
+		echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+		exit();
+	}
        
-       return true;
 }
 
 function publishCsv () {

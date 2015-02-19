@@ -4,8 +4,8 @@
 
 .zoomContainer {z-index: 10000}
 
-.slide-left { position: absolute; top: 0px; right: 875px; height: 995px; width: 30px; background:#ffffff;}
-.slide-right { position: absolute; top: 0px; left: 880px; height: 995px; width: 30px; background:#ffffff;}
+.slide-left { position: absolute; top: 0px; right: 875px; height: 1021px; width: 30px; background:#ffffff;}
+.slide-right { position: absolute; top: 0px; left: 880px; height: 1021px; width: 30px; background:#ffffff;}
 
 .slide-left, .slide-left a, .slide-right, .slide-right a { cursor: pointer; }
 

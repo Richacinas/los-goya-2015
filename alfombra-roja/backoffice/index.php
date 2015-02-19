@@ -10,7 +10,7 @@ $result = isset($_GET['r']) ? $_GET['r'] : '';
 if ($password != '' && isValidMd5($password)) {
 
    if ($password == md5('dRtVe2015goyA')) {
-       $data = getCarouselData(false);
+       $data = getCarouselData(false); 
        $aCarousel = $data[0];
        
        $fecha = date_create();
