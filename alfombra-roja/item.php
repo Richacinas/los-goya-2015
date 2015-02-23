@@ -46,7 +46,7 @@ $fecha = date_create();
             <img id="carousel-image" title="<?php echo $aCarousel[$carouselIndex ][2]; ?> en los Oscar 2015 - RTVE.es" src="<?php echo $baseUrl; ?>fotosPublished/<?php echo $aCarousel[$carouselIndex ][1]; ?>?t=<?php echo date_timestamp_get($fecha); ?>" data-zoom-image="<?php echo $baseUrl; ?>fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex ][1]; ?>?t=<?php echo date_timestamp_get($fecha); ?>" alt="<?php echo $aCarousel[$carouselIndex ][2]; ?> en los Oscar 2015" itemprop="image" />
         </div>
         <div class="txt">
-          <h1 class="rtv03" itemprop="name"><?php echo $aCarousel[$carouselIndex ][2]; ?>, en la alfombra roja de los Oscar</h1>
+          <h1 class="rtv03" itemprop="name"><?php echo $aCarousel[$carouselIndex ][2]; ?>, en la alfombra roja de los Oscar 2015</h1>
           <span itemprop="provider"><?php echo $aCarousel[$carouselIndex ][3]; ?></span>
           <p itemprop="description"><?php echo str_replace("\"","'",targetBlank($aCarousel[$carouselIndex ][4])); ?></p>
           <meta itemprop="author" content="<?php echo count(explode("/", $aCarousel[$carouselIndex ][3])) > 1 ? array_pop(explode("/", $aCarousel[$carouselIndex ][3])) : ""; ?>" />
