@@ -153,7 +153,7 @@ else {
                             <div class="stage">
                                 <div itemscope itemtype="http://schema.org/ImageObject">
                                     <div class="foto">
-                                        <img id="carousel-image" title="<?php echo $aCarousel[$carouselIndex ][2]; ?> en los Oscar 2015 - RTVE.es" src="<?php echo $baseUrl; ?>fotosPublished/<?php echo $aCarousel[$carouselIndex ][1]; ?>" data-zoom-image="<?php echo $baseUrl; ?>fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex ][1]; ?>" alt="<?php echo $aCarousel[$carouselIndex ][2]; ?> en los Oscar 2015" itemprop="image" />
+                                        <img id="carousel-image" title="<?php echo $aCarousel[$carouselIndex ][2]; ?> en los Oscar 2015 - RTVE.es" src="" data-zoom-image="<?php echo $baseUrl; ?>fotosPublished/zoom/<?php echo $aCarousel[$carouselIndex ][1]; ?>" alt="<?php echo $aCarousel[$carouselIndex ][2]; ?> en los Oscar 2015" itemprop="image" />
                                     </div>
                                     <div class="txt">
                                       <h1 class="rtv03" itemprop="name"><?php echo $aCarousel[$carouselIndex ][2]; ?>, en la alfombra roja de los Oscar 2015</h1>
@@ -193,12 +193,27 @@ else {
 </div>
 <?php echo $footer; ?>
 <script type="text/javascript">
-if ( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) == false )  {
-    $("#carousel-image").elevateZoom({ zoomType: "lens", lensShape: "round", lensSize: 300, containLensZoom: true, loadingIcon: "css/loader.gif" });
-} else {
-    document.write("\<script type='text\/javascript' src='js\/jquery.mobile.custom.min.js'\>\<\/script>");
-    $(".zoom_info").hide();
-}
+
+$('#carousel-image').css({opacity:0});
+
+$('#carousel-image').load(function () {
+    $('#carousel-image').css({opacity:1});
+});
+
+var theCachedImage = new Image();
+theCachedImage.src = $('#carousel-image').data("zoom-image");
+
+$(theCachedImage).load(function () {
+    $('#carousel-image')[0].src = "<?php echo $baseUrl; ?>fotosPublished/<?php echo $aCarousel[$carouselIndex ][1]; ?>";
+
+    if ( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) == false )  {
+        $("#carousel-image").elevateZoom({ zoomType: "lens", lensShape: "round", lensSize: 300, containLensZoom: true, loadingIcon: "css/loader.gif" });
+    } else {
+        document.write("\<script type='text\/javascript' src='js\/jquery.mobile.custom.min.js'\>\<\/script>");
+        $(".zoom_info").hide();
+    }
+});
+
 </script>
 </body>
 </html>
