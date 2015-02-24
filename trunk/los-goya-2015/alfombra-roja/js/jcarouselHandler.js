@@ -8,6 +8,8 @@ $(function() {
 
     function swapPhoto(link) {
         $(".carousel-content").animate({opacity:0}, 200, function(){
+            $("#carousel-image").hide();
+
             $.ajax(
                 {
                    type:'POST',

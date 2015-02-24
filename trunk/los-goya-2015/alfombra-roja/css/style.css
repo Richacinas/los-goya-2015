@@ -31,7 +31,7 @@
 .fadeout-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #ffffff; opacity: 0; filter: Alpha(Opacity=0); z-index: 100;}
 .fadein-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #ffffff; z-index: 100;}
 
-#carousel-image { background:url("loader.gif") no-repeat 50% 50% #EAEAEA; }
+.foto { background:url("loader.gif") no-repeat 50% 50% #EAEAEA; }
 .clear { clear:both; }
 .content { clear:both; }
 .stage { width:100%; float:left; padding-top: 15px;}
