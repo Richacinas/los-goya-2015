@@ -79,10 +79,6 @@ $fecha = date_create();
 
 $('#carousel-image').css({opacity:0});
 
-$('#carousel-image').load(function () {
-    $('#carousel-image').css({opacity:1});
-});
-
 var theCachedImage = new Image();
 theCachedImage.src = $('#carousel-image').data("zoom-image");
 
