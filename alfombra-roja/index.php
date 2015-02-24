@@ -196,22 +196,22 @@ else {
 
 $('#carousel-image').css({opacity:0});
 
-$('#carousel-image').load(function () {
-    $('#carousel-image').css({opacity:1});
-});
-
 var theCachedImage = new Image();
 theCachedImage.src = $('#carousel-image').data("zoom-image");
 
 $(theCachedImage).load(function () {
     $('#carousel-image')[0].src = "<?php echo $baseUrl; ?>fotosPublished/<?php echo $aCarousel[$carouselIndex ][1]; ?>";
 
-    if ( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) == false )  {
-        $("#carousel-image").elevateZoom({ zoomType: "lens", lensShape: "round", lensSize: 300, containLensZoom: true, loadingIcon: "css/loader.gif" });
-    } else {
-        document.write("\<script type='text\/javascript' src='js\/jquery.mobile.custom.min.js'\>\<\/script>");
-        $(".zoom_info").hide();
-    }
+    $('#carousel-image').load(function () {
+        $('#carousel-image').css({opacity:1});
+        
+        if ( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) == false )  {
+            $("#carousel-image").elevateZoom({ zoomType: "lens", lensShape: "round", lensSize: 300, containLensZoom: true, loadingIcon: "css/loader.gif" });
+        } else {
+            document.write("\<script type='text\/javascript' src='js\/jquery.mobile.custom.min.js'\>\<\/script>");
+            $(".zoom_info").hide();
+        }
+    });
 });
 
 </script>
