@@ -86,8 +86,8 @@ else {
     <script language="javascript" type="text/javascript" src="js/jcarouselHandler.js" ></script>
     <script language="javascript" type="text/javascript" src="//www.rtve.es/js/mushrooms/rtve_mushroom.js" ></script>
     <script type="text/javascript" src="js/jquery.elevatezoom.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
     
-
     <script language="javascript" type="text/javascript">
         var carouselIndex = <?php print($carouselIndex); ?>;
     </script>
@@ -194,24 +194,37 @@ else {
 <?php echo $footer; ?>
 <script type="text/javascript">
 
-$('#carousel-image').css({opacity:0});
+var isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
-var theCachedImage = new Image();
-theCachedImage.src = $('#carousel-image').data("zoom-image");
-
-$(theCachedImage).load(function () {
+function continueLoading() {
     $('#carousel-image')[0].src = "<?php echo $baseUrl; ?>fotosPublished/<?php echo $aCarousel[$carouselIndex ][1]; ?>";
-
+    
     $('#carousel-image').load(function () {
         $('#carousel-image').css({opacity:1});
-        
-        if ( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) == false )  {
+                              
+        if ( isMobile == false )  {
             $("#carousel-image").elevateZoom({ zoomType: "lens", lensShape: "round", lensSize: 300, containLensZoom: true, loadingIcon: "css/loader.gif" });
         } else {
-            document.write("\<script type='text\/javascript' src='js\/jquery.mobile.custom.min.js'\>\<\/script>");
             $(".zoom_info").hide();
         }
     });
+}
+
+$('#carousel-image').css({opacity:0});
+
+var theCachedZoomImage = new Image();
+if ( isMobile == false )  {
+    theCachedZoomImage.src = $('#carousel-image').data("zoom-image");
+} else {
+    continueLoading();
+}
+
+
+var theCachedImage = new Image();
+theCachedImage.src = "<?php echo $baseUrl; ?>fotosPublished/<?php echo $aCarousel[$carouselIndex ][1]; ?>";
+
+$(theCachedZoomImage).load(function () {
+    continueLoading();
 });
 
 </script>
