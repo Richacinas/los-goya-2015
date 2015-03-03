@@ -14,7 +14,7 @@ $(function() {
         $("#"+this.parentNode.children[1].id).trigger('click');
     });
     $(document).on('click', "img[id^='delete_item']", function(){
-        $("#"+this.parentNode.parentNode.id).remove();
+        $("#"+this.parentNode.parentNode.id).addClass('deleted');
         //$("#id"+this.id.replace( /[^\d.]/g, '' )).val("-1");
     });
     $(document).on('click', "img[id='add_item']", function(){
